@@ -20,6 +20,8 @@ to make every quoted figure reconstructible from the raw data.
 | `cover_letter_NHTB_v2.tex` | cover letter addressed to the editor |
 | `supplementary_material/` | the 64-file supplementary package, groups S1-S4, with `MANIFEST.csv` (size, line count and SHA-256 of every entry) and its own `README.md` |
 | `campaign_v2_symmetry_selection/` | the campaigns: raw CSV/JSON results, fitted parameters, publication figures, drivers, analysis scripts and quality gates |
+| `dns_physical_validation_suite/` | the fully nonlinear DNS records: per-case measurements, the four convergence and scaling scans, the wall-flux parity test and the run report the consistency script re-derives |
+| `validation_outputs_ULTIMATE_DENSE_CPU/` | the dense finite-domain critical-Peclet survey behind the endpoint classification |
 | `*.png` at the root | the first-order, DNS-convergence and mechanism figures included by the manuscript |
 
 ## The campaigns in `campaign_v2_symmetry_selection/`
@@ -52,19 +54,20 @@ resumes from its own checkpoint.
 To rebuild the manuscript:
 
 ```bash
-pdflatex -interaction=nonstopmode -output-directory=build main_v2.tex
-bibtex   build/main_v2
-pdflatex -interaction=nonstopmode -output-directory=build main_v2.tex
-pdflatex -interaction=nonstopmode -output-directory=build main_v2.tex
+pdflatex -interaction=nonstopmode -output-directory=build_v2 main_v2.tex
+bibtex   build_v2/main_v2
+pdflatex -interaction=nonstopmode -output-directory=build_v2 main_v2.tex
+pdflatex -interaction=nonstopmode -output-directory=build_v2 main_v2.tex
 ```
 
 Compile from the repository root: the manuscript addresses its figures with
-root-relative paths.
+root-relative paths. The build directories are named as above because the gates read
+`build_v2/main_v2.log` and `build_v2/main_v2.aux`.
 
 ## Quality gates
 
 All five scripts exit non-zero on any defect, so the manuscript cannot drift away
-from the data it quotes.
+from the data it quotes. Each resolves the repository root from its own location.
 
 ```bash
 py -X utf8 campaign_v2_symmetry_selection/check_build.py                # build, labels, ASCII, prose hygiene
@@ -75,7 +78,15 @@ py -X utf8 campaign_v2_symmetry_selection/check_cover_letter.py         # cover-
 ```
 
 `check_build.py` additionally refuses any working filename in the prose, requires a
-keyword line, and requires every figure and table to be cited in the text.
+keyword line, and requires every figure and table to be cited in the text. It needs the
+build above to exist; `verify_manuscript_numbers.py` and `check_notation.py` run on the
+data and the source alone.
+
+Two gates are author-side by nature and cannot pass from this repository alone:
+`check_duplicate_text.py` compares the manuscript against the sources of the two
+companion studies, which are not deposited here, and `check_cover_letter.py` inspects
+the compiled cover letter, which must be built locally from `cover_letter_NHTB_v2.tex`
+into a `build_cover/` directory.
 
 ## Relationship to the other two studies
 

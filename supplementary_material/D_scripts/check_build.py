@@ -9,7 +9,7 @@ import re
 import sys
 from pathlib import Path
 
-WORK = Path(r"C:\Users\user\Documents\Documents - Copie\mixed_conv_verification")
+WORK = Path(__file__).resolve().parents[1]
 BUILD = WORK / "build_v2"
 LOG = BUILD / "main_v2.log"
 AUX = BUILD / "main_v2.aux"
