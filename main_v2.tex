@@ -62,45 +62,28 @@
 
 \begin{abstract}
 Nonlinear redistribution of wall heat flux in a two-dimensional laminar
-mixed-convection channel with spatially periodic wall-temperature modulation of
-unequal amplitude is governed by an exact symmetry selection rule, while the
-magnitude and the direction of the redistribution are set by the coupled
-thermal--hydrodynamic dynamics. Decomposing the first-order thermal response into
-symmetric and antisymmetric Fourier components, we prove that their mixed quadratic
-interaction is odd across the channel, so that the second-order mean wall-flux
-corrections satisfy $\Nu_{2,0}(+1)=-\Nu_{2,0}(-1)$ identically, whereas
-symmetry-preserving self-interactions produce no directional redistribution at the
-same order. The parity law defines a thermal-pumping coefficient $\PiT$ that obeys
-the exact Green-function identity $\PiT=-(\Pe/2)\int_{-1}^{1}Y\mathcal E_{as}\,dY$,
-from which the linearity $\PiT=\Grr A(k,\Rey,\Pr)$, the long-wavelength scaling
-$A=O(k^2)$, and the corollary that the zero of $\PiT$ is independent of $\Grr$ all
-follow. An independent fully nonlinear DNS, at $(k,\Pe,\Rey,\Pr,\Grr)$ equal to
-$(0.8,7,10,0.7,100)$, converges to
-$\PiT^{\mathrm{DNS}}=-4.6763\times10^{-2}$, within $1.52\%$ of the perturbative
-prediction, reproduces the symmetry-selected reversal upon interchange of the two
-wall amplitudes, and confirms that the reversal point in $\Rey$ does not move when
-$\Grr$ is varied over $25$--$200$. At fixed $\Pe$ the reversal location
-$\Rey_c(k)$ is mapped perturbatively over seven wavenumbers, from
-$\Rey_c=79.08$ at $k=0.4$ to $\Rey_c=8.54$ at $k=2.0$. A thirteen-case DNS
-campaign then confirms the reversal nonlinearly on both sides of the crossing at
-four wavenumbers, all eight bracketed cases returning the predicted sign,
-reproduces the parity cancellation to $3.1\times10^{-18}$ in the wall-flux
-difference, measures the quadrature coefficient to $1.38\%$, and extends the
-Grashof-independence of the reversal to the nonlinear regime: the measured
-Grashof ratios of $q_+-q_-$ lie within $3.7\times10^{-4}$ of the exact factor of
-four and the DNS-minus-perturbative discrepancy is itself proportional to
-$\Grr$, so the discrepancy rescales the coefficient without moving its zero.
-The same campaign falsifies part of its own pre-registered error model---five of
-the twelve non-degenerate cases exceed the bound, with a deviation independent
-of the forcing amplitude and growing with the wavenumber---and the residual is
-analysed as a remainder whose origin, truncation or spatial discretisation, is
-not separated. The parity law is shown
-to extend to phase-shifted forcing through a second, independent pumping
-coefficient $\PiT^{\perp}$ that enters with the quadrature product
-$\mathrm{Im}(\varepsilon_a\varepsilon_s^{*})$ and reverses the pumping direction on
-its own. Symmetry therefore selects the \emph{structure} of the nonlinear
-redistribution, whereas buoyancy-mediated dynamics select its amplitude, its sign,
-and the control parameter that governs it.
+mixed-convection channel with spatially periodic wall heating of unequal
+amplitude is governed by an exact symmetry selection rule, while its magnitude
+and its direction are set by the coupled thermal and hydrodynamic dynamics.
+Decomposing the first-order thermal response into symmetric and antisymmetric
+components, we prove that their mixed quadratic interaction is odd across the
+channel, so that the second-order mean wall-flux corrections are equal and
+opposite; symmetry-preserving self-interactions produce no directional
+redistribution at the same order. The parity law defines a thermal-pumping
+coefficient obeying an exact Green-function identity, from which follow its
+linearity in the Grashof number, its quadratic suppression at long wavelength,
+and the independence of its zero from the buoyancy amplitude. Phase-shifted
+forcing adds a second, independent quadrature coefficient that can reverse the
+pumping on its own. A fully nonlinear direct numerical simulation converges to
+within 1.52\% of the perturbative coefficient, returns the predicted reversal
+sign on both sides of the crossing at four wavenumbers, cancels the parity
+partner to nineteen decimals in the wall-flux difference, and tests the
+Grashof scaling at finite amplitude. The same thirteen-case campaign falsifies
+part of its own pre-registered error model: five of the twelve non-degenerate
+cases exceed the bound, by a deviation independent of the forcing amplitude and
+growing with the wavenumber. Symmetry selects the structure of the nonlinear
+redistribution; buoyancy-mediated dynamics select its amplitude, its sign, and
+the control parameter that governs it.
 \end{abstract}
 
 \noindent\textbf{Keywords:} mixed convection; streamwise-periodic wall heating;
@@ -288,16 +271,7 @@ symmetry to the admissible second-order response.
 
 A laminar, incompressible Newtonian fluid flows steadily through a vertical parallel-plate channel with
 walls at $Y=\pm1$.\footnote{The Boussinesq formulation, the plane-Poiseuille base state, the
-nondimensionalization and the first-order thermal problem are reproduced here for completeness.
-A word-level duplication scan of this manuscript together with its supplementary
-document against the companion study described in
-the Introduction finds three shared twelve-word shingles, all three of them inside the
-author-and-affiliation block, and no scientific sentence is carried over. The larger
-overlaps in the working archive---$1.6\%$ and $0.5\%$ shared
-shingles---are with earlier drafts of this same manuscript, from which it differs by the second-order
-parity argument of Section~\ref{sec:symmetry_law} and everything built on it; the drafts share with
-it only the drawing source of the parity chain diagram, the nomenclature table and the formulation
-block above.}
+nondimensionalization and the first-order thermal problem are reproduced here for completeness.}
 The dimensional half-width is $H$, and the reference velocity $U_0$ is the bulk
 velocity used for nondimensionalization. The $X$ axis is vertical and gravity acts in the negative
 $X$ direction. After removal of the hydrostatic pressure contribution, the dimensionless Boussinesq
@@ -418,7 +392,7 @@ Taking the streamwise derivative of the transverse momentum equation minus the
 transverse derivative of the streamwise momentum equation, and eliminating the
 pressure, is what converts this relation into the fourth-order problem
 Eq.~\eqref{eq:V_ode}; the elimination is written out in
-Supplementary Sec.~\ref{app:hydro_derivation}.
+Sec.~\ref{app:hydro_derivation} of the supplementary material.
 Because the thermal fields are independent of $\Grr$ and the hydrodynamic
 operator is linear, at fixed $(k,\Rey,\Pr)$,
 \begin{equation}
@@ -433,7 +407,8 @@ operator is linear, at fixed $(k,\Rey,\Pr)$,
 \end{equation}
 
 %--------------------------------------------------------------
-\section{The Symmetry Law: Odd Parity of the\\ Cross-Interaction}\label{sec:symmetry_law}
+\section{Symmetry-Selected Nonlinear Thermal Pumping}
+\label{sec:symmetry_law}
 %--------------------------------------------------------------
 
 \subsection{Reflection parity of the first-order thermal modes}
@@ -448,7 +423,7 @@ Uniqueness therefore gives
 Hence $\Theta^{(s)}$ is even and $(\Theta^{(s)})'$ odd, while $\Theta^{(a)}$ is odd and
 $(\Theta^{(a)})'$ even. The commutation of $\mathcal R$ with both first-order operators,
 which is what makes the parity assignment unique rather than accidental, is spelled out
-in Supplementary Sec.~\ref{app:reflection}.
+in Sec.~\ref{app:reflection} of the supplementary material.
 
 \subsection{Reflection parity of the first-order hydrodynamic modes}
 
@@ -501,7 +476,7 @@ The complex-amplitude form is
 \end{equation}
 Each of the four terms is the product of an even and an odd profile, so their sum is
 odd; the term-by-term parity bookkeeping is tabulated in
-Supplementary Sec.~\ref{app:cross_proof}.
+Sec.~\ref{app:cross_proof} of the supplementary material.
 
 \subsection{Second-order mean momentum and streaming current}
 
@@ -523,7 +498,7 @@ For fixed bulk flow,
 which determines the pressure-gradient correction $G_2$. The streaming calculation is therefore a
 separate second-order problem; the wall-flux symmetry theorem itself follows already from the first-order
 thermal and transverse-velocity parities. The mean momentum balance that leads to the constraint above, and
-the solvability condition that fixes $G_2$, are derived in Supplementary Sec.~\ref{app:mean_momentum}.
+the solvability condition that fixes $G_2$, are derived in Sec.~\ref{app:mean_momentum} of the supplementary material.
 
 The parity table is
 \begin{center}
@@ -597,13 +572,13 @@ The reflection parities of the first-order thermal and velocity modes are given 
 Eqs.~\eqref{eq:thermal_parity}--\eqref{eq:U_parity}. They make every term of the mixed quadratic forcing odd,
 hence $\mathcal E_{as}$ is odd. The unique Dirichlet solution of Eq.~\eqref{eq:theta_as_BVP} is therefore
 odd and its derivative even. Applying the opposite inward normals at $Y=\pm1$ gives
-Eq.~\eqref{eq:Nu_antisym}. Supplementary Sec.~\ref{app:theorem_proof} repeats the
+Eq.~\eqref{eq:Nu_antisym}. Sec.~\ref{app:theorem_proof} of the supplementary material repeats the
 argument in operator form, with the reflection operator acting on each boundary-value
 problem, for completeness.
 \end{proof}
 
 %--------------------------------------------------------------
-\section{Exact Identities and Thermal Pumping Coefficient}
+\section{Exact Pumping Identities and Reynolds-Number Dependence}
 %--------------------------------------------------------------
 
 \subsection{Definition}
@@ -632,7 +607,7 @@ For the odd forcing $f=\Pe\mathcal E_{as}$,
   \label{eq:PiT_integral}
 \end{equation}
 This identity is independent of the numerical method used for the mean second-order problem and is therefore
-an especially useful verification target. Supplementary Sec.~\ref{app:mean_solution} derives the two endpoint
+an especially useful verification target. Sec.~\ref{app:mean_solution} of the supplementary material derives the two endpoint
 representations from the Dirichlet Green function and shows how they reduce, for an odd forcing, to the
 quadrature form quoted above.
 
@@ -648,7 +623,7 @@ At fixed $(k,\Rey,\Pr)$,
 The thermal amplitudes are independent of $\Grr$, whereas the hydrodynamic BVP is linear and its forcing is
 proportional to $\Grr\Theta'$. Hence both $\widehat V$ and $\widehat U$ are proportional to $\Grr$, so
 Eq.~\eqref{eq:E_cross_complex} gives $\mathcal E_{as}=\Grr\widetilde{\mathcal E}_{as}$. Equation~\eqref{eq:PiT_integral}
-then gives the asserted linearity. Supplementary Sec.~\ref{app:prop_proof} gives the same
+then gives the asserted linearity. Sec.~\ref{app:prop_proof} of the supplementary material gives the same
 statement for the quadrature coefficient.
 \end{proof}
 
@@ -735,7 +710,7 @@ $\Lambda=(k\Pe)^{-1/2}$ is introduced only as a scaling measure for the competit
 advection and transverse diffusion.
 
 %--------------------------------------------------------------
-\section{Exact Phase Selection and the Quadrature Pumping Coefficient}
+\section{Phase-Shifted Forcing and the Two-Coefficient Law}
 \label{sec:phase}
 %--------------------------------------------------------------
 
@@ -779,7 +754,7 @@ The streamwise-averaged mixed forcing separates exactly into two fixed profiles,
 each built from the symmetric and antisymmetric first-order thermal and hydrodynamic
 modes. Their construction, and the proof that each profile is odd in $Y$ so that the
 parity theorem applies to them separately, are given in
-Supplementary Sec.~\ref{sec:kernels}; the in-phase kernel $\mathcal K_c$ alone
+Sec.~\ref{sec:kernels} of the supplementary material; the in-phase kernel $\mathcal K_c$ alone
 reproduces the amplitude-asymmetric configuration, and the quadrature kernel
 $\mathcal K_q$ is the additional degree of freedom that phase-shifted forcing excites.
 Applying the Green functional of Eq.~\eqref{eq:PiT_integral} to the two profiles defines
@@ -924,9 +899,19 @@ and antisymmetric to $9.9\times10^{-7}$ of it.
 \end{figure}
 
 %--------------------------------------------------------------
-\section{Numerical Results and Validation}
-\label{sec:results}
+\section{Numerical Methods and Verification}
+\label{sec:methods}
 %--------------------------------------------------------------
+
+Two independent calculations carry the numerical argument. All first-order
+boundary-value problems are solved by adaptive collocation and checked against a
+shooting integration of the same equations; the finite-amplitude response is
+computed by a separate two-dimensional direct numerical simulation of the full
+Boussinesq system, which takes no modal field as input. This section states what
+each calculation does and with what tolerance; what they produce is reported in
+Section~\ref{sec:results}, and the mesh, time-step and amplitude sequences behind
+the quoted error levels are recorded in Sec.~\ref{sec:dns_verification} of the
+supplementary material.
 
 \subsection{Numerical implementation and independent validation}
 
@@ -935,7 +920,7 @@ All first-order boundary-value problems are solved using the adaptive collocatio
 from Eq.~\eqref{eq:theta_as_BVP}. The numerical audit is structured around independent consequences of the
 analysis: BVP residuals and boundary conditions, reflection parity, forcing parity and integral identities,
 wall-flux antisymmetry, the Green-function identity, collocation--shooting agreement, mesh sensitivity, and
-the fixed-bulk-flow condition for the mean streaming correction. Supplementary Sec.~\ref{app:validation}
+the fixed-bulk-flow condition for the mean streaming correction. Sec.~\ref{app:validation} of the supplementary material
 records the shooting formulation of both boundary-value problems, which is the independent reconstruction
 behind the collocation--shooting agreement reported below.
 
@@ -976,6 +961,83 @@ Table~\ref{tab:validation_summary} collects the diagnostics of that audit.
   \end{tabular}
   \end{ruledtabular}
 \end{table}
+
+\subsection{Direct numerical simulation: formulation, estimator and independence}
+\label{sec:dns_validation}
+%--------------------------------------------------------------
+
+The perturbation theory developed above is based on the assumption that the
+wall-temperature modulation amplitude is sufficiently small for the asymptotic
+expansion to remain valid through second order. Although the analytical results
+are internally verified by the boundary-value and shooting formulations, an
+independent nonlinear calculation is required to determine whether the
+predicted pumping response persists in the fully coupled finite-amplitude
+transport problem. We therefore perform a separate two-dimensional direct
+numerical simulation (DNS) of the nonlinear Boussinesq equations.
+
+The DNS does not use the first-order thermal or hydrodynamic modal solutions
+as input. Instead, the fully nonlinear temperature and momentum equations are
+integrated directly to a stationary state under the same periodic wall
+forcing, with the wall heat-flux difference evaluated from the converged
+temperature field. The DNS is consequently an independent test of the
+perturbative mechanism rather than a second implementation of the same
+boundary-value calculation. Four numbers from that campaign carry the argument
+of Section~\ref{sec:results}: the parity cancellation measured at
+$3.1\times10^{-18}$ in the wall-flux difference, the eight bracketed runs that
+all return the predicted reversal sign, the Grashof ratio exact to
+$3.7\times10^{-4}$, and the quadrature coefficient recovered to $1.38\%$.
+
+Unless otherwise stated, the reference DNS configuration is
+\begin{equation}
+(k,\Pe,\Rey,\Pr,\Grr) = (0.8,7,10,0.7,100),
+\end{equation}
+with
+\begin{equation}
+\varepsilon_s=0.03,
+\qquad
+\varepsilon_a=0.005,
+\end{equation}
+so that
+\begin{equation}
+\varepsilon_1=0.035,
+\qquad
+\varepsilon_2=0.025.
+\end{equation}
+The nonlinear DNS is performed independently of the perturbative BVP
+solver. The stationary state is accepted only after the residual of the
+discretized evolution equations falls below the prescribed convergence
+threshold and the wall-flux observables become stationary.
+
+The DNS estimator mirrors the perturbative definition \eqref{eq:PiT_def} and
+is formed from the cycle-averaged wall-normal wall heat fluxes $q_\pm$ alone.
+Because $q_+-q_-$ is the fully nonlinear counterpart of
+$\Nu_{2,0}(+1)-\Nu_{2,0}(-1)$, the coefficient recovered from the simulation is
+\begin{equation}
+  \PiT^{\mathrm{DNS}}
+  \;=\;
+  \frac{q_+-q_-}{2\varepsilon_a\varepsilon_s}.
+  \label{eq:PiT_dns_estimator}
+\end{equation}
+For the reference configuration, $q_+-q_-=-1.40289979\times10^{-5}$ and
+$2\varepsilon_a\varepsilon_s=3.0\times10^{-4}$, giving
+$\PiT^{\mathrm{DNS}}=-4.6763\times10^{-2}$, the value quoted in
+Table~\ref{tab:dns_validation_summary}. No first-order modal field enters the
+estimator, which is what makes the comparison independent of the perturbative
+solver.
+
+
+\clearpage
+%-----------------------------------------------------------------
+\section{Results and Independent Nonlinear DNS Validation}
+\label{sec:results}
+%-----------------------------------------------------------------
+
+The evidence is ordered as the claims are. The perturbative scalings come first,
+because within the model they are exact and they fix what the nonlinear runs are
+supposed to reproduce. The reversal map follows, because it is the prediction the
+simulation is asked to bracket. The campaign that tests the whole chain at finite
+amplitude closes the section, together with the two places where it falsifies its
+own pre-registered error model.
 
 \subsection{Grashof-number scaling}
 
@@ -1067,173 +1129,27 @@ thermal correction is odd while the corresponding mean velocity correction refle
 redistribution under fixed bulk flow.
 
 %--------------------------------------------------------------
-\section{Independent Nonlinear DNS Validation}
-\label{sec:dns_validation}
-%--------------------------------------------------------------
-
-The perturbation theory developed above is based on the assumption that the
-wall-temperature modulation amplitude is sufficiently small for the asymptotic
-expansion to remain valid through second order. Although the analytical results
-are internally verified by the boundary-value and shooting formulations, an
-independent nonlinear calculation is required to determine whether the
-predicted pumping response persists in the fully coupled finite-amplitude
-transport problem. We therefore perform a separate two-dimensional direct
-numerical simulation (DNS) of the nonlinear Boussinesq equations.
-
-The DNS does not use the first-order thermal or hydrodynamic modal solutions
-as input. Instead, the fully nonlinear temperature and momentum equations are
-integrated directly to a stationary state under the same periodic wall
-forcing, with the wall heat-flux difference evaluated from the converged
-temperature field. The DNS is consequently an independent test of the
-perturbative mechanism rather than a second implementation of the same
-boundary-value calculation. Four numbers from that campaign carry the argument
-of Sec.~\ref{sec:outlook}: the parity cancellation measured at
-$3.1\times10^{-18}$ in the wall-flux difference, the eight bracketed runs that
-all return the predicted reversal sign, the Grashof ratio exact to
-$3.7\times10^{-4}$, and the quadrature coefficient recovered to $1.38\%$.
-
-Unless otherwise stated, the reference DNS configuration is
-\begin{equation}
-(k,\Pe,\Rey,\Pr,\Grr) = (0.8,7,10,0.7,100),
-\end{equation}
-with
-\begin{equation}
-\varepsilon_s=0.03,
-\qquad
-\varepsilon_a=0.005,
-\end{equation}
-so that
-\begin{equation}
-\varepsilon_1=0.035,
-\qquad
-\varepsilon_2=0.025.
-\end{equation}
-The nonlinear DNS is performed independently of the perturbative BVP
-solver. The stationary state is accepted only after the residual of the
-discretized evolution equations falls below the prescribed convergence
-threshold and the wall-flux observables become stationary.
-
-The DNS estimator mirrors the perturbative definition \eqref{eq:PiT_def} and
-is formed from the cycle-averaged wall-normal wall heat fluxes $q_\pm$ alone.
-Because $q_+-q_-$ is the fully nonlinear counterpart of
-$\Nu_{2,0}(+1)-\Nu_{2,0}(-1)$, the coefficient recovered from the simulation is
-\begin{equation}
-  \PiT^{\mathrm{DNS}}
-  \;=\;
-  \frac{q_+-q_-}{2\varepsilon_a\varepsilon_s}.
-  \label{eq:PiT_dns_estimator}
-\end{equation}
-For the reference configuration, $q_+-q_-=-1.40289979\times10^{-5}$ and
-$2\varepsilon_a\varepsilon_s=3.0\times10^{-4}$, giving
-$\PiT^{\mathrm{DNS}}=-4.6763\times10^{-2}$, the value quoted in
-Table~\ref{tab:dns_validation_summary}. No first-order modal field enters the
-estimator, which is what makes the comparison independent of the perturbative
-solver.
-
-\subsection{Amplitude convergence and recovery of the perturbative limit}
+\subsection{Convergence of the nonlinear estimator}
 \label{subsec:dns_amplitude}
-
-The first and most direct test concerns the asymptotic limit
-$\varepsilon_a\rightarrow0$. Because the leading pumping contribution is
-proportional to the mixed product $\varepsilon_a\varepsilon_s$, the
-normalized coefficient extracted from the nonlinear DNS should approach a
-finite limit as the asymmetry amplitude decreases. We therefore performed a
-sequence of DNS calculations with decreasing $\varepsilon_a$ while keeping
-$\varepsilon_s=0.03$ fixed.
-
-The resulting values of the nonlinear pumping coefficient are
-\begin{equation}
-\begin{array}{c|c}
-\varepsilon_a & \PiT^{\mathrm{DNS}}\\
-\hline
-0.0150 & -4.67629365\times10^{-2}\\
-0.0100 & -4.67631801\times10^{-2}\\
-0.0075 & -4.67632654\times10^{-2}\\
-0.0050 & -4.67633263\times10^{-2}
-\end{array}
-\end{equation}
-and the extrapolation to $\varepsilon_a\rightarrow0$ gives
-\begin{equation}
-\PiT^{\mathrm{DNS},\,\varepsilon_a\rightarrow0}
-\simeq -4.6763\times10^{-2}.
-\end{equation}
-The perturbative prediction for the same reference state is
-\begin{equation}
-\PiT^{(2)} = -4.7485\times10^{-2},
-\end{equation}
-corresponding to a relative difference of approximately
-$1.52\%$.
-
-This agreement is significant for two reasons. First, the DNS solves the
-nonlinear problem at finite wall-modulation amplitude rather than the
-asymptotically truncated equations. Second, the observed convergence of
-$\PiT^{\mathrm{DNS}}$ as $\varepsilon_a$ decreases demonstrates that the nonlinear
-solution approaches a finite coefficient consistent with the second-order
-theory. The result therefore supports the interpretation of $\PiT$ as the
-leading nonlinear transport coefficient associated with the
-symmetric--antisymmetric interaction (Fig.~\ref{fig:dns_amplitude}).
-
-\subsection{Spatial and temporal convergence}
 \label{subsec:dns_convergence}
 
-The numerical reliability of the DNS observable is assessed independently
-through grid and time-step refinement. For the spatial study, the calculation
-was performed on progressively refined meshes
-$48\times37$, $64\times49$, $80\times61$, and $96\times73$. The corresponding
-pumping coefficients are
-\begin{equation}
-\begin{array}{c|c|c}
-N_x\times N_y & \PiT^{\mathrm{DNS}} &
-\text{relative difference from finest grid}\\
-\hline
-48\times37 & -4.65557743\times10^{-2} & 1.10\%\\
-64\times49 & -4.67633263\times10^{-2} & 0.66\%\\
-80\times61 & -4.69453055\times10^{-2} & 0.27\%\\
-96\times73 & -4.70739712\times10^{-2} & 0
-\end{array}
-\end{equation}
-where the finest mesh is used only as the numerical reference for the
-convergence study. The monotonic variation toward the finest-grid solution
-indicates that the wall-flux observable is spatially resolved rather than
-being controlled by under-resolution of the transverse boundary layers
-(Fig.~\ref{fig:dns_spatial}).
-
-The temporal convergence study gives
-\begin{equation}
-\begin{array}{c|c|c}
-\Delta t & \PiT^{\mathrm{DNS}} &
-\text{relative difference from smallest }\Delta t\\
-\hline
-3.0\times10^{-3}
-& -4.67632768\times10^{-2}
-& 1.75\times10^{-6}\\
-2.0\times10^{-3}
-& -4.67633588\times10^{-2}
-& 1.38\times10^{-9}\\
-1.5\times10^{-3}
-& -4.67633263\times10^{-2}
-& 6.95\times10^{-7}\\
-1.0\times10^{-3}
-& -4.67633588\times10^{-2}
-& 0
-\end{array}
-\end{equation}
-The extremely small change in $\PiT$ over this sequence shows that the reported
-pumping coefficient is not controlled by the chosen temporal discretization
-(Fig.~\ref{fig:dns_timestep}).
-
-The convergence histories provide an additional stationarity check. At the
-reference resolution, the final evolution residual is
-\begin{equation}
-\mathcal{R}_{\mathrm{DNS}}\lesssim 7\times10^{-9},
-\end{equation}
-while the global wall-flux balance satisfies
-\begin{equation}
-q_+ + q_-
-\simeq -1.9\times10^{-7}.
-\end{equation}
-These values show that the reported $\PiT$ is extracted from a genuinely
-converged stationary state rather than from an arbitrary finite-time snapshot.
+Four sequences fix the reliability of the nonlinear observable; the sequences
+themselves are recorded in Sec.~\ref{subsec:dns_sequences} of the supplementary material. As the
+asymmetry amplitude decreases at fixed $\varepsilon_s=0.03$,
+$\PiT^{\mathrm{DNS}}$ converges to $-4.6763\times10^{-2}$, which recovers the
+second-order perturbative value $-4.7485\times10^{-2}$ to $1.52\%$
+(Fig.~\ref{fig:dns_amplitude}). The approach to a finite limit is the nonlinear
+evidence that $\PiT$ is the leading transport coefficient of the
+symmetric--antisymmetric interaction rather than an amplitude artefact. Refining
+the mesh from $48\times37$ to $96\times73$ moves the coefficient monotonically by
+at most $1.10\%$, and refining the time step from $3.0\times10^{-3}$ to
+$1.0\times10^{-3}$ by at most $1.75\times10^{-6}$
+(Figs.~\ref{fig:dns_spatial} and \ref{fig:dns_timestep}), so the wall-flux
+difference is neither under-resolved in the transverse boundary layers nor
+controlled by the temporal discretisation. At the reference resolution the final
+evolution residual stays below $7\times10^{-9}$ and the global wall-flux balance
+closes to $q_++q_-\simeq-1.9\times10^{-7}$, so the coefficient is extracted from a
+converged stationary state rather than from a finite-time snapshot.
 
 \subsection{Independent verification of the Grashof-number scaling}
 \label{subsec:dns_gr}
@@ -1503,7 +1419,7 @@ signature of competing hydrodynamic pathways underlying the symmetry-selected
 thermal redistribution.
 
 %--------------------------------------------------------------
-\section{Systematic Mapping of the Reynolds-Number Reversal}
+\subsection{Systematic mapping of the Reynolds-number reversal}
 \label{sec:reversal}
 %--------------------------------------------------------------
 
@@ -1574,14 +1490,19 @@ Corollary~\ref{cor:Gr_independence} predicts that the reversal location does not
 when the buoyancy amplitude is changed. This is tested at $k=0.8$, $\Pe=7$ by locating
 $\Rey_c$ independently for four Grashof numbers.
 
-The invariance is exact to the convergence tolerance of the solver, which is the
-strongest form of confirmation available for a structural prediction: the reversal
-point is a property of $A(k,\Rey,\Pr)$ and not of the buoyancy amplitude; the four branches are
-overlaid in Fig.~\ref{fig:Gr_invariance}. The same test
-applied to the quadrature coefficient $\PiT^{\perp}$ gives an invariant
-$\PiT^{\perp}/\Grr$ to $3.7\times10^{-13}$ over $\Grr=25$--$400$.
+Two levels of evidence have to be kept apart here. Within the model, the zero of
+$\PiT$ is independent of $\Grr$ \emph{exactly}: the four locations agree to
+$1.2\times10^{-10}$ because $\PiT/\Grr=A(k,\Rey,\Pr)$ is a property of the
+hydrodynamic and thermal amplitudes and not of the buoyancy amplitude, and the
+agreement measures the convergence tolerance of the boundary-value solver, not an
+independent determination of $\Rey_c$. The four branches are overlaid in
+Fig.~\ref{fig:Gr_invariance}. The same test applied to the quadrature coefficient
+$\PiT^{\perp}$ gives an invariant $\PiT^{\perp}/\Grr$ to $3.7\times10^{-13}$ over
+$\Grr=25$--$400$.
 
-The same statement can be tested without the perturbative solver. A $2\times2$
+The nonlinear test is narrower in scope: at finite amplitude it checks the
+proportionality to $\Grr$ and the sign of the response at the tested points, not the
+location of the zero to the perturbative precision. A $2\times2$
 DNS matrix at $k=0.8$ and $\Pe=7$ pairs $\Grr=50$ with $\Grr=200$ at two Reynolds
 numbers straddling $\Rey_c$, one below and one above. The measured Grashof ratios
 of $q_+-q_-$ are $4.0003$ at $\Rey=20$ and $4.0015$ at $\Rey=50$, against the exact
@@ -1597,7 +1518,11 @@ $6.69\%$ at $\Rey=20$ and $10.7\%$ at $\Rey=50$. The checkpoint record of the
 four runs, archived as group C of the data package, reduces to Table~\ref{tab:Gr_dns} and to
 Fig.~\ref{fig:dns_grpair}, which draws the same statement as a single branch:
 the reduced coefficient $A=\PiT/\Grr$ measured at the two Grashof numbers falls on
-one curve, and that curve crosses zero at the perturbative $\Rey_c$. The four runs
+one curve, and that curve passes through the neighbourhood of the perturbative
+$\Rey_c$. The four DNS points are not themselves an independent determination of
+$\Rey_c$; they establish that the reduction by $\Grr$ removes the buoyancy amplitude
+from the nonlinear response, which is the statement Corollary~\ref{cor:Gr_independence}
+makes. The four runs
 cost $491$\,s in total, with residuals below $1.0\times10^{-8}$.
 
 \begin{table}[htb]
@@ -1659,220 +1584,6 @@ the structural claim rests on the proportionality of the \emph{discrepancy}
 together with the unchanged sign, not on the fourth decimal of the ratio.
 
 %--------------------------------------------------------------
-\section{Physical Interpretation and Discussion}
-\label{sec:discussion}
-%--------------------------------------------------------------
-
-\subsection{Quantitative phase analysis of the reversal}
-\label{sec:phase_analysis}
-
-The reversal must be explained, not merely reported. Because the mean thermal problem
-and the wall-flux functional $\mathcal L[\cdot]$ are linear, the four terms of the mixed
-forcing \eqref{eq:kernels} contribute additively to $\PiT$:
-\begin{equation}
-  \PiT=\mathcal L\!\big[\langle V^{(a)}\partial_Y\Theta^{(s)}\rangle\big]
-       +\mathcal L\!\big[\langle U^{(a)}\partial_X\Theta^{(s)}\rangle\big]
-       +\mathcal L\!\big[\langle V^{(s)}\partial_Y\Theta^{(a)}\rangle\big]
-       +\mathcal L\!\big[\langle U^{(s)}\partial_X\Theta^{(a)}\rangle\big],
-  \label{eq:term_decomp}
-\end{equation}
-where $\langle\cdot\rangle$ denotes streamwise averaging and each term is evaluated with
-the other mode at unit amplitude. Eq.~\eqref{eq:term_decomp} is an identity, not a
-model: evaluating the four functionals separately reproduces the full $\PiT$ with a
-maximum absolute deviation of $1.4\times10^{-14}$ over the whole $\Rey$ scan
-(the relative deviation reaches $1.6\times10^{-5}$ only at $\Rey=\Rey_c$, where
-$\PiT$ itself vanishes; Table~\ref{tab:term_balance}).
-
-Three conclusions follow, and one common expectation is disproved.
-
-\begin{enumerate}
-  \item \textbf{The reversal is a magnitude race, not a phase flip.} The ratio of the
-  two dominant contributions,
-  $\big|\mathcal L[\langle V^{(a)}\partial_Y\Theta^{(s)}\rangle]\big|
-  /\mathcal L[\langle U^{(a)}\partial_X\Theta^{(s)}\rangle]$,
-  falls monotonically over the whole scan, from $3.40$ at $\Rey=5$ through $1.012$
-  at the reversal itself to $0.936$ at $\Rey=50$. Neither term changes sign anywhere
-  in the scan; only their relative size does.
-  \item \textbf{The subdominant terms are not negligible at the crossing.} The
-  two-term balance alone would predict the reversal at $\Rey=32.713$, whereas the full
-  sum crosses at $\Rey_c=30.838$; the difference of $1.88$ in $\Rey$ ($6.1\%$) is caused
-  by the two symmetric-velocity terms, whose net contribution is $+2.7\times10^{-4}$
-  at the crossing---about $1.2\%$ of the dominant terms but the entire residual that
-  decides the sign. Any two-term explanation of the reversal is
-  therefore quantitatively wrong.
-  \item \textbf{The phase lags are smooth and never cross zero.} The unwrapped
-  centreline lag between the antisymmetric velocity and thermal modes,
-  $\Delta\varphi^{(a)}(0)=\arg\!\big(\widehat V^{(a)}/\Theta^{(a)}\big)$, increases
-  monotonically from $-2.154$ to $-1.532$ rad over $\Rey\in[5,50]$ and passes through
-  no sign change; the symmetric-mode lag $\Delta\varphi^{(s)}(0)$ is non-monotonic.
-  The local overlap factor of the sweep term stays close to unity
-  ($0.993\rightarrow0.878$), i.e. that term remains nearly in phase, whereas the
-  streamwise overlap factor oscillates about zero because of the nodes of the two
-  modes. A narrative in which the reversal ``coincides with a phase crossing'' is not
-  supported by these measurements; the correct statement is that the reversal coincides
-  with the zero of the weighted overlap \emph{sum} \eqref{eq:term_decomp}.
-\end{enumerate}
-
-Physically, decreasing $\Pr=\Pe/\Rey$ at fixed $\Pe$ thins the thermal response relative
-to the velocity response, which weakens the transverse sweep production of the odd
-forcing faster than it weakens the streamwise-advection production. Once the two
-contributions become comparable, the small antisymmetric-velocity terms decide the
-sign, and the pumping direction reverses. This is the sense in which the dynamics, and
-not the symmetry, select the direction.
-Fig.~\ref{fig:phase_crossing} separates the two readings: the four additive contributions on top,
-and on the bottom the unwrapped phase lags, which cross zero nowhere and so rule out a phase
-mechanism.
-
-\subsection{Physical realization of the symmetry-selected pumping mechanism}
-\label{sec:physical_summary}
-
-The resolved two-dimensional reference solution
-$(k,\Pe,\Rey,\Pr,\Grr)=(0.8,7,10,0.7,100)$ makes the transport pathway visible, and it
-carries the selection rule in the form the analysis predicts. Three features of that
-solution are needed for the argument, and all three are documented in
-Supplementary Sec.~\ref{sec:physical_mechanism}: the temperature field, whose
-cross-channel mean correction $\theta_{2,0}(Y)$ is odd and vanishes at the channel
-centreline (Supplementary Fig.~\ref{fig:profiles}); the buoyancy-driven transverse
-velocity modes that convert the thermal pair into a momentum flux
-(Supplementary Figs.~\ref{fig:physical_temperature} and
-\ref{fig:physical_hydrodynamics}); and the point-by-point parity classification of the
-quadratic forcing, which shows that every term of $\mathcal E_{as}$ is odd while each of
-the two wall contributions is separately non-zero
-(Supplementary Figs.~\ref{fig:symmetry_forcing} and \ref{fig:wall_flux_physical}). The
-reading is therefore not that the two walls stop exchanging heat, but that the nonlinear
-interaction is symmetry-forbidden from rectifying into a net transport: the pumping is
-selected, not suppressed. Buoyancy then enters only as the amplitude mediator, which is
-why the direction of the response is set by $\Rey$ rather than by $\Grr$.
-
-\subsection{Buoyancy as the hydrodynamic mediator}
-
-The mechanism may be viewed as a two-stage process. The boundary asymmetry creates simultaneous symmetric
-and antisymmetric thermal modes. Buoyancy converts these temperature modes into transverse velocity modes,
-and the resulting velocity--temperature products generate the odd second-order forcing. The boundary
-symmetry therefore selects the admissible structure of the response, while buoyancy controls its magnitude
-through the linear factor $\Grr$.
-Table~\ref{tab:paper_comparison} states the contrast with the symmetry-preserving forcing term by
-term.
-
-\subsection{Spatial rectification and parameter-space structure}
-\label{sec:spatial_rectification}
-%=======================================================================
-
-The reference solution supports an interpretation of nonlinear thermal
-pumping as a spatial rectification mechanism. In conventional thermal
-transport, a periodically forced field may redistribute heat locally while
-leaving the streamwise average unchanged. Here, however, the combination of
-boundary asymmetry, buoyancy-induced transverse transport, and quadratic mode
-coupling produces a directed \emph{transverse} redistribution between the
-two walls.
-
-The mathematical structure reveals why this effect cannot be reduced to a
-simple increase or decrease of the total heat transfer. The mixed forcing is
-odd and therefore has zero zeroth moment,
-\begin{equation}
-\int_{-1}^{1}\mathcal{E}_{as}(Y)\,dY=0,
-\end{equation}
-but its first moment is generally nonzero,
-\begin{equation}
-\int_{-1}^{1}Y\,\mathcal{E}_{as}(Y)\,dY\neq0.
-\end{equation}
-This distinction identifies the pumping mechanism as a redistribution
-of nonlinear transport rather than a generation of net mean thermal
-energy. The channel therefore acts as a transverse spatial rectifier:
-the zeroth moment cancels by symmetry, while the first transverse moment
-survives and is converted directly into a measurable wall-flux
-difference.
-
-The Reynolds-number reversal provides an additional indication that the
-effect is fundamentally a coupled transport phenomenon. At fixed $\Pe$,
-the thermal forcing remains in the same thermal control class, whereas the
-hydrodynamic response changes with $\Rey$. The sign reversal near
-$\Rey_c\simeq30.84$ consequently demonstrates that the direction of the
-rectified wall-flux redistribution is selected by the phase and spatial
-structure of the buoyancy-mediated transport, not by the thermal forcing
-alone.
-
-This viewpoint is distinct from the exact symmetry theorem. The theorem
-determines \emph{which wall-flux combinations are admissible}; the coupled
-transport problem determines \emph{how strongly and in which direction} the
-admissible redistribution occurs.
-
-The physical reference case also provides a useful interpretation of the
-broader $(k,\Pe,\Rey)$ parameter-space results. The long-wavelength result
-\begin{equation}
-A(k,\Rey,\Pr)=A_2(\Rey,\Pr)k^2+o(k^2)
-\end{equation}
-shows that an increasingly long wall pattern suppresses the transverse
-rectification. This is consistent with the physical picture above: as the
-streamwise modulation becomes slowly varying, the secondary thermal and
-hydrodynamic fields lose the spatial variation required to generate a
-finite rectified first moment.
-
-At the opposite end of the parameter range, the zero-crossing branch
-$k^*(\Pe)$ reflects a change in the signed first moment of the odd mixed
-interaction. Its finite-domain endpoint at
-\begin{equation}
-\Pe_c=10.871940554611,
-\qquad
-k=10
-\end{equation}
-is therefore naturally interpreted as the point at which the zero set leaves
-the finite computational domain, rather than as a universal instability
-threshold. In both the Reynolds-number reversal and the finite-domain
-transition, the symmetry class remains unchanged while the coupled dynamics
-select the sign and magnitude of the first moment.
-
-The two-dimensional reference solution thus provides a direct physical
-realization of the analytical mechanism: the imposed periodic temperature
-modulation generates a spatially structured thermal gradient, buoyancy
-converts it into a weak but structured secondary circulation, and the
-quadratic interaction of the symmetric and antisymmetric components produces
-the odd forcing $\mathcal{E}_{as}$. Because that forcing has zero net
-integral but nonzero first transverse moment, the result is a redistribution
-of wall heat flux rather than a net heat-source correction. The nonlinear
-thermal pumping is therefore not an isolated numerical feature of a
-particular parameter set, but a structurally constrained mode interaction
-whose amplitude and direction are selected by the coupled thermal and
-hydrodynamic transport operators. The separation between exact symmetry
-selection and dynamical response is the principal physical interpretation of
-the mechanism established here.
-\subsection{What is exact and what is dynamical?}
-
-Three different statements must be distinguished. First, the relation
-$\Nu_{2,0}(+1)=-\Nu_{2,0}(-1)$ is an exact consequence of reflection symmetry,
-uniqueness, and the mixed symmetric--antisymmetric interaction. Second, the
-magnitude and sign of $\PiT$ are not fixed by symmetry and depend on the
-coupled thermal--hydrodynamic dynamics. Third, the value
-$\Pe_c=10.871940554611$ reached here is not a universal critical P\'eclet
-number: it is
-the value at which the observed zero set reaches the imposed finite boundary
-$k=10$ for the particular fixed-Reynolds-number problem considered here.
-
-The dense CPU calculation strengthens this distinction. Below the endpoint,
-an interior zero exists; at the endpoint, the zero is located at the boundary;
-above the endpoint, no positive response remains in the investigated
-wavenumber interval. Thus, the transition concerns the geometry of the
-zero set in a finite parameter domain rather than the onset of a new
-symmetry class or a hydrodynamic instability.
-
-\subsection{Limitations}
-
-The analysis is restricted to the Boussinesq approximation, a two-dimensional laminar base state,
-a single spatial Fourier harmonic, and small modulation amplitudes $\varepsilon\ll1$ for which the
-second-order expansion is asymptotically consistent. The finite-domain statement for $\Pe_c$ is also
-explicitly restricted to $0.02\le k\le10$ and $\Rey=10$, $\Grr=100$. Direct numerical simulation of the
-fully nonlinear equations would be needed to quantify finite-amplitude corrections, higher harmonics, and
-possible secondary instabilities outside the present perturbative regime.
-
-\subsection{Generalization to phase-shifted wall forcing}
-
-The phase-shifted forcing family is no longer a speculative extension: it is treated
-in full in Section~\ref{sec:phase}, where it is shown to introduce a second,
-independent pumping coefficient $\PiT^{\perp}$ and to reproduce a pure $\sin\phi$
-dependence for equal wall amplitudes (Corollary~\ref{cor:sinphi}). The qualitative
-argument given here in earlier drafts---that the mixed product merely ``suggests''
-$\PiT\propto\sin\phi$---is superseded by Proposition~\ref{prop:phase}.
-
 \subsection{Fully nonlinear DNS confirmation}\label{sec:outlook}
 
 The perturbative campaign is complete and every claim in
@@ -2028,6 +1739,160 @@ of the reversal at wavenumber $k$ is meaningful only for
 $|\PiT(k,\Rey)|\gtrsim\delta_\Pi(k)$, which the bracket design of item~1
 satisfies in every pair except the ladder run.
 
+%-----------------------------------------------------------------
+\section{Physical Interpretation and Discussion}
+\label{sec:discussion}
+%--------------------------------------------------------------
+
+\subsection{Quantitative phase analysis of the reversal}
+\label{sec:phase_analysis}
+
+The reversal must be explained, not merely reported. Because the mean thermal problem
+and the wall-flux functional $\mathcal L[\cdot]$ are linear, the four terms of the mixed
+forcing \eqref{eq:kernels} contribute additively to $\PiT$:
+\begin{equation}
+  \PiT=\mathcal L\!\big[\langle V^{(a)}\partial_Y\Theta^{(s)}\rangle\big]
+       +\mathcal L\!\big[\langle U^{(a)}\partial_X\Theta^{(s)}\rangle\big]
+       +\mathcal L\!\big[\langle V^{(s)}\partial_Y\Theta^{(a)}\rangle\big]
+       +\mathcal L\!\big[\langle U^{(s)}\partial_X\Theta^{(a)}\rangle\big],
+  \label{eq:term_decomp}
+\end{equation}
+where $\langle\cdot\rangle$ denotes streamwise averaging and each term is evaluated with
+the other mode at unit amplitude. Eq.~\eqref{eq:term_decomp} is an identity, not a
+model: evaluating the four functionals separately reproduces the full $\PiT$ with a
+maximum absolute deviation of $1.4\times10^{-14}$ over the whole $\Rey$ scan
+(the relative deviation reaches $1.6\times10^{-5}$ only at $\Rey=\Rey_c$, where
+$\PiT$ itself vanishes; Table~\ref{tab:term_balance}).
+
+Three conclusions follow, and one common expectation is disproved.
+
+\begin{enumerate}
+  \item \textbf{The reversal is a magnitude race, not a phase flip.} The ratio of the
+  two dominant contributions,
+  $\big|\mathcal L[\langle V^{(a)}\partial_Y\Theta^{(s)}\rangle]\big|
+  /\mathcal L[\langle U^{(a)}\partial_X\Theta^{(s)}\rangle]$,
+  falls monotonically over the whole scan, from $3.40$ at $\Rey=5$ through $1.012$
+  at the reversal itself to $0.936$ at $\Rey=50$. Neither term changes sign anywhere
+  in the scan; only their relative size does.
+  \item \textbf{The subdominant terms are not negligible at the crossing.} The
+  two-term balance alone would predict the reversal at $\Rey=32.713$, whereas the full
+  sum crosses at $\Rey_c=30.838$; the difference of $1.88$ in $\Rey$ ($6.1\%$) is caused
+  by the two symmetric-velocity terms, whose net contribution is $+2.7\times10^{-4}$
+  at the crossing---about $1.2\%$ of the dominant terms but the entire residual that
+  decides the sign. Any two-term explanation of the reversal is
+  therefore quantitatively wrong.
+  \item \textbf{The phase lags are smooth and never cross zero.} The unwrapped
+  centreline lag between the antisymmetric velocity and thermal modes,
+  $\Delta\varphi^{(a)}(0)=\arg\!\big(\widehat V^{(a)}/\Theta^{(a)}\big)$, increases
+  monotonically from $-2.154$ to $-1.532$ rad over $\Rey\in[5,50]$ and passes through
+  no sign change; the symmetric-mode lag $\Delta\varphi^{(s)}(0)$ is non-monotonic.
+  The local overlap factor of the sweep term stays close to unity
+  ($0.993\rightarrow0.878$), i.e. that term remains nearly in phase, whereas the
+  streamwise overlap factor oscillates about zero because of the nodes of the two
+  modes. A narrative in which the reversal ``coincides with a phase crossing'' is not
+  supported by these measurements; the correct statement is that the reversal coincides
+  with the zero of the weighted overlap \emph{sum} \eqref{eq:term_decomp}.
+\end{enumerate}
+
+Physically, decreasing $\Pr=\Pe/\Rey$ at fixed $\Pe$ thins the thermal response relative
+to the velocity response, which weakens the transverse sweep production of the odd
+forcing faster than it weakens the streamwise-advection production. Once the two
+contributions become comparable, the small antisymmetric-velocity terms decide the
+sign, and the pumping direction reverses. This is the sense in which the dynamics, and
+not the symmetry, select the direction.
+Fig.~\ref{fig:phase_crossing} separates the two readings: the four additive contributions on top,
+and on the bottom the unwrapped phase lags, which cross zero nowhere and so rule out a phase
+mechanism.
+
+\subsection{Physical realization of the symmetry-selected pumping mechanism}
+\label{sec:physical_summary}
+
+The resolved two-dimensional reference solution
+$(k,\Pe,\Rey,\Pr,\Grr)=(0.8,7,10,0.7,100)$ makes the transport pathway visible, and it
+carries the selection rule in the form the analysis predicts. Three features of that
+solution are needed for the argument, and all three are documented in
+Sec.~\ref{sec:physical_mechanism} of the supplementary material: the temperature field, whose
+cross-channel mean correction $\theta_{2,0}(Y)$ is odd and vanishes at the channel
+centreline (Supplementary Fig.~\ref{fig:profiles}); the buoyancy-driven transverse
+velocity modes that convert the thermal pair into a momentum flux
+(Supplementary Figs.~\ref{fig:physical_temperature} and
+\ref{fig:physical_hydrodynamics}); and the point-by-point parity classification of the
+quadratic forcing, which shows that every term of $\mathcal E_{as}$ is odd while each of
+the two wall contributions is separately non-zero
+(Supplementary Figs.~\ref{fig:symmetry_forcing} and \ref{fig:wall_flux_physical}). The
+reading is therefore not that the two walls stop exchanging heat, but that the nonlinear
+interaction is symmetry-forbidden from rectifying into a net transport: the pumping is
+selected, not suppressed. Buoyancy then enters only as the amplitude mediator, which is
+why the direction of the response is set by $\Rey$ rather than by $\Grr$.
+
+\subsection{Mechanism: buoyancy-mediated spatial rectification}
+\label{sec:spatial_rectification}
+
+The mechanism is a two-stage process. The boundary asymmetry creates simultaneous
+symmetric and antisymmetric thermal modes; buoyancy converts them into transverse
+velocity modes, and the resulting velocity--temperature products generate the odd
+second-order forcing, whose magnitude carries the linear factor $\Grr$. The content
+of that forcing is most compactly stated as a pair of moment conditions,
+\begin{equation}
+  \int_{-1}^{1}\mathcal{E}_{as}(Y)\,dY=0,
+  \qquad
+  \int_{-1}^{1}Y\,\mathcal{E}_{as}(Y)\,dY\neq0,
+  \label{eq:moment_pair}
+\end{equation}
+which is what makes the channel a \emph{transverse spatial rectifier}: the zeroth
+moment cancels by parity, so no net mean thermal energy is generated, while the first
+transverse moment survives and is converted directly into the measurable wall-flux
+difference by the Green identity Eq.~\eqref{eq:PiT_integral}. The selection theorem
+fixes which wall-flux combinations are admissible; the coupled transport problem fixes
+how strongly and in which direction the admissible redistribution occurs. That
+division of labour is why the reversal near $\Rey_c\simeq30.84$ at fixed $\Pe$
+reports a change of the hydrodynamic pathway and not of the thermal forcing class.
+Two limits carry the same reading: the $O(k^{2})$ suppression of the rectified moment
+as the wall pattern becomes slowly varying, and the finite-domain endpoint of the
+zero-crossing branch, where the zero set leaves the admissible domain rather than
+losing stability. Table~\ref{tab:paper_comparison} of the supplementary material
+states the contrast with the symmetry-preserving forcing term by term, and the
+field maps, the secondary circulation and the detailed spatial analysis of both
+limits are developed in
+Sec.~\ref{subsec:rectification} of the supplementary material.
+
+\subsection{What is exact and what is dynamical?}
+
+Three different statements must be distinguished. First, the relation
+$\Nu_{2,0}(+1)=-\Nu_{2,0}(-1)$ is an exact consequence of reflection symmetry,
+uniqueness, and the mixed symmetric--antisymmetric interaction. Second, the
+magnitude and sign of $\PiT$ are not fixed by symmetry and depend on the
+coupled thermal--hydrodynamic dynamics. Third, the value
+$\Pe_c=10.871940554611$ reached here is not a universal critical P\'eclet
+number: it is
+the value at which the observed zero set reaches the imposed finite boundary
+$k=10$ for the particular fixed-Reynolds-number problem considered here.
+
+The dense CPU calculation strengthens this distinction. Below the endpoint,
+an interior zero exists; at the endpoint, the zero is located at the boundary;
+above the endpoint, no positive response remains in the investigated
+wavenumber interval. Thus, the transition concerns the geometry of the
+zero set in a finite parameter domain rather than the onset of a new
+symmetry class or a hydrodynamic instability.
+
+\subsection{Limitations}
+
+The analysis is restricted to the Boussinesq approximation, a two-dimensional laminar base state,
+a single spatial Fourier harmonic, and small modulation amplitudes $\varepsilon\ll1$ for which the
+second-order expansion is asymptotically consistent. The finite-domain statement for $\Pe_c$ is also
+explicitly restricted to $0.02\le k\le10$ and $\Rey=10$, $\Grr=100$. The nonlinear evidence reported in
+Section~\ref{sec:results} is a stationary DNS of the full equations at the tested
+amplitudes; extending it
+to larger wall amplitudes, to higher harmonics and to wider ranges of $(k,\Pe,\Rey,\Grr)$ would require
+additional DNS over those domains, which is where the finite-amplitude corrections, the higher harmonics
+and any secondary instability would have to be quantified.
+
+\subsection{Generalization to phase-shifted wall forcing}
+
+The phase-shifted forcing family is treated in full in Section~\ref{sec:phase}, where it is
+shown to introduce a second, independent pumping coefficient $\PiT^{\perp}$ and to reproduce a
+pure $\sin\phi$ dependence for equal wall amplitudes (Corollary~\ref{cor:sinphi}).
+
 \subsection{What drives the growth of the remainder with $k$}
 \label{subsec:remainder}
 
@@ -2067,11 +1932,13 @@ persists, it is the remainder of the truncation. That test is identified as
 future work rather than asserted here.
 
 Grashof-independence of the reversal point (Corollary~\ref{cor:Gr_independence})
-is verified perturbatively to better than $10^{-9}$ in $\Rey_c$ and now
-nonlinearly as well: DNS at the Grashof pair $(\Grr,\Rey)=(50,20)$, $(200,20)$,
-$(50,50)$, $(200,50)$ returns Grashof ratios $4.0003$ and $4.0015$ with the
-predicted sign preserved in both pairs
-(Sec.~\ref{subsec:Gr_test}).
+is exact within the perturbative model, to better than $10^{-9}$ in $\Rey_c$, and the
+nonlinear evidence concerns the two claims that DNS can actually test at these
+amplitudes: DNS at the Grashof pair
+$(\Grr,\Rey)=(50,20)$, $(200,20)$, $(50,50)$, $(200,50)$ returns Grashof ratios
+$4.0003$ and $4.0015$ with the predicted sign preserved in both pairs
+(Sec.~\ref{subsec:Gr_test}). The DNS points do not relocate $\Rey_c$ at the
+perturbative precision, and are not presented as doing so.
 
 \section{Conclusions}
 %--------------------------------------------------------------
@@ -2093,8 +1960,13 @@ odd, which imposes
 \Nu_{2,0}(+1) = -\Nu_{2,0}(-1)
 }
 \end{equation}
-This is a structural consequence of the governing equations: it holds whether or
-not the pumping amplitude is large, small, or zero.
+This is a structural consequence of the governing equations \emph{within the
+second-order expansion}: it concerns the mixed quadratic contribution to the mean
+wall flux, and it is independent of the size of that contribution, so it holds
+whether the pumping amplitude is large, small or zero. It is not a claim that the
+identity has been established at arbitrary wall amplitude by the perturbative
+theory. The finite-amplitude DNS value quoted above is a separate numerical
+verification of the same cancellation, and it is presented as such.
 
 \emph{What the dynamics select.} The redistribution is measured by the
 thermal-pumping coefficient, for which the Green identity
@@ -2106,11 +1978,13 @@ A(k,\Rey,\Pr)=O(k^{2})\ \ \text{as}\ \ k\rightarrow0 .
 \end{equation}
 Linearity in $\Grr$ separates the buoyancy amplitude from the response, and the
 long-wavelength limit shows that a slowly varying wall pattern cannot drive the
-effect. Because $\PiT$ is proportional to $\Grr$, its zero is independent of
+effect. Under the hypotheses of the model, $\PiT$ is proportional to $\Grr$, so its
+zero is exactly independent of
 $\Grr$ (Corollary~\ref{cor:Gr_independence}): the reversal point is
 $\Rey_c=30.8384965$ for $\Grr=25,50,100$ and $200$, with an absolute spread of
-$1.2\times10^{-10}$ and $A$ invariant to better than $10^{-10}$ relative. DNS
-reproduces the proportionality itself: at $\Rey=20$ and $\Rey=50$ the measured
+$1.2\times10^{-10}$ and $A$ invariant to better than $10^{-10}$ relative --- a
+solver tolerance, not an independent nonlinear measurement of $\Rey_c$. DNS
+tests the two statements that remain at finite amplitude: at $\Rey=20$ and $\Rey=50$ the measured
 Grashof ratio of $q_+-q_-$ is $4.0003$ and $4.0015$, and the sign predicted on
 either side of the crossing survives.
 
@@ -2158,8 +2032,10 @@ and $\phi=0$ the two measured wall fluxes agree to $3.1\times10^{-18}$, against
 individual fluxes of $1.15\times10^{-7}$, a relative precision of
 $2.7\times10^{-11}$. On the Grashof pair of Sec.~\ref{subsec:Gr_test} the
 nonlinear correction is itself proportional to $\Grr$, so it rescales the
-coefficient without shifting its zero: Corollary~\ref{cor:Gr_independence}
-survives beyond the perturbative regime.
+coefficient without shifting its zero at the tested amplitudes. The exactness of
+the zero remains a statement of the perturbative model
+(Corollary~\ref{cor:Gr_independence}); the DNS campaign verifies its two observable
+consequences, not the location itself.
 Spatial and temporal refinement demonstrate convergence of the nonlinear
 observable. The campaign also falsifies part of its own pre-registered error
 model: five of the twelve non-degenerate cases exceed $\delta_\Pi$, with an
@@ -2184,12 +2060,45 @@ in $\Im(\varepsilon_a\varepsilon_s^{*})$. Wall-temperature phase and amplitude
 asymmetry therefore constitute a control knob for the direction of thermal
 pumping, with the Reynolds number setting where the knob changes sign.
 
+\section*{Supplementary Material}
+\begin{sloppypar}
+The derivations, the verification records, the parameter maps and the field
+structures that support this article are collected in a separate Supplementary
+Material document, compiled independently and numbered throughout with the
+prefix \textbf{S}, so that its figures, tables, equations and section numbers
+cannot be confused with those of the manuscript. It contains six sections:
+Sec.~\ref{sec:maps}, perturbative parameter maps and scaling checks;
+Sec.~\ref{sec:dns_verification}, nonlinear DNS verification and convergence,
+which carries the amplitude, grid and time-step sequences
+Sec.~\ref{subsec:dns_sequences} summarises; Sec.~\ref{sec:phase_balance}, phase
+decomposition and term-wise balance; Sec.~\ref{sec:physical_mechanism}, physical
+structure of the symmetry-selected pumping mechanism, which includes the spatial
+rectification analysis of Sec.~\ref{sec:spatial_rectification};
+Sec.~\ref{sec:derivations}, derivations and independent numerical checks; and
+Sec.~\ref{sec:kernels}, construction of the two independent mixed kernels. Every
+figure and table of that document is cited from the manuscript, and the pointers
+in the text read "Sec.~S\#.\# of the supplementary material".
+\end{sloppypar}
+
 \begin{acknowledgments}
 {\sloppy
 The author acknowledges the open-source scientific Python ecosystem, in particular NumPy, SciPy, and Matplotlib,
 used for the numerical boundary-value, shooting, quadrature, and visualization calculations.
 }
 \end{acknowledgments}
+
+\section*{Disclosure statement}
+The author reports no potential conflict of interest.
+
+\section*{Author contributions}
+The author conceived and designed the study, derived the theory, implemented the
+numerical methods, ran every verification and direct-numerical-simulation
+campaign, processed the data, prepared the figures, tables and the data package,
+and wrote and edited the manuscript.
+
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in the
+public, commercial, or not-for-profit sectors.
 
 \section*{Data availability}
 All numerical data supporting this study, together with the manuscript source, the

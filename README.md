@@ -14,16 +14,26 @@ to make every quoted figure reconstructible from the raw data.
 
 The paper is published as two documents: a main manuscript and an independently
 numbered supplementary document whose floats, sections and equations carry the
-prefix **S** (Fig. S1, Table S1, Sec. S1, Eq. (S1)). The theorems and every
-headline measurement stay in the main text; the derivations, the kernel
-construction, the parameter maps and the supporting floats are in the supplement,
-and each of them is cited and discussed from the main text through the `xr`
+prefix **S** (Fig. S1, Table S1, Sec. S1, Eq. (S1)). The main text runs in nine
+sections -- introduction, formulation and base state, the symmetry-selected
+pumping law, the exact pumping identities and their Reynolds-number dependence,
+the phase-shifted two-coefficient law, numerical methods and verification,
+results with the independent nonlinear DNS validation, physical interpretation
+and discussion, conclusions -- and keeps the parity theorem, the two-coefficient
+phase law, the reversal cartography and every headline measurement. The
+supplement follows the order in which a reviewer checks such a claim:
+`S1` perturbative parameter maps and scaling checks, `S2` nonlinear DNS
+verification and convergence, `S3` phase decomposition and term-wise balance,
+`S4` physical structure of the symmetry-selected pumping mechanism, `S5` the
+seven derivations and the independent shooting check, `S6` construction of the two
+independent mixed kernels. Each of the 21 floats of that document is cited and
+discussed from the main text, and cross-references resolve through the `xr`
 package, so the two files cannot silently disagree about a number.
 
 | Path | What it holds |
 |---|---|
-| `main_v2.tex` | the main manuscript (42 pages when compiled) |
-| `supplementary_text.tex` | the supplementary document, S-numbered (18 pages when compiled) |
+| `main_v2.tex` | the main manuscript (41 pages when compiled) |
+| `supplementary_text.tex` | the supplementary document, S-numbered (21 pages when compiled) |
 | `manuscript/main_v2.pdf` | the compiled main manuscript, build of this repository |
 | `manuscript/supplementary_text.pdf` | the compiled supplementary document |
 | `references.bib` | bibliography; the main manuscript carries the only reference list |
@@ -45,7 +55,9 @@ package, so the two files cannot silently disagree about a number.
 | `DNS_D345_*` | direct numerical simulation matrix: amplitude, spatial and time-step convergence, Grashof and Reynolds scans, wall-flux parity test |
 | `ultimate_*` | dense finite-domain critical-Peclet survey (the data behind the endpoint classification) |
 | `run_*.py`, `analyze_*.py`, `make_fig_*.py` | drivers, post-processing and figure generation |
-| `check_*.py`, `verify_manuscript_numbers.py` | the five quality gates described below |
+| `restructure_sections.py`, `reorg_*.py`, `move_*.py`, `add_end_matter.py` | the section recomposition itself: each moves whole LaTeX blocks by delimiter, never by line number, so a section cannot be split mid-paragraph |
+| `make_supplementary_material.py`, `make_submission_folder.py` | assemble the 64-file data package and the upload folder, with the README generated from the build logs |
+| `check_*.py`, `verify_manuscript_numbers.py` | the six quality gates described below |
 
 ## Reproducing
 
@@ -79,8 +91,8 @@ pdflatex -interaction=nonstopmode -output-directory=build_cover cover_letter_NHT
 The passes alternate because the two documents reference each other with the `xr`
 package: the supplement needs the auxiliary file of the main text, and the main text
 needs the auxiliary file of the supplement for the S-numbered cross-references.
-Building the supplement only at the end leaves 32 cross-references undefined in the
-main text, which `check_build.py` reports.
+Building the supplement only at the end leaves the S-numbered cross-references
+undefined in the main text, which `check_build.py` reports.
 
 Compile from the repository root: both sources address their figures with
 root-relative paths, and the `xr` blocks point at `build_v2/main_v2.aux` and
@@ -89,7 +101,7 @@ because the gates read their logs and auxiliary files from there.
 
 ## Quality gates
 
-All five scripts exit non-zero on any defect, so neither document can drift away
+All six scripts exit non-zero on any defect, so neither document can drift away
 from the data it quotes. Each resolves the repository root from its own location.
 
 ```bash
@@ -98,6 +110,7 @@ py -X utf8 campaign_v2_symmetry_selection/verify_manuscript_numbers.py  # every 
 py -X utf8 campaign_v2_symmetry_selection/check_notation.py             # notation and macro use
 py -X utf8 campaign_v2_symmetry_selection/check_duplicate_text.py       # 12-word shingle overlap with the companion sources
 py -X utf8 campaign_v2_symmetry_selection/check_cover_letter.py         # cover-letter length and required statements
+py -X utf8 campaign_v2_symmetry_selection/check_end_matter.py           # abstract length, supplementary pointers, declarations
 ```
 
 `check_build.py` parses the logs and `.aux` files of **both** documents, treats them
@@ -127,8 +140,9 @@ the vanishing of the mean second-order component in the symmetric limit is deriv
 this paper rather than quoted from unpublished work. The textual overlap is measured,
 not asserted: `check_duplicate_text.py` scans the manuscript together with its
 supplementary document against the companion sources and against the earlier drafts of
-this paper, and fails if the footnote quoted in the formulation section disagrees with
-the scan.
+this paper, reports the shared twelve-word shingles, and fails if the accounting quoted
+in the cover letter disagrees with the scan. The manuscript itself carries no such
+statement, and the gate requires it to stay silent.
 
 ## Headline results
 
