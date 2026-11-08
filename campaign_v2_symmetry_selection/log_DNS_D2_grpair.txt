@@ -1,0 +1,13 @@
+k=0.8  Pe=7.0  Pr=Pe/Re  eps_s=0.030 eps_a=0.005  phi=0
+  Re= 20.0 Gr=  50.0  PiT=-3.213941e-03  q_+-q_-=-9.641824e-07  delta=2.71e-04  margin= 11.9  antisym=4.3e-19
+  Re= 20.0 Gr= 200.0  PiT=-1.285577e-02  q_+-q_-=-3.856730e-06  delta=2.71e-04  margin= 47.4  antisym=1.7e-18
+  Re= 50.0 Gr=  50.0  PiT=+6.649574e-04  q_+-q_-=+1.994872e-07  delta=2.71e-04  margin=  2.5  antisym=3.3e-19
+  Re= 50.0 Gr= 200.0  PiT=+2.659830e-03  q_+-q_-=+7.979489e-07  delta=2.71e-04  margin=  9.8  antisym=8.7e-19
+  predicted Gr-ratio at Re=20.0: 4.000000
+  predicted Gr-ratio at Re=50.0: 4.000000
+DONE D2_Gr50_Re20     q_diff=-8.996526e-07 (predicted -9.641824e-07) resid=9.69e-09 113s
+DONE D2_Gr200_Re20    q_diff=-3.598839e-06 (predicted -3.856730e-06) resid=9.81e-09 112s
+DONE D2_Gr50_Re50     q_diff=+2.207512e-07 (predicted +1.994872e-07) resid=9.92e-09 124s
+DONE D2_Gr200_Re50    q_diff=+8.833327e-07 (predicted +7.979489e-07) resid=9.62e-09 141s
+Re=20.0 measured Gr-ratio 4.0003 (Corollary 1: 4.0000), same sign: True
+Re=50.0 measured Gr-ratio 4.0015 (Corollary 1: 4.0000), same sign: True

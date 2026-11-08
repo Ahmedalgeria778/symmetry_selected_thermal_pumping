@@ -1,0 +1,68 @@
+error model, published DNS Re sweep at k = 0.8 (eps_a = 0.005):
+   Re=5.0   |Pi_T^pert|=-1.5951e-01  Pi_T^DNS - Pi_T^pert = +7.3265e-04
+   Re=10.0  |Pi_T^pert|=-4.7485e-02  Pi_T^DNS - Pi_T^pert = +7.2176e-04
+   Re=20.0  |Pi_T^pert|=-6.4279e-03  Pi_T^DNS - Pi_T^pert = +4.3014e-04
+   Re=30.0  |Pi_T^pert|=-1.9588e-04  Pi_T^DNS - Pi_T^pert = +2.7093e-04
+   Re=35.0  |Pi_T^pert|=+6.7452e-04  Pi_T^DNS - Pi_T^pert = +2.2390e-04
+   derived flat deviation 2.709e-04 (constants 2.710e-04), relative 1.520e-02 (1.520e-02)
+   H1 = deviation fixed in coefficient space, H2 = deviation absolute in q_+-q_- at the reference amplitude
+
+reference coefficients (k=0.8, Pe=7, Re=10, Pr=0.7, Gr=100):
+  Pi_T       = -4.74850846e-02   (stored -4.74850846e-02, rel diff 0.00e+00)
+  Pi_T_perp  = +8.89496095e-02   (stored +8.89496095e-02, rel diff 0.00e+00)
+
+D.5 falsifiable predictions (q_+ - q_- = 2 d Pi_T_perp):
+  phi=+0.000  d=0.0000e+00  q_+-q_- predicted +0.000000e+00
+  phi=+1.571  d=4.5000e-04  q_+-q_- predicted +8.005465e-05
+  phi=-1.571  d=-4.5000e-04  q_+-q_- predicted -8.005465e-05
+
+case matrix (13 cases, 0 already checkpointed)
+case_id              fam  k    Re     Pr      phi     eps_a    q_pred       expected  margH1  margH2  asym.err
+--------------------------------------------------------------------------------------------------------------
+D3_k0.8_Re20         D.3  0.8  20.0   0.3500  0.0000  0.0050   -1.9284e-06  negative  23.7    23.7    6.9e-18
+D3_k0.8_Re40         D.3  0.8  40.0   0.1750  0.0000  0.0050   3.2423e-07   positive  4.0     4.0     1.7e-18
+D3_k1.0_Re15         D.3  1.0  15.0   0.4667  0.0000  0.0050   -1.8282e-06  negative  22.5    22.5    4.3e-18
+D3_k1.0_Re25         D.3  1.0  25.0   0.2800  0.0000  0.0050   4.6715e-07   positive  5.7     5.7     3.5e-18
+D3_k1.2_Re10         D.3  1.2  10.0   0.7000  0.0000  0.0050   -3.7029e-06  negative  45.5    45.5    6.9e-18
+D3_k1.2_Re20         D.3  1.2  20.0   0.3500  0.0000  0.0050   7.7197e-07   positive  9.5     9.5     1.7e-18
+D3b_k0.6_Re40        D.3b 0.6  40.0   0.1750  0.0000  0.0050   -3.8863e-07  negative  4.8     4.8     4.3e-19
+D3b_k0.6_Re70        D.3b 0.6  70.0   0.1000  0.0000  0.0050   1.7407e-07   positive  2.1     2.1     4.3e-19
+D3c_k0.8_Re30_ea02   D.3c 0.8  30.0   0.2333  0.0000  0.0200   -2.3506e-07  negative  0.7     2.9     3.5e-18
+D4_k0.8_Re50         D.4  0.8  50.0   0.1400  0.0000  0.0050   3.9897e-07   positive  4.9     4.9     6.5e-19
+D5_phi_0             D.5  0.8  10.0   0.7000  0.0000  0.0000   0.0000e+00   zero      nan     nan     1.4e-17
+D5_phi_plus_pi_over_2 D.5  0.8  10.0   0.7000  1.5708  0.0000   8.0055e-05   positive  65.8    197.4   1.4e-17
+D5_phi_minus_pi_over_2 D.5  0.8  10.0   0.7000  -1.5708 0.0000   -8.0055e-05  negative  65.8    197.4   1.4e-17
+NOTE error-model discriminators (H1 no, H2 yes): D3c_k0.8_Re30_ea02
+
+predictions written to DNS_D345_predictions.csv
+
+perturbative references computed in 11.1 s
+estimated cost: 13 runs x 30000 steps at Nx=64, Ny=49, dt=0.0015
+  D3_k0.8_Re20         below Re_c=30.838 | predicted q_+-q_- -1.928365e-06 (negative)
+  D3_k0.8_Re40         above Re_c=30.838 | predicted q_+-q_- +3.242275e-07 (positive)
+  D3_k1.0_Re15         below Re_c=20.487 | predicted q_+-q_- -1.828239e-06 (negative)
+  D3_k1.0_Re25         above Re_c=20.487 | predicted q_+-q_- +4.671537e-07 (positive)
+  D3_k1.2_Re10         below Re_c=15.089 | predicted q_+-q_- -3.702864e-06 (negative)
+  D3_k1.2_Re20         above Re_c=15.089 | predicted q_+-q_- +7.719747e-07 (positive)
+  D3b_k0.6_Re40        below Re_c=51.252 | predicted q_+-q_- -3.886322e-07 (negative)
+  D3b_k0.6_Re70        above Re_c=51.252 | predicted q_+-q_- +1.740707e-07 (positive)
+  D3c_k0.8_Re30_ea02   near-crossing ladder: H1 says unresolvable, H2 says yes | predicted q_+-q_- -2.350614e-07 (negative)
+  D4_k0.8_Re50         far above Re_c(0.8) | predicted q_+-q_- +3.989744e-07 (positive)
+  D5_phi_0             sin(phi) selection rule | predicted q_+-q_- +0.000000e+00 (zero)
+  D5_phi_plus_pi_over_2 sin(phi) selection rule | predicted q_+-q_- +8.005465e-05 (positive)
+  D5_phi_minus_pi_over_2 sin(phi) selection rule | predicted q_+-q_- -8.005465e-05 (negative)
+DONE D3_k0.8_Re20         q_diff=-1.799329e-06 (predicted -1.928365e-06) resid=9.70e-09 118s
+DONE D3_k0.8_Re40         q_diff=+3.809729e-07 (predicted +3.242275e-07) resid=9.81e-09 129s
+DONE D3_k1.0_Re15         q_diff=-1.604171e-06 (predicted -1.828239e-06) resid=9.73e-09 104s
+DONE D3_k1.0_Re25         q_diff=+5.910363e-07 (predicted +4.671537e-07) resid=9.69e-09 105s
+DONE D3_k1.2_Re10         q_diff=-3.326895e-06 (predicted -3.702864e-06) resid=9.58e-09 92s
+DONE D3_k1.2_Re20         q_diff=+9.454173e-07 (predicted +7.719747e-07) resid=9.91e-09 90s
+DONE D3b_k0.6_Re40        q_diff=-3.542744e-07 (predicted -3.886322e-07) resid=9.58e-09 136s
+DONE D3b_k0.6_Re70        q_diff=+1.910334e-07 (predicted +1.740707e-07) resid=2.12e-08 144s
+DONE D3c_k0.8_Re30_ea02   q_diff=+9.007819e-08 (predicted -2.350614e-07) resid=9.98e-09 113s
+DONE D4_k0.8_Re50         q_diff=+4.416458e-07 (predicted +3.989744e-07) resid=9.64e-09 134s
+DONE D5_phi_0             q_diff=+3.144186e-18 (predicted +0.000000e+00) resid=9.70e-09 106s
+DONE D5_phi_plus_pi_over_2 q_diff=+8.115924e-05 (predicted +8.005465e-05) resid=9.58e-09 107s
+DONE D5_phi_minus_pi_over_2 q_diff=-8.115932e-05 (predicted -8.005465e-05) resid=9.85e-09 108s
+
+checkpoint: C:\Users\user\Documents\Documents - Copie\mixed_conv_verification\campaign_v2_symmetry_selection\DNS_D345_results.csv

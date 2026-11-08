@@ -1,0 +1,101 @@
+# Supplementary material - Symmetry-selected nonlinear thermal pumping (main_v2.tex)
+
+Assembled by `campaign_v2_symmetry_selection/make_supplementary_material.py`; every file is copied unchanged from the project tree and listed with its byte count, line count and SHA-256 digest in `MANIFEST.csv`. No file here contains data that is not used or not quoted by the manuscript.
+
+## S1 - A pe c dense survey
+
+Dense finite-domain Pe_c survey: 173 wavenumbers on 0.02<=k<=10 for five Pe values (865 second-order evaluations) at Re=10, Gr=100, Pr=0.7. This is the data behind the endpoint classification quoted in the main text; the main text retains only the two bracketing calculations Pe=10.85 and Pe=10.9.
+
+* `ultimate_dense_cpu_scan.csv`
+* `ultimate_Pe_summary.csv`
+* `ultimate_roots.csv`
+* `ultimate_sign_check.csv`
+* `ultimate_local_boundary_check.csv`
+* `ULTIMATE_CPU_VALIDATION.json`
+* `table_ultimate_global_summary.tex`
+* `table_ultimate_roots.tex`
+* `table_ultimate_sign_check.tex`
+
+## S2 - B perturbative campaigns
+
+Reversal cartography and phase-selection data: the D.1 Reynolds scan (primary window Re<=40 and the low-k extension to Re=120), the Brent-refined crossings, the power-law fits, the D.2 Grashof-independence test and the D.5/C.2 phase-law outputs.
+
+* `D1_Re_grid.csv`
+* `D1_Re_grid_lowk.csv`
+* `D1_Re_c.csv`
+* `D1_Re_c_all.csv`
+* `D1_Re_c_fit.json`
+* `D2_Gr_invariance.csv`
+* `D2_Re_c_vs_Gr.csv`
+* `D2_Re_c_spread.json`
+* `D5_phase_law.csv`
+* `D5_phase_sweep_direct.csv`
+* `D5_reference_coefficients.json`
+* `D5_ratio_map.csv`
+* `P2_Gr_linearity_two_coeffs.csv`
+* `P2_Re_scan_two_coeffs.csv`
+* `P2_two_coeff_law_validation.csv`
+* `P2_Re_c_two_branches.json`
+* `C2_phase_lag.csv`
+* `C2_phase_unwrapped.csv`
+
+## S3 - C dns validation
+
+Nonlinear DNS results reported in the main text (amplitude, spatial and time-step convergence, Grashof scaling, fixed-Pe Reynolds sweep, reflection and symmetric-forcing tests, master summary) and the completed D.3/D.4/D.5 campaign: pre-run predictions, raw per-case measurements with residuals and wall times, the derived deviation table and the analysis summary behind the DNS confirmation section, plus the Grashof-pair matrix and the reduced data of its figure, which test Corollary 1 nonlinearly.
+
+* `dns_amplitude_convergence.csv`
+* `dns_spatial_convergence.csv`
+* `dns_timestep_convergence.csv`
+* `dns_gr_scaling.csv`
+* `dns_re_sweep.csv`
+* `dns_symmetry_test.csv`
+* `dns_master_validation.csv`
+* `DNS_D345_predictions.csv`
+* `DNS_D345_results.csv`
+* `DNS_D345_measured.csv`
+* `DNS_D345_analysis.json`
+* `DNS_D2_grpair_results.csv`
+* `DNS_D2_grpair_measured.csv`
+* `DNS_D2_grpair_analysis.json`
+* `FIG_v2_11_dns_grpair.json`
+
+## S4 - D scripts
+
+Code that produced every file above. The solver is the CPU-authoritative SciPy solve_bvp chain; run_campaigns.py generates group S2, run_D1_lowk_extension.py the low-k extension and the locus figures, ultimate_dense_cpu_validation_publication_CORRECTED.py group S1, dns_physical_validation_suite.py group S3, and run_dns_D3_D4_D5.py the DNS matrix (dry run by default, --go to integrate) with analyze_dns_D345.py turning its checkpoint into the measured table, the deviation analysis and the multi-wavenumber figure. run_dns_D2_grpair.py runs the four-case Grashof-pair matrix and analyze_dns_D2_grpair.py reduces it to the measured Grashof ratios. verify_manuscript_numbers.py re-derives every number quoted in the manuscript, and check_build.py plus check_cover_letter.py gate the two compiled documents.
+
+* `validate_thermal_pumping_PC_GPU_FINAL_V4_FIXED.py`
+* `dns_physical_validation_suite.py`
+* `ultimate_dense_cpu_validation_publication_CORRECTED.py`
+* `run_campaigns.py`
+* `run_D1_lowk_extension.py`
+* `run_phase_direct_sweep.py`
+* `run_phase_clean.py`
+* `run_quadrature.py`
+* `run_dns_D3_D4_D5.py`
+* `run_dns_D2_grpair.py`
+* `analyze_dns_D2_grpair.py`
+* `analyze_dns_D345.py`
+* `smoke_dns_import.py`
+* `launch_dns_D345.ps1`
+* `watch_dns_D345.ps1`
+* `make_fig_endpoint.py`
+* `verify_manuscript_numbers.py`
+* `check_notation.py`
+* `check_duplicate_text.py`
+* `check_build.py`
+* `check_cover_letter.py`
+* `make_fig_dns_grpair.py`
+
+## Reproducing the manuscript numbers from this package
+
+The scripts are provided for provenance and are the exact files used in the project. They address the project tree through absolute paths, so regeneration means running them from the repository root, not from inside this package:
+
+```
+py -X utf8 campaign_v2_symmetry_selection/verify_manuscript_numbers.py
+py -X utf8 campaign_v2_symmetry_selection/run_D1_lowk_extension.py
+py -X utf8 campaign_v2_symmetry_selection/run_campaigns.py
+py -X utf8 campaign_v2_symmetry_selection/run_dns_D3_D4_D5.py   # dry run only
+py -X utf8 campaign_v2_symmetry_selection/check_notation.py
+```
+
+The pending DNS confirmations (D.3/D.4/D.5) are described in the Outlook subsection of the manuscript; their predictions are in `C_dns_validation/DNS_D345_predictions.csv` and are regenerated by the dry run of `D_scripts/run_dns_D3_D4_D5.py`.

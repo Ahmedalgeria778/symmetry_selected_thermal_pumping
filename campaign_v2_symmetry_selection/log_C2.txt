@@ -1,0 +1,14 @@
+D.C2 Re= 5.0  Pi_T=-1.595143e-01  dphi_s=-3.8933 dphi_a=-2.1540  terms=Ua_dX_Ths=5.504e-02 Us_dX_Tha=-2.537e-02 Va_dY_Ths=-1.869e-01 Vs_dY_Tha=-2.236e-03
+D.C2 Re= 8.0  Pi_T=-7.404001e-02  dphi_s=+0.6969 dphi_a=-2.0215  terms=Ua_dX_Ths=6.134e-02 Us_dX_Tha=-8.065e-03 Va_dY_Ths=-1.216e-01 Vs_dY_Tha=-5.673e-03
+D.C2 Re=10.0  Pi_T=-4.748508e-02  dphi_s=-3.6945 dphi_a=-1.9462  terms=Ua_dX_Ths=5.899e-02 Us_dX_Tha=-2.707e-03 Va_dY_Ths=-9.726e-02 Vs_dY_Tha=-6.504e-03
+D.C2 Re=15.0  Pi_T=-1.720421e-02  dphi_s=-4.0710 dphi_a=-1.8019  terms=Ua_dX_Ths=4.787e-02 Us_dX_Tha=3.211e-03 Va_dY_Ths=-6.148e-02 Vs_dY_Tha=-6.801e-03
+D.C2 Re=20.0  Pi_T=-6.427883e-03  dphi_s=-0.9003 dphi_a=-1.7075  terms=Ua_dX_Ths=3.736e-02 Us_dX_Tha=4.894e-03 Va_dY_Ths=-4.251e-02 Vs_dY_Tha=-6.180e-03
+D.C2 Re=25.0  Pi_T=-2.089882e-03  dphi_s=-3.0879 dphi_a=-1.6462  terms=Ua_dX_Ths=2.948e-02 Us_dX_Tha=5.118e-03 Va_dY_Ths=-3.131e-02 Vs_dY_Tha=-5.372e-03
+D.C2 Re=28.0  Pi_T=-7.801054e-04  dphi_s=-4.0083 dphi_a=-1.6200  terms=Ua_dX_Ths=2.584e-02 Us_dX_Tha=4.976e-03 Va_dY_Ths=-2.669e-02 Vs_dY_Tha=-4.904e-03
+D.C2 Re=30.0  Pi_T=-1.958845e-04  dphi_s=+1.2352 dphi_a=-1.6057  terms=Ua_dX_Ths=2.378e-02 Us_dX_Tha=4.829e-03 Va_dY_Ths=-2.420e-02 Vs_dY_Tha=-4.611e-03
+D.C2 Re=32.0  Pi_T= 2.329088e-04  dphi_s=-3.2798 dphi_a=-1.5934  terms=Ua_dX_Ths=2.197e-02 Us_dX_Tha=4.661e-03 Va_dY_Ths=-2.206e-02 Vs_dY_Tha=-4.337e-03
+D.C2 Re=35.0  Pi_T= 6.745165e-04  dphi_s=-1.8366 dphi_a=-1.5780  terms=Ua_dX_Ths=1.964e-02 Us_dX_Tha=4.391e-03 Va_dY_Ths=-1.939e-02 Vs_dY_Tha=-3.960e-03
+D.C2 Re=40.0  Pi_T= 1.080758e-03  dphi_s=-4.6972 dphi_a=-1.5582  terms=Ua_dX_Ths=1.655e-02 Us_dX_Tha=3.939e-03 Va_dY_Ths=-1.599e-02 Vs_dY_Tha=-3.420e-03
+   saved C2_phase_lag.csv
+   saved FIG_v2_05_phase_analysis.png
+TOTAL 10 s

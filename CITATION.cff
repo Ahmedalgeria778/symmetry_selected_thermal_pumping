@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use the data, code or manuscript in this repository, please cite the study."
+title: "Symmetry-Selected Nonlinear Thermal Pumping in Periodically Heated Mixed-Convection Channels"
+authors:
+  - family-names: Beniaiche
+    given-names: Ahmed
+    email: beniaiche_ahmed25@yahoo.fr
+    affiliation:
+      name: "Laboratory of Fluid Mechanics, Ecole Militaire Polytechnique, Algiers, Algeria"
+type: study
+date-released: 2026-11-08
+repository: https://github.com/Ahmedalgeria778/symmetry_selected_thermal_pumping
+version: 1.0.0
+license: CC-BY-4.0
+keywords:
+  - mixed convection
+  - streamwise-periodic wall heating
+  - thermal pumping
+  - symmetry selection rule
+  - weakly nonlinear expansion
+  - Reynolds-number reversal
+  - direct numerical simulation
+  - numerical verification
+notes: >-
+  Study 3 of a three-part series on streamwise-periodically heated mixed
+  convection. Submitted to Numerical Heat Transfer, Part B: Fundamentals
+  (Taylor & Francis). The repository holds the manuscript source and PDF, the
+  64-file supplementary package, and all campaign data, scripts and figures.

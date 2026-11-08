@@ -1,0 +1,238 @@
+{
+  "parameters": {
+    "Re": 10.0,
+    "Gr": 100.0,
+    "k_min": 0.02,
+    "k_max": 10.0,
+    "Pe_c": 10.871940554611,
+    "n_k_points": 173,
+    "n_pe_values": 5,
+    "N_eval": 801,
+    "thermal_tol": 2e-08,
+    "hydro_tol": 2e-08
+  },
+  "summary": [
+    {
+      "Pe": 10.85,
+      "Pi_min": -0.10482764735962015,
+      "k_at_Pi_min": 0.32776795961890104,
+      "Pi_max": 1.0971782192782267e-06,
+      "k_at_Pi_max": 10.0,
+      "Pi_at_k10": 1.0971782192782267e-06,
+      "n_sign_change_brackets": 1,
+      "n_refined_interior_roots": 1,
+      "boundary_root": false,
+      "status": "INTERIOR_ROOT"
+    },
+    {
+      "Pe": 10.871940554611,
+      "Pi_min": -0.1049159782617699,
+      "k_at_Pi_min": 0.32776795961890104,
+      "Pi_max": -8.396593987622443e-15,
+      "k_at_Pi_max": 10.0,
+      "Pi_at_k10": -8.396593987622443e-15,
+      "n_sign_change_brackets": 0,
+      "n_refined_interior_roots": 0,
+      "boundary_root": true,
+      "status": "BOUNDARY_ROOT"
+    },
+    {
+      "Pe": 10.9,
+      "Pi_min": -0.10502814476883376,
+      "k_at_Pi_min": 0.32776795961890104,
+      "Pi_max": -1.4068443355643944e-06,
+      "k_at_Pi_max": 10.0,
+      "Pi_at_k10": -1.4068443355643944e-06,
+      "n_sign_change_brackets": 0,
+      "n_refined_interior_roots": 0,
+      "boundary_root": false,
+      "status": "STRICTLY_NEGATIVE"
+    },
+    {
+      "Pe": 11.0,
+      "Pi_min": -0.10542067919945262,
+      "k_at_Pi_min": 0.32776795961890104,
+      "Pi_max": -6.4539472545263326e-06,
+      "k_at_Pi_max": 10.0,
+      "Pi_at_k10": -6.4539472545263326e-06,
+      "n_sign_change_brackets": 0,
+      "n_refined_interior_roots": 0,
+      "boundary_root": false,
+      "status": "STRICTLY_NEGATIVE"
+    },
+    {
+      "Pe": 12.0,
+      "Pi_min": -0.10901075455258931,
+      "k_at_Pi_min": 0.30326994504130156,
+      "Pi_max": -5.9609206094628733e-05,
+      "k_at_Pi_max": 10.0,
+      "Pi_at_k10": -5.9609206094628733e-05,
+      "n_sign_change_brackets": 0,
+      "n_refined_interior_roots": 0,
+      "boundary_root": false,
+      "status": "STRICTLY_NEGATIVE"
+    }
+  ],
+  "roots": [
+    {
+      "Pe": 10.85,
+      "root_type": "interior_root",
+      "k_left": 9.325,
+      "k_right": 9.35,
+      "k_root": 9.338218553141244,
+      "Pi_root": 1.9191477223787012e-20,
+      "abs_Pi_root": 1.9191477223787012e-20
+    },
+    {
+      "Pe": 10.871940554611,
+      "root_type": "upper_boundary_root",
+      "k_left": 10.0,
+      "k_right": 10.0,
+      "k_root": 10.0,
+      "Pi_root": -8.396593987622443e-15,
+      "abs_Pi_root": 8.396593987622443e-15
+    }
+  ],
+  "sign_check": [
+    {
+      "Pe": 10.85,
+      "n_positive_samples": 39,
+      "n_negative_samples": 134,
+      "n_near_zero_samples": 0,
+      "n_sign_transitions": 1,
+      "all_sampled_negative": false,
+      "any_positive_sample": true,
+      "Pi_max": 1.0971782192782267e-06,
+      "Pi_min": -0.10482764735962015,
+      "k_global_max_location": 10.0
+    },
+    {
+      "Pe": 10.871940554611,
+      "n_positive_samples": 0,
+      "n_negative_samples": 173,
+      "n_near_zero_samples": 1,
+      "n_sign_transitions": 0,
+      "all_sampled_negative": true,
+      "any_positive_sample": false,
+      "Pi_max": -8.396593987622443e-15,
+      "Pi_min": -0.1049159782617699,
+      "k_global_max_location": 10.0
+    },
+    {
+      "Pe": 10.9,
+      "n_positive_samples": 0,
+      "n_negative_samples": 173,
+      "n_near_zero_samples": 0,
+      "n_sign_transitions": 0,
+      "all_sampled_negative": true,
+      "any_positive_sample": false,
+      "Pi_max": -1.4068443355643944e-06,
+      "Pi_min": -0.10502814476883376,
+      "k_global_max_location": 10.0
+    },
+    {
+      "Pe": 11.0,
+      "n_positive_samples": 0,
+      "n_negative_samples": 173,
+      "n_near_zero_samples": 0,
+      "n_sign_transitions": 0,
+      "all_sampled_negative": true,
+      "any_positive_sample": false,
+      "Pi_max": -6.4539472545263326e-06,
+      "Pi_min": -0.10542067919945262,
+      "k_global_max_location": 10.0
+    },
+    {
+      "Pe": 12.0,
+      "n_positive_samples": 0,
+      "n_negative_samples": 173,
+      "n_near_zero_samples": 0,
+      "n_sign_transitions": 0,
+      "all_sampled_negative": true,
+      "any_positive_sample": false,
+      "Pi_max": -5.9609206094628733e-05,
+      "Pi_min": -0.10901075455258931,
+      "k_global_max_location": 10.0
+    }
+  ],
+  "local_boundary_check": [
+    {
+      "Pe": 10.866940554610999,
+      "delta_Pe": -0.005,
+      "k": 10.0,
+      "Pi_T": 2.5025685297774806e-07,
+      "sign": "positive"
+    },
+    {
+      "Pe": 10.869940554610999,
+      "delta_Pe": -0.002,
+      "k": 10.0,
+      "Pi_T": 1.0011848403372952e-07,
+      "sign": "positive"
+    },
+    {
+      "Pe": 10.870940554611,
+      "delta_Pe": -0.001,
+      "k": 10.0,
+      "Pi_T": 5.006186187397267e-08,
+      "sign": "positive"
+    },
+    {
+      "Pe": 10.871440554610999,
+      "delta_Pe": -0.0005,
+      "k": 10.0,
+      "Pi_T": 2.5031582697128677e-08,
+      "sign": "positive"
+    },
+    {
+      "Pe": 10.871840554611,
+      "delta_Pe": -0.0001,
+      "k": 10.0,
+      "Pi_T": 5.00641477023137e-09,
+      "sign": "positive"
+    },
+    {
+      "Pe": 10.871940554611,
+      "delta_Pe": 0.0,
+      "k": 10.0,
+      "Pi_T": -8.396593987622443e-15,
+      "sign": "negative"
+    },
+    {
+      "Pe": 10.872040554610999,
+      "delta_Pe": 0.0001,
+      "k": 10.0,
+      "Pi_T": -5.00648399300062e-09,
+      "sign": "negative"
+    },
+    {
+      "Pe": 10.872440554611,
+      "delta_Pe": 0.0005,
+      "k": 10.0,
+      "Pi_T": -2.5032911253463847e-08,
+      "sign": "negative"
+    },
+    {
+      "Pe": 10.872940554610999,
+      "delta_Pe": 0.001,
+      "k": 10.0,
+      "Pi_T": -5.0067125847808026e-08,
+      "sign": "negative"
+    },
+    {
+      "Pe": 10.873940554611,
+      "delta_Pe": 0.002,
+      "k": 10.0,
+      "Pi_T": -1.0013948967820501e-07,
+      "sign": "negative"
+    },
+    {
+      "Pe": 10.876940554611,
+      "delta_Pe": 0.005,
+      "k": 10.0,
+      "Pi_T": -2.503880503201234e-07,
+      "sign": "negative"
+    }
+  ],
+  "elapsed_s": 117.35511389997555
+}

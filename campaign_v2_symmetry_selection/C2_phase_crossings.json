@@ -1,0 +1,12 @@
+{
+  "Re_c_Pi_T": 30.838497,
+  "zero_cross_dphi_s": [],
+  "zero_cross_dphi_a": [],
+  "term_T_Va_dYs_plus_T_Ua_zero": [
+    32.71326316316861
+  ],
+  "max_balance_err": 1.3684366140243043e-14,
+  "term_balance_Ua_Va_zero": [
+    32.71326316316861
+  ]
+}

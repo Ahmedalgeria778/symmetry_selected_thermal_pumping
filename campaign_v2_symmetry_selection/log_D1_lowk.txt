@@ -1,0 +1,35 @@
+k=0.4 Re= 45.0  Pi_T=-3.14212072e-03  (asym err 4.3e-19)
+k=0.4 Re= 50.0  Pi_T=-2.11062721e-03  (asym err 4.3e-19)
+k=0.4 Re= 55.0  Pi_T=-1.40248923e-03  (asym err 0.0e+00)
+k=0.4 Re= 60.0  Pi_T=-9.07184819e-04  (asym err 2.2e-19)
+k=0.4 Re= 70.0  Pi_T=-3.00695463e-04  (asym err 4.9e-19)
+k=0.4 Re= 80.0  Pi_T=+2.22656240e-05  (asym err 6.1e-20)
+k=0.4 Re= 90.0  Pi_T=+2.00722258e-04  (asym err 2.7e-19)
+k=0.4 Re=100.0  Pi_T=+3.00905556e-04  (asym err 2.7e-19)
+k=0.4 Re=110.0  Pi_T=+3.56488731e-04  (asym err 1.6e-19)
+k=0.4 Re=120.0  Pi_T=+3.85623467e-04  (asym err 5.4e-20)
+k=0.6 Re= 45.0  Pi_T=-5.45696080e-04  (asym err 1.1e-19)
+k=0.6 Re= 50.0  Pi_T=-8.52915933e-05  (asym err 7.5e-19)
+k=0.6 Re= 55.0  Pi_T=+2.03970468e-04  (asym err 1.1e-19)
+k=0.6 Re= 60.0  Pi_T=+3.88212574e-04  (asym err 2.2e-19)
+k=0.6 Re= 70.0  Pi_T=+5.80235771e-04  (asym err 4.3e-19)
+k=0.6 Re= 80.0  Pi_T=+6.51528223e-04  (asym err 2.2e-19)
+k=0.6 Re= 90.0  Pi_T=+6.66941007e-04  (asym err 2.2e-19)
+k=0.6 Re=100.0  Pi_T=+6.55533433e-04  (asym err 0.0e+00)
+k=0.6 Re=110.0  Pi_T=+6.31366055e-04  (asym err 0.0e+00)
+k=0.6 Re=120.0  Pi_T=+6.01597591e-04  (asym err 1.1e-19)
+Re_c(k=0.40) = 79.080214038 from bracket (70.0, 80.0)
+Re_c(k=0.60) = 51.252439196 from bracket (50.0, 55.0)
+
+seven-point fit: Re_c = 21.4965 k^(-1.4719), max rel dev 11.039%
+   k=0.4  Re_c=  79.0802  fit=  82.8144  dev=4.72%
+   k=0.6  Re_c=  51.2524  fit=  45.5945  dev=11.04%
+   k=0.8  Re_c=  30.8385  fit=  29.8547  dev=3.19%
+   k=1.0  Re_c=  20.4870  fit=  21.4965  dev=4.93%
+   k=1.2  Re_c=  15.0890  fit=  16.4369  dev=8.93%
+   k=1.5  Re_c=  11.0694  fit=  11.8352  dev=6.92%
+   k=2.0  Re_c=   8.5413  fit=   7.7495  dev=9.27%
+five-point fit (k >= 0.8): Re_c = 20.9073 k^(-1.4075), max rel dev 7.729%
+
+saved FIG_v2_02_Re_c_vs_k.png (seven points)
+saved FIG_v2_01_piT_vs_Re_kartsch.png (merged grid)

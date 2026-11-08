@@ -1,0 +1,98 @@
+PDF pages: 42
+
+[B3] duplicate \subsection titles in .tex: NONE
+[B3] occurrences 'Solvability and wall-flux identities' in .tex: 1
+[B3] occurrences in PDF text: 1
+
+[B4] 'Consider' at line start in .tex: 1
+[B4] 'Consider Consider' in PDF: False
+
+[B5] 'partial \gamma' in .tex: 0
+[B5] arrow chains in .tex: 0
+[B5] lines containing \to :
+      assumptions, whereas nonzero pumping, its $k\to0$ scaling, and the location of its zero crossing are
+      For $k\to0$,
+      \boxed{A(k,\Rey,\Pr)=A_2(\Rey,\Pr)k^2+o(k^2),\qquad k\to0.}
+
+[B1] pages with long runs of '1': NONE
+
+[B2] '[]' empty-unit tokens in .tex: 0
+[B2] nomenclature rows: 82
+
+[B10] number of equation labels: 40
+[B10] PDF rendered equation numbers range: [1]..[111], count=111
+[B10] gaps in rendered numbering (1..max): NONE
+
+[B8] captions count: 28
+   [ 1] Logical chain connecting wall-temperature symmetry to the nonlinear wall-flux response.
+   [ 2] Physical schematic of the wall heat-flux redistribution mechanism. The symmetric limit suppresses the antisymmetric wall-flux correction, whereas uneq
+   [ 3] Geometry and nondimensionalization. The vertical channel has walls at $Y=\pm1$, half-width $H$, base Poiseuille flow $U_0(Y)=\tfrac32(1-Y^2)$, gravity
+   [ 4] Fixed-$\Pe$ dependence of $A=\PiT/\Grr$ at $k=0.8$, $\Grr=100$.
+   [ 5] Long-wavelength fit at $(\Rey,\Pr,\Grr)=(10,0.7,100)$.
+   [ 6] Representative numerical validation diagnostics for the reference case $(k,\Rey,\Pr,\Grr)=(2,10,0.7,100)$.
+   [ 7] Thermal pumping coefficient versus Grashof number at fixed $(k,\Rey,\Pr)=(0.8,10,0.7)$. The free-intercept fit is effectively exact and the response v
+   [ 8] CPU-authoritative classification of the zero-crossing branch at $\Rey=10$, $\Grr=100$, using 173 wavenumber values per $\Pe$ value.
+   [ 9] Local CPU-authoritative verification of the finite-domain endpoint at $k=10$. The sign reversal occurs at $\Pe_c=10.871940554611$, with nearly symmetr
+   [10] Normalized pumping response $A=\PiT/\Grr$ over the investigated $(k,\Pe)$ domain at fixed $\Rey=10$. The solid zero contour identifies the interior si
+   [11] Global CPU-authoritative verification of the finite-domain zero-crossing structure of $\PiT(k,\Pe)$ at fixed $\Rey=10$ and $\Grr=100$. The curves corr
+   [12] High-wavenumber zoom of the CPU-authoritative response $\PiT(k,\Pe)$ near the upper boundary $k=10$ at $\Rey=10$ and $\Grr=100$. The positive-response
+   [13] Local CPU-authoritative verification of the endpoint at the upper wavenumber boundary $k=10$. The response $\PiT(10,\Pe)$ changes sign at $\Pe_c=10.87
+   [14] Convergence of the fully nonlinear DNS pumping coefficient with decreasing asymmetry amplitude. The nonlinear DNS values approach a finite $\varepsilo
+   [15] Spatial convergence of the nonlinear DNS pumping coefficient. The solution approaches a well-defined finest-grid value as both the streamwise and tran
+   [16] Time-step convergence of the nonlinear DNS pumping coefficient. The response remains unchanged to within approximately $10^{-6
+   [17] Nonlinear DNS verification of the Grashof-number scaling at fixed $(k,\Rey,\Pr)=(0.8,10,0.7)$. The pumping coefficient is linear in $\Grr$ over the in
+   [18] Normalized pumping response $A=\PiT/Gr$ from the independent nonlinear DNS at fixed $Pe=7$, $k=0.8$, and $Gr=100$. Varying $Re$ changes both the magni
+   [19] Independent nonlinear DNS at fixed $Pe=7$, $k=0.8$, and $Gr=100$. The Prandtl number is adjusted according to $\Pr=Pe/Re$.
+   [20] Independent DNS verification of reflection symmetry and wall-flux conservation. Interchanging the upper and lower thermal forcing reverses the sign of
+   [21] Consolidated summary of the independent nonlinear DNS validation campaign. The seven diagnostic panels combine amplitude extrapolation, spatial and te
+   [22] Summary of the independent nonlinear DNS validation campaign. Spatial and temporal convergence values are measured relative to the finest calculation 
+   [23] Symmetry-based comparison of the leading nonlinear transport response.
+   [24] Two-dimensional thermal reference solution for $(k,\Pe,\Rey,\Pr,\Grr)=(0.8,7,10,0.7,100)$. Left: first-order temperature response $\theta_1(X,Y)$. Rig
+   [25] Hydrodynamic response for the reference case $(k,\Pe,\Rey,\Pr,\Grr)=(0.8,7,10,0.7,100)$. Left: total streamwise velocity $U_0+U_1$, showing the domina
+   [26] Cross-channel profiles of the mean temperature correction $\theta_{2,0
+   [27] Symmetry classification of the quadratic thermal forcing for the reference configuration. Left: symmetric self-interactions $\mathcal{E
+   [28] Mean nonlinear wall-flux redistribution for $k=0.8$ and $\Pe=7$. The comparison is performed at fixed $\Pe=7$, with $\Pr=\Pe/\Rey$ adjusted accordingl
+
+[B6] reference section starts on page 41
+[B6] raw rendered reference text:
+F Proof of linearity in Grashof number
+The thermal modes are independent ofGr, while the hydrodynamic BVP is linear with
+forcing proportional toGr Θ′. ConsequentlybV, bU,E as andΠ T are each proportional toGr
+at fixed(k,Re,Pr).
+G Integral representation of the pumping coefficient
+Forθ′′ =f(Y)withθ(±1) = 0,
+θ′(1) = 1
+2
+Z 1
+−1
+(1 +Y)f(Y)dY, θ ′(−1) =− 1
+2
+Z 1
+−1
+(1−Y)f(Y)dY.(110)
+For oddf=PeE as,
+θ′(1) =θ′(−1) = Pe
+2
+Z 1
+−1
+YEas(Y)dY,(111)
+and the inward-normal definition gives Eq. (41).
+H Independent validation by initial-value shooting
+For the thermal BVP, the unknown complex derivative atY =−1is adjusted to satisfy
+the prescribed value atY = +1. For the fourth-order hydrodynamic BVP, the two complex
+initial derivativesbV′′(−1)and bV′′′(−1)are adjusted until bV (+1) = bV′(+1) = 0. The
+shooting solutions are compared against the adaptive collocation solutions, andΠT is
+independently recon
+
+[B11] email occurrences in .tex: {'_ahmed25@yahoo.fr'}
+
+[B7] table environments: 9
+   table 1: [htb] \begin{ruledtabular} \begin{tabular}{ll} \textbf{Roman Symbols} & \\ $A(k,\Rey,\Pr)$ & Normalized pumpin | has PiT=True has Nu20=False
+   table 2: [htb] \centering \caption{Fixed-$\Pe$ dependence of $A=\PiT/\Grr$ at $k=0.8$, $\Grr=100$.} \label{tab:fixed_pe | has PiT=True has Nu20=False
+   table 3: [htb] \centering \caption{Long-wavelength fit at $(\Rey,\Pr,\Grr)=(10,0.7,100)$.} \label{tab:small_k_fit} \beg | has PiT=False has Nu20=False
+   table 4: [htb] \centering \caption{Representative numerical validation diagnostics for the reference case $(k,\Rey,\Pr, | has PiT=True has Nu20=False
+   table 5: [htb] \centering \caption{CPU-authoritative classification of the zero-crossing branch at $\Rey=10$, $\Grr=100 | has PiT=True has Nu20=False
+   table 6: [htb] \centering \caption{Local CPU-authoritative verification of the finite-domain endpoint at $k=10$. The si | has PiT=True has Nu20=False
+   table 7: [htb] \centering \caption{ Independent nonlinear DNS at fixed $Pe=7$, $k=0.8$, and $Gr=100$. The Prandtl numbe | has PiT=False has Nu20=False
+   table 8: [htb] \centering \caption{ Summary of the independent nonlinear DNS validation campaign. Spatial and temporal  | has PiT=True has Nu20=False
+   table 9: [htb] \centering \caption{Symmetry-based comparison of the leading nonlinear transport response.} \label{tab:p | has PiT=False has Nu20=False

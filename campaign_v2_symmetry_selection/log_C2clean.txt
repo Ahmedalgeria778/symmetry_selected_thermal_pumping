@@ -1,0 +1,42 @@
+C:\Users\user\Documents\Documents - Copie\mixed_conv_verification\campaign_v2_symmetry_selection\run_phase_clean.py:87: SyntaxWarning: "\P" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\P"? A raw string is also an option.
+  a.set_ylabel("contribution to $\Pi_T$")
+Re=  5.00 Pi_T=-1.595143e-01  T_Ua= 5.5042e-02 T_Va=-1.8695e-01  dphi_s0=+2.3899  dphi_a0=-2.1540
+Re=  6.00 Pi_T=-1.210173e-01  T_Ua= 5.9365e-02 T_Va=-1.5895e-01  dphi_s0=+0.5722  dphi_a0=-2.1073
+Re=  7.00 Pi_T=-9.391648e-02  T_Ua= 6.1150e-02 T_Va=-1.3804e-01  dphi_s0=+1.3264  dphi_a0=-2.0631
+Re=  8.00 Pi_T=-7.404001e-02  T_Ua= 6.1340e-02 T_Va=-1.2164e-01  dphi_s0=+0.6969  dphi_a0=-2.0215
+Re=  9.00 Pi_T=-5.904038e-02  T_Ua= 6.0499e-02 T_Va=-1.0833e-01  dphi_s0=+2.3544  dphi_a0=-1.9825
+Re= 10.00 Pi_T=-4.748508e-02  T_Ua= 5.8989e-02 T_Va=-9.7263e-02  dphi_s0=+2.5887  dphi_a0=-1.9462
+Re= 12.00 Pi_T=-3.128543e-02  T_Ua= 5.4877e-02 T_Va=-7.9860e-02  dphi_s0=+1.4100  dphi_a0=-1.8814
+Re= 15.00 Pi_T=-1.720421e-02  T_Ua= 4.7869e-02 T_Va=-6.1483e-02  dphi_s0=+2.2122  dphi_a0=-1.8019
+Re= 18.00 Pi_T=-9.569073e-03  T_Ua= 4.1264e-02 T_Va=-4.8845e-02  dphi_s0=-2.9117  dphi_a0=-1.7404
+Re= 20.00 Pi_T=-6.427883e-03  T_Ua= 3.7365e-02 T_Va=-4.2508e-02  dphi_s0=-0.9003  dphi_a0=-1.7075
+Re= 22.00 Pi_T=-4.237803e-03  T_Ua= 3.3903e-02 T_Va=-3.7366e-02  dphi_s0=-0.5908  dphi_a0=-1.6798
+Re= 25.00 Pi_T=-2.089882e-03  T_Ua= 2.9476e-02 T_Va=-3.1312e-02  dphi_s0=-3.0879  dphi_a0=-1.6462
+Re= 27.00 Pi_T=-1.148766e-03  T_Ua= 2.6974e-02 T_Va=-2.8103e-02  dphi_s0=+1.3076  dphi_a0=-1.6280
+Re= 28.00 Pi_T=-7.801054e-04  T_Ua= 2.5841e-02 T_Va=-2.6693e-02  dphi_s0=+2.2749  dphi_a0=-1.6200
+Re= 29.00 Pi_T=-4.652530e-04  T_Ua= 2.4780e-02 T_Va=-2.5395e-02  dphi_s0=+2.9019  dphi_a0=-1.6126
+Re= 30.00 Pi_T=-1.958845e-04  T_Ua= 2.3784e-02 T_Va=-2.4198e-02  dphi_s0=+1.2352  dphi_a0=-1.6057
+Re= 30.50 Pi_T=-7.604820e-05  T_Ua= 2.3309e-02 T_Va=-2.3633e-02  dphi_s0=+1.0297  dphi_a0=-1.6024
+Re= 30.84 Pi_T= 1.050302e-10  T_Ua= 2.2996e-02 T_Va=-2.3263e-02  dphi_s0=+0.5915  dphi_a0=-1.6003
+Re= 31.00 Pi_T= 3.491488e-05  T_Ua= 2.2849e-02 T_Va=-2.3090e-02  dphi_s0=+2.1093  dphi_a0=-1.5993
+Re= 32.00 Pi_T= 2.329088e-04  T_Ua= 2.1972e-02 T_Va=-2.2063e-02  dphi_s0=+3.0034  dphi_a0=-1.5934
+Re= 33.00 Pi_T= 4.029174e-04  T_Ua= 2.1146e-02 T_Va=-2.1110e-02  dphi_s0=-0.2177  dphi_a0=-1.5879
+Re= 35.00 Pi_T= 6.745165e-04  T_Ua= 1.9638e-02 T_Va=-1.9395e-02  dphi_s0=-1.8366  dphi_a0=-1.5780
+Re= 38.00 Pi_T= 9.545029e-04  T_Ua= 1.7681e-02 T_Va=-1.7220e-02  dphi_s0=-2.5686  dphi_a0=-1.5654
+Re= 40.00 Pi_T= 1.080758e-03  T_Ua= 1.6547e-02 T_Va=-1.5985e-02  dphi_s0=+1.5859  dphi_a0=-1.5582
+Re= 45.00 Pi_T= 1.262444e-03  T_Ua= 1.4180e-02 T_Va=-1.3464e-02  dphi_s0=+1.0571  dphi_a0=-1.5436
+Re= 50.00 Pi_T= 1.329915e-03  T_Ua= 1.2324e-02 T_Va=-1.1537e-02  dphi_s0=+0.8296  dphi_a0=-1.5322
+max |sum(terms) - Pi_T| = 1.368e-14
+{
+  "Re_c_Pi_T": 30.838497,
+  "zero_cross_dphi_s": [],
+  "zero_cross_dphi_a": [],
+  "term_T_Va_dYs_plus_T_Ua_zero": [
+    32.71326316316861
+  ],
+  "max_balance_err": 1.3684366140243043e-14,
+  "term_balance_Ua_Va_zero": [
+    32.71326316316861
+  ]
+}
+TOTAL 22 s

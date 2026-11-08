@@ -1,0 +1,79 @@
+{
+  "k": 0.8,
+  "Pe": 7.0,
+  "eps_s": 0.03,
+  "eps_a": 0.005,
+  "phi": 0.0,
+  "cases": 4,
+  "pairs": [
+    {
+      "Re": 20.0,
+      "q_lo": -8.996525913923352e-07,
+      "q_hi": -3.598838587651849e-06,
+      "Gr_ratio_measured": 4.000253678013816,
+      "Gr_ratio_rel_error": 6.341950345389868e-05,
+      "same_sign": true,
+      "sign": "negative",
+      "PiT_lo": -0.002998841971307785,
+      "PiT_hi": -0.011996128625506168,
+      "dev_lo": 0.000215099346524895,
+      "dev_hi": 0.0008596366458300236,
+      "dev_ratio": 3.9964633073886704,
+      "A_dns_lo": -5.99768394261557e-05,
+      "A_dns_hi": -5.9980643127530836e-05,
+      "A_spread_rel": 6.341950345389868e-05,
+      "margin_lo": 11.859562058423174,
+      "margin_hi": 47.43824823371289,
+      "dev_over_model_lo": 0.7937245259221215,
+      "dev_over_model_hi": 3.172090944022228
+    },
+    {
+      "Re": 50.0,
+      "q_lo": 2.207512350516994e-07,
+      "q_hi": 8.83332701793766e-07,
+      "Gr_ratio_measured": 4.001484755393969,
+      "Gr_ratio_rel_error": 0.0003711888484922987,
+      "same_sign": true,
+      "sign": "positive",
+      "PiT_lo": 0.0007358374501723315,
+      "PiT_hi": 0.002944442339312554,
+      "dev_lo": 7.088007081263001e-05,
+      "dev_hi": 0.0002846128218824983,
+      "dev_ratio": 4.015413904352132,
+      "A_dns_lo": 1.4716749003446631e-05,
+      "A_dns_hi": 1.472221169656277e-05,
+      "A_spread_rel": 0.0003711888484922987,
+      "margin_lo": 2.453717267009969,
+      "margin_hi": 9.814869068007587,
+      "dev_over_model_lo": 0.2615500767993727,
+      "dev_over_model_hi": 1.0502318150645698
+    }
+  ],
+  "rejected": [
+    {
+      "Re": 32.0,
+      "margins": [
+        0.4297209451550287,
+        1.7188837804449604
+      ],
+      "weakest": 0.4297209451550287
+    },
+    {
+      "Re": 40.0,
+      "margins": [
+        1.9940192588406416,
+        7.976077035288239
+      ],
+      "weakest": 1.9940192588406416
+    }
+  ],
+  "worst_Gr_ratio_rel_error": 0.0003711888484922987,
+  "all_signs_agree": true,
+  "max_final_residual": 9.922035769708258e-09,
+  "total_wall_seconds": 490.92375659942627,
+  "runtime_range": [
+    112.4734218120575,
+    141.1361882686615
+  ],
+  "reading": "the DNS deviation is itself proportional to Gr (ratios 3.996 and 4.015 against 4.0000), so it rescales the response without moving the zero: Corollary 1 holds nonlinearly"
+}
