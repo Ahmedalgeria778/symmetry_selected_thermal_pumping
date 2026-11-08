@@ -169,8 +169,7 @@ def main():
     flat = re.sub(r"\s+", " ", io.open(main_tex, encoding="utf-8",
                                        errors="replace").read())
     fails = []
-    m = re.search(r"finds ([a-z0-9]+) shared twelve-word shingles with the first "
-                  r"and none with the second", flat)
+    m = re.search(r"finds ([a-z0-9]+) shared twelve-word shingles", flat)
     first = max([res[k] for k in study1 if k in res], default=None)
     second = max([res[k] for k in study2 if k in res], default=None)
     if len([k for k in study1 if k in res]) < len(study1):
@@ -183,12 +182,14 @@ def main():
     if m is None:
         fails.append("duplication sentence not found in the manuscript")
     elif quoted_first != first or second != 0:
-        fails.append("footnote quotes %s/%s shingles, measured %s/%s"
-                     % (m.group(1), "0", first, second))
+        fails.append("footnote quotes %s shingles, measured %s against study 1 "
+                     "and %s against the unmentioned second companion, which must "
+                     "stay at zero" % (m.group(1), first, second))
     else:
-        print("\nfootnote study 1 / study 2 shingles : %d / %d  ok  "
-              "(study 1 scanned in %d version(s))"
-              % (first, second, len([k for k in study1 if k in res])))
+        print("\nfootnote companion-study shingles : %d  ok  "
+              "(study 1 scanned in %d version(s); the unsubmitted companion measures %d "
+              "and is not named in the text)"
+              % (first, len([k for k in study1 if k in res]), second))
     q = re.search(r"archive---\$([\d.]+)\\%\$ and \$([\d.]+)\\%\$ shared", flat)
     drafts = sorted((v, k) for k, v in res.items()
                     if k.endswith(".tex") and k != "cover_letter_NHTB_v2.tex")
