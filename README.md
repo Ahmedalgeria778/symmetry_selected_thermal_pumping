@@ -96,7 +96,7 @@ from the data it quotes. Each resolves the repository root from its own location
 py -X utf8 campaign_v2_symmetry_selection/check_build.py                # build, labels, ASCII, prose hygiene
 py -X utf8 campaign_v2_symmetry_selection/verify_manuscript_numbers.py  # every quoted number re-derived
 py -X utf8 campaign_v2_symmetry_selection/check_notation.py             # notation and macro use
-py -X utf8 campaign_v2_symmetry_selection/check_duplicate_text.py       # 12-word shingle overlap with the companion studies
+py -X utf8 campaign_v2_symmetry_selection/check_duplicate_text.py       # 12-word shingle overlap with the companion sources
 py -X utf8 campaign_v2_symmetry_selection/check_cover_letter.py         # cover-letter length and required statements
 ```
 
@@ -111,20 +111,24 @@ conventions.
 
 Two gates are author-side by nature and cannot pass from this repository alone:
 `check_duplicate_text.py` compares the manuscript **and** its supplementary document
-against the sources of the two companion studies, which are not deposited here, and
+against the sources of both companion studies, which are not deposited here; only the
+first of them is disclosed in the submission text, and
 `check_cover_letter.py` inspects the compiled cover letter, which must be built
 locally from `cover_letter_NHTB_v2.tex` into a `build_cover/` directory.
 
-## Relationship to the other two studies
+## Relationship to the companion study
 
-This is one paper of a three-study series. Study 1 treats the symmetric modulation
-and the non-monotonic integral framework; study 2 corrects the modal decomposition
-and establishes the vanishing of the mean second-order Nusselt component. Neither is
-citable yet, so both are described in the text rather than referenced, and the
-present study is separated from them by the asymmetric configuration and by the
-exact parity selection rule. The overlap is measured, not asserted: `check_duplicate_text.py`
-scans the manuscript together with its supplementary document against the companion
-sources and against the earlier drafts of this paper.
+The paper continues the work whose first installment treats the symmetric modulation and
+the non-monotonic integral framework; that study is under review at *Numerical Heat
+Transfer, Part B*, and it is the **only** companion named in the manuscript and in the
+cover letter, because it is the one the editor can verify. Other companion material that
+is neither submitted nor published is deliberately left out of the submission text, and
+the vanishing of the mean second-order component in the symmetric limit is derived in
+this paper rather than quoted from unpublished work. The textual overlap is measured,
+not asserted: `check_duplicate_text.py` scans the manuscript together with its
+supplementary document against the companion sources and against the earlier drafts of
+this paper, and fails if the footnote quoted in the formulation section disagrees with
+the scan.
 
 ## Headline results
 
