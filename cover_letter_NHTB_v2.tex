@@ -11,25 +11,26 @@
 \newcommand{\Prn}{\mathit{Pr}}
 \newcommand{\Nu}{\mathit{Nu}}
 \let\Pr\Prn
-\setlength{\parskip}{4pt}
+\setlength{\parskip}{2pt}
 \setlength{\parindent}{0pt}
+\linespread{0.98}
 \pagestyle{empty}
 
 \begin{document}
 
 \textbf{Ahmed Beniaiche}\\
 Laboratory of Fluid Mechanics, Ecole Militaire Polytechnique, Algiers, Algeria\\
-Email: beniaiche\_ahmed25@yahoo.fr\\[4pt]
-8 November 2026\\[8pt]
+Email: beniaiche\_ahmed25@yahoo.fr\\[3pt]
+8 November 2026\\[5pt]
 
 The Editor-in-Chief\\
 \emph{Numerical Heat Transfer, Part B: Fundamentals}\\
 Taylor \& Francis\\
 
-\bigskip
+\medskip
 \textbf{Subject: submission of ``Symmetry-Selected Nonlinear Thermal Pumping in a
 Periodically Heated Mixed-Convection Channel''}\\
-\textbf{Article type: Research Article}\\[4pt]
+\textbf{Article type: Research Article}\\[3pt]
 
 Dear Editor,
 
@@ -46,10 +47,10 @@ the \emph{direction} of the pumping is set by the Reynolds number
 at fixed P\'eclet number. Separating the two is the physics: symmetry fixes the structure
 of the response, $\Nu_{2,0}(+1)=-\Nu_{2,0}(-1)$ exactly for every admissible
 $(\Rey,\Pr,\Grr,k)$ under the stated assumptions, while the coupled thermal--hydrodynamic
-dynamics fix its amplitude and sign. A second exact result follows: under phase-shifted
-modulation the rectified response carries two pumping coefficients, in-phase
-and quadrature, of opposite sign and roughly twice the magnitude, so at equal wall
-amplitudes it is proportional to $\sin\phi$ with no higher harmonic.
+dynamics fix its amplitude and sign. A second exact result follows: phase-shifted modulation
+gives the rectified response two pumping coefficients, in-phase and quadrature, of opposite
+sign and roughly twice the magnitude, so at equal amplitudes it is proportional to $\sin\phi$
+with no higher harmonic.
 
 \medskip
 \textbf{The headline number.} The rule was tested in its most destructive configuration,
@@ -67,33 +68,39 @@ measured pumping fluxes ratio to $4.0003$ and $4.0015$, and the DNS--perturbativ
 \emph{discrepancy} itself ratios to $3.996$ and $4.015$. Because the discrepancy scales with
 $\Grr$ like the pumping does, the second-order correction rescales the response without
 displacing its zero: the reduced coefficient $A=\Pi_T/\Grr$ at the two Grashof numbers falls
-on a single branch. The residual $0.1\%$
-and $0.4\%$ departures from exact linearity are not read as a Richardson-number
-correction --- the two pairs order the reverse of what such a term predicts --- and are
-reported as consistent with exact Grashof linearity at the tolerance the runs reach.
+on a single branch. The $0.1\%$ and $0.4\%$ residual departures from exact linearity are not
+read as a Richardson-number correction, which the two pairs order in reverse, and are reported
+as consistent with exact Grashof linearity at the tolerance the runs reach.
 
 \medskip
 \textbf{What the campaign falsified.} A pre-registered deviation model calibrated on an
 earlier sweep is exceeded by five of the twelve non-degenerate cases. The manuscript
 characterises the excess instead of widening the bound: it is independent of the forcing
 amplitude and grows with the wavenumber, which we report as an empirical observation rather
-than a scaling law. We do not attribute it to a mechanism, because the available checks do
-not separate truncation from resolution; the refined-streamwise-mesh replica of the worst
-case is named as the next test rather than asserted as a conclusion.
+than a scaling law. No mechanism is claimed, because the available checks do not separate
+truncation from resolution; a refined-streamwise-mesh replica of the worst case is named as the
+next test rather than as a conclusion.
 
 \medskip
-\textbf{Positioning, and a disclosure.} The manuscript is the third member of a series on
-the same canonical configuration. Study~1, the exact integral framework for the
-\emph{symmetric} wall modulation, was submitted to this journal on 1 November 2026; study~2,
-the corrected modal decomposition that establishes $\Nu_{2,0}=0$ in that symmetric case, is
-likewise unpublished. Neither carries a citable identifier, so both are described in the text
-rather than cited, and their full texts are available to you on request. The overlap is
-stated up front because it is measurable: a word-level duplication scan returns three shared
-twelve-word shingles with study~1 and none with study~2, all three inside the
-author-and-affiliation block, and no scientific sentence is carried over; a footnote in the
-formulation section repeats that accounting. The new physics of this paper is the asymmetric
-configuration: the odd-parity selection rule, the two-coefficient phase law and the reversal
-mapping $\Rey_c(k)$ at seven wavenumbers, with DNS confirmation at four of them.
+\textbf{Positioning, and a disclosure.} The manuscript is the third member of a series on the
+same canonical configuration, and the only member under review at this journal is its first:
+the exact integral framework for the \emph{symmetric} wall modulation, submitted to this
+journal on 1 November 2026. The two papers share the geometry and the first-order amplitude
+machinery; they do not share the object of study. Study~1 drives
+the walls in phase and quantifies the symmetric response; this paper drives them asymmetrically
+and proves that the second-order thermal response is then \emph{selected} by parity: the
+rectified wall-flux difference is exactly odd in the sign of the forcing, its amplitude is set
+by the coupled dynamics, and its direction by the Reynolds number at fixed P\'eclet number. The
+difference is one of physics, not of parameters, because the quantity that carries all of it
+vanishes identically in the symmetric case. The new content is the parity selection rule, the
+two-coefficient phase law with its $\sin\phi$ response at equal amplitudes, the reversal map
+$\Rey_c(k)$ at seven wavenumbers with DNS confirmation at four, and the parity cancellation
+carried to eleven digits. The companion work is described in the text rather than cited, since
+it carries no citable identifier, and its full text is available to you on request. The overlap
+with the study under review is measured: a word-level duplication scan of this manuscript
+together with its supplementary document returns three shared twelve-word shingles, all three
+inside the author-and-affiliation block, and no scientific sentence is carried over; a footnote
+in the formulation section repeats that accounting.
 
 \medskip
 \textbf{Why this journal.} The contribution is methodological as much as physical, and no
@@ -101,18 +108,18 @@ layer of the evidence validates itself. The parity identity and the Green identi
 the perturbative hierarchy --- adaptive collocation replicated by an independent fixed-mesh
 shooting solver, field agreement $9\times10^{-12}$ --- while the fully nonlinear stationary
 DNS, performed independently of those boundary-value solvers, tests the symmetry argument
-rather than the solver that produced it. Residuals are reported quantity by quantity, an
+rather than the solver that produced it. Residuals are reported quantity by quantity, the
 error model is pre-registered before the campaign and then falsified by it, and candidate
-designs are rejected beforehand by a resolvability margin, so no run is launched on a signal
-it could not resolve. That combination --- an exact identity, a two-strategy verification
-hierarchy and a documented failure of the author's own error estimate --- is fundamentals
-material for the readership of \emph{Numerical Heat Transfer Part B}.
+designs are rejected beforehand by a resolvability margin. That combination --- an exact
+identity, a two-strategy verification hierarchy and a documented failure of the author's own
+error estimate --- is fundamentals material for the readership of \emph{Numerical Heat
+Transfer Part B}.
 
 \medskip
-\textbf{One terminological caution.} ``Pumping'' here is not the travelling-wave propulsion
-of Hossain and Floryan, \emph{J.\ Fluid Mech.}\ \textbf{966}, A43 (2023): the observable is
-the difference between the two wall heat fluxes at strictly fixed bulk flow rate, a
-transverse redistribution with zero net transport.
+\textbf{One terminological caution.} ``Pumping'' here is not the travelling-wave propulsion of
+Hossain and Floryan, \emph{J.\ Fluid Mech.}\ \textbf{966}, A43 (2023): the observable is the
+difference of the two wall heat fluxes at strictly fixed bulk flow rate, a transverse
+redistribution with zero net transport.
 
 \medskip
 \textbf{What is not claimed, and reproducibility.} The results are two-dimensional, laminar
@@ -131,7 +138,7 @@ consistency script regenerates every number quoted in the text.
 
 Thank you for considering the submission.
 
-\medskip
+\smallskip
 Sincerely,\\[3pt]
 Ahmed Beniaiche\\
 Laboratory of Fluid Mechanics, Ecole Militaire Polytechnique, Algiers, Algeria
