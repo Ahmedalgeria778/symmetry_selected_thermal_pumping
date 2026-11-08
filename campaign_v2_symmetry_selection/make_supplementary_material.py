@@ -19,14 +19,14 @@ import shutil
 import sys
 from pathlib import Path
 
-WORK = Path(r"C:\Users\user\Documents\Documents - Copie\mixed_conv_verification")
+WORK = Path(__file__).resolve().parents[1]
 SUP = WORK / "supplementary_material"
 OUT = WORK / "campaign_v2_symmetry_selection"
 SUITE = WORK / "dns_physical_validation_suite"
 SURVEY = WORK / "validation_outputs_ULTIMATE_DENSE_CPU"
 
 GROUPS = [
-    ("A_pe_c_dense_survey", "S1",
+    ("A_pe_c_dense_survey", "A",
      "Dense finite-domain Pe_c survey: 173 wavenumbers on 0.02<=k<=10 for five "
      "Pe values (865 second-order evaluations) at Re=10, Gr=100, Pr=0.7. This is "
      "the data behind the endpoint classification quoted in the main text; the "
@@ -38,7 +38,7 @@ GROUPS = [
          "ultimate_local_boundary_check.csv", "ULTIMATE_CPU_VALIDATION.json",
          "table_ultimate_global_summary.tex", "table_ultimate_roots.tex",
          "table_ultimate_sign_check.tex")]),
-    ("B_perturbative_campaigns", "S2",
+    ("B_perturbative_campaigns", "B",
      "Reversal cartography and phase-selection data: the D.1 Reynolds scan "
      "(primary window Re<=40 and the low-k extension to Re=120), the Brent-refined "
      "crossings, the power-law fits, the D.2 Grashof-independence test and the "
@@ -52,7 +52,7 @@ GROUPS = [
          "P2_Gr_linearity_two_coeffs.csv", "P2_Re_scan_two_coeffs.csv",
          "P2_two_coeff_law_validation.csv", "P2_Re_c_two_branches.json",
          "C2_phase_lag.csv", "C2_phase_unwrapped.csv")]),
-    ("C_dns_validation", "S3",
+    ("C_dns_validation", "C",
      "Nonlinear DNS results reported in the main text (amplitude, "
      "spatial and time-step convergence, Grashof scaling, fixed-Pe Reynolds "
      "sweep, reflection and symmetric-forcing tests, master summary) and the "
@@ -71,12 +71,12 @@ GROUPS = [
          "DNS_D345_measured.csv", "DNS_D345_analysis.json",
          "DNS_D2_grpair_results.csv", "DNS_D2_grpair_measured.csv",
          "DNS_D2_grpair_analysis.json", "FIG_v2_11_dns_grpair.json")]),
-    ("D_scripts", "S4",
+    ("D_scripts", "D",
      "Code that produced every file above. The solver is the CPU-authoritative "
-     "SciPy solve_bvp chain; run_campaigns.py generates group S2, "
+     "SciPy solve_bvp chain; run_campaigns.py generates group B, "
      "run_D1_lowk_extension.py the low-k extension and the locus figures, "
-     "ultimate_dense_cpu_validation_publication_CORRECTED.py group S1, "
-     "dns_physical_validation_suite.py group S3, and run_dns_D3_D4_D5.py the "
+     "ultimate_dense_cpu_validation_publication_CORRECTED.py group A, "
+     "dns_physical_validation_suite.py group C, and run_dns_D3_D4_D5.py the "
      "DNS matrix (dry run by default, --go to integrate) with "
      "analyze_dns_D345.py turning its checkpoint into the measured table, the "
      "deviation analysis and the multi-wavenumber figure. "
@@ -140,13 +140,20 @@ def main():
     mdf.to_csv(SUP / "MANIFEST.csv", index=False)
     copied = set(mdf.file)
 
-    readme = ["# Supplementary material - Symmetry-selected nonlinear thermal "
-              "pumping (main_v2.tex)", "",
+    readme = ["# Supplementary data and scripts - Symmetry-selected nonlinear "
+              "thermal pumping", "",
+              "This package is the data half of the supplementary material; the "
+              "derivations, the parameter maps and the supporting figures are in "
+              "the separately numbered supplementary document "
+              "(`supplementary_document.pdf`, built from "
+              "`supplementary_text.tex`).", "",
               "Assembled by `campaign_v2_symmetry_selection/"
               "make_supplementary_material.py`; every file is copied unchanged "
               "from the project tree and listed with its byte count, line count "
               "and SHA-256 digest in `MANIFEST.csv`. No file here contains data "
-              "that is not used or not quoted by the manuscript.", ""]
+              "that is not used or not quoted by the manuscript. The four groups "
+              "are labelled A to D, which is how the main text refers to them; "
+              "the S-numbering belongs to the supplementary document.", ""]
     for group, tag, desc, files in GROUPS:
         readme += ["## %s - %s" % (tag, group.replace("_", " ")), "", desc, ""]
         for src in files:

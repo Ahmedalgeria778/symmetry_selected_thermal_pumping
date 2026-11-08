@@ -1,10 +1,10 @@
 # Symmetry-Selected Nonlinear Thermal Pumping in a Periodically Heated Mixed-Convection Channel
 
 Repository for study 3 of the three-part series on streamwise-periodically heated
-mixed convection. It contains the complete reproducibility package of the manuscript:
-LaTeX source, the compiled PDF, every data file produced by the verification
-campaigns, the scripts that produced them, the figures, and the quality gates that
-check the numbers quoted in the text.
+mixed convection. It contains the complete reproducibility package of the paper:
+LaTeX source of both documents, the compiled PDFs, every data file produced by the
+verification campaigns, the scripts that produced them, the figures, and the
+quality gates that check the numbers quoted in the text.
 
 Manuscript status: submitted to *Numerical Heat Transfer, Part B: Fundamentals*
 (Taylor & Francis). The source and PDF are deposited here with the author's consent
@@ -12,17 +12,28 @@ to make every quoted figure reconstructible from the raw data.
 
 ## Contents
 
+The paper is published as two documents: a main manuscript and an independently
+numbered supplementary document whose floats, sections and equations carry the
+prefix **S** (Fig. S1, Table S1, Sec. S1, Eq. (S1)). The theorems and every
+headline measurement stay in the main text; the derivations, the kernel
+construction, the parameter maps and the supporting floats are in the supplement,
+and each of them is cited and discussed from the main text through the `xr`
+package, so the two files cannot silently disagree about a number.
+
 | Path | What it holds |
 |---|---|
-| `main_v2.tex` | the manuscript (56 pages when compiled) |
-| `manuscript/main_v2.pdf` | the compiled manuscript, build of this repository |
-| `references.bib` | bibliography |
-| `cover_letter_NHTB_v2.tex` | cover letter addressed to the editor |
-| `supplementary_material/` | the 64-file supplementary package, groups S1-S4, with `MANIFEST.csv` (size, line count and SHA-256 of every entry) and its own `README.md` |
+| `main_v2.tex` | the main manuscript (42 pages when compiled) |
+| `supplementary_text.tex` | the supplementary document, S-numbered (18 pages when compiled) |
+| `manuscript/main_v2.pdf` | the compiled main manuscript, build of this repository |
+| `manuscript/supplementary_text.pdf` | the compiled supplementary document |
+| `references.bib` | bibliography; the main manuscript carries the only reference list |
+| `cover_letter_NHTB_v2.tex` | cover letter addressed to the editor (2 pages) |
+| `supplementary_material/` | the 64-file supplementary data package, groups A-D, with `MANIFEST.csv` (size, line count and SHA-256 of every entry) and its own `README.md` |
 | `campaign_v2_symmetry_selection/` | the campaigns: raw CSV/JSON results, fitted parameters, publication figures, drivers, analysis scripts and quality gates |
 | `dns_physical_validation_suite/` | the fully nonlinear DNS records: per-case measurements, the four convergence and scaling scans, the wall-flux parity test and the run report the consistency script re-derives |
 | `validation_outputs_ULTIMATE_DENSE_CPU/` | the dense finite-domain critical-Peclet survey behind the endpoint classification |
-| `*.png` at the root | the first-order, DNS-convergence and mechanism figures included by the manuscript |
+| `*.png` at the root | the first-order, DNS-convergence and mechanism figures included by the two documents |
+| `validate_thermal_pumping_PC_GPU_FINAL_V4_FIXED.py`, `dns_physical_validation_suite.py`, `ultimate_dense_cpu_validation_publication_CORRECTED.py` at the root | the three solvers: the second-order boundary-value machinery, the fully nonlinear DNS suite, and the dense critical-Peclet survey |
 
 ## The campaigns in `campaign_v2_symmetry_selection/`
 
@@ -51,22 +62,34 @@ The DNS matrix is not re-run by these commands on its own: `run_dns_D3_D4_D5.py`
 performs a dry run unless an explicit go-ahead flag is supplied, and otherwise
 resumes from its own checkpoint.
 
-To rebuild the manuscript:
+To rebuild the two documents:
 
 ```bash
+mkdir -p build_v2 build_cover
 pdflatex -interaction=nonstopmode -output-directory=build_v2 main_v2.tex
 bibtex   build_v2/main_v2
 pdflatex -interaction=nonstopmode -output-directory=build_v2 main_v2.tex
+pdflatex -interaction=nonstopmode -output-directory=build_v2 supplementary_text.tex
+pdflatex -interaction=nonstopmode -output-directory=build_v2 supplementary_text.tex
 pdflatex -interaction=nonstopmode -output-directory=build_v2 main_v2.tex
+pdflatex -interaction=nonstopmode -output-directory=build_v2 supplementary_text.tex
+pdflatex -interaction=nonstopmode -output-directory=build_cover cover_letter_NHTB_v2.tex
 ```
 
-Compile from the repository root: the manuscript addresses its figures with
-root-relative paths. The build directories are named as above because the gates read
-`build_v2/main_v2.log` and `build_v2/main_v2.aux`.
+The passes alternate because the two documents reference each other with the `xr`
+package: the supplement needs the auxiliary file of the main text, and the main text
+needs the auxiliary file of the supplement for the S-numbered cross-references.
+Building the supplement only at the end leaves 32 cross-references undefined in the
+main text, which `check_build.py` reports.
+
+Compile from the repository root: both sources address their figures with
+root-relative paths, and the `xr` blocks point at `build_v2/main_v2.aux` and
+`build_v2/supplementary_text.aux`. The build directories are named as above
+because the gates read their logs and auxiliary files from there.
 
 ## Quality gates
 
-All five scripts exit non-zero on any defect, so the manuscript cannot drift away
+All five scripts exit non-zero on any defect, so neither document can drift away
 from the data it quotes. Each resolves the repository root from its own location.
 
 ```bash
@@ -77,16 +100,20 @@ py -X utf8 campaign_v2_symmetry_selection/check_duplicate_text.py       # 12-wor
 py -X utf8 campaign_v2_symmetry_selection/check_cover_letter.py         # cover-letter length and required statements
 ```
 
-`check_build.py` additionally refuses any working filename in the prose, requires a
-keyword line, and requires every figure and table to be cited in the text. It needs the
-build above to exist; `verify_manuscript_numbers.py` and `check_notation.py` run on the
-data and the source alone.
+`check_build.py` parses the logs and `.aux` files of **both** documents, treats them
+as one corpus for dangling references and uncited floats, refuses any working
+filename in the prose, requires a keyword line, requires every figure and table to be
+cited in the text, requires each of the 21 supplementary floats to be cited from the
+main text, and enforces a 45-page ceiling on the main manuscript. It needs the build
+above to exist; `verify_manuscript_numbers.py` and `check_notation.py` run on the
+data and the sources alone, the latter auditing both documents for the same notation
+conventions.
 
 Two gates are author-side by nature and cannot pass from this repository alone:
-`check_duplicate_text.py` compares the manuscript against the sources of the two
-companion studies, which are not deposited here, and `check_cover_letter.py` inspects
-the compiled cover letter, which must be built locally from `cover_letter_NHTB_v2.tex`
-into a `build_cover/` directory.
+`check_duplicate_text.py` compares the manuscript **and** its supplementary document
+against the sources of the two companion studies, which are not deposited here, and
+`check_cover_letter.py` inspects the compiled cover letter, which must be built
+locally from `cover_letter_NHTB_v2.tex` into a `build_cover/` directory.
 
 ## Relationship to the other two studies
 
@@ -96,8 +123,8 @@ and establishes the vanishing of the mean second-order Nusselt component. Neithe
 citable yet, so both are described in the text rather than referenced, and the
 present study is separated from them by the asymmetric configuration and by the
 exact parity selection rule. The overlap is measured, not asserted: `check_duplicate_text.py`
-compares the manuscript against the companion sources and against the earlier drafts
-of this paper.
+scans the manuscript together with its supplementary document against the companion
+sources and against the earlier drafts of this paper.
 
 ## Headline results
 

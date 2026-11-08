@@ -1,8 +1,10 @@
-# Supplementary material - Symmetry-selected nonlinear thermal pumping (main_v2.tex)
+# Supplementary data and scripts - Symmetry-selected nonlinear thermal pumping
 
-Assembled by `campaign_v2_symmetry_selection/make_supplementary_material.py`; every file is copied unchanged from the project tree and listed with its byte count, line count and SHA-256 digest in `MANIFEST.csv`. No file here contains data that is not used or not quoted by the manuscript.
+This package is the data half of the supplementary material; the derivations, the parameter maps and the supporting figures are in the separately numbered supplementary document (`supplementary_document.pdf`, built from `supplementary_text.tex`).
 
-## S1 - A pe c dense survey
+Assembled by `campaign_v2_symmetry_selection/make_supplementary_material.py`; every file is copied unchanged from the project tree and listed with its byte count, line count and SHA-256 digest in `MANIFEST.csv`. No file here contains data that is not used or not quoted by the manuscript. The four groups are labelled A to D, which is how the main text refers to them; the S-numbering belongs to the supplementary document.
+
+## A - A pe c dense survey
 
 Dense finite-domain Pe_c survey: 173 wavenumbers on 0.02<=k<=10 for five Pe values (865 second-order evaluations) at Re=10, Gr=100, Pr=0.7. This is the data behind the endpoint classification quoted in the main text; the main text retains only the two bracketing calculations Pe=10.85 and Pe=10.9.
 
@@ -16,7 +18,7 @@ Dense finite-domain Pe_c survey: 173 wavenumbers on 0.02<=k<=10 for five Pe valu
 * `table_ultimate_roots.tex`
 * `table_ultimate_sign_check.tex`
 
-## S2 - B perturbative campaigns
+## B - B perturbative campaigns
 
 Reversal cartography and phase-selection data: the D.1 Reynolds scan (primary window Re<=40 and the low-k extension to Re=120), the Brent-refined crossings, the power-law fits, the D.2 Grashof-independence test and the D.5/C.2 phase-law outputs.
 
@@ -39,7 +41,7 @@ Reversal cartography and phase-selection data: the D.1 Reynolds scan (primary wi
 * `C2_phase_lag.csv`
 * `C2_phase_unwrapped.csv`
 
-## S3 - C dns validation
+## C - C dns validation
 
 Nonlinear DNS results reported in the main text (amplitude, spatial and time-step convergence, Grashof scaling, fixed-Pe Reynolds sweep, reflection and symmetric-forcing tests, master summary) and the completed D.3/D.4/D.5 campaign: pre-run predictions, raw per-case measurements with residuals and wall times, the derived deviation table and the analysis summary behind the DNS confirmation section, plus the Grashof-pair matrix and the reduced data of its figure, which test Corollary 1 nonlinearly.
 
@@ -59,9 +61,9 @@ Nonlinear DNS results reported in the main text (amplitude, spatial and time-ste
 * `DNS_D2_grpair_analysis.json`
 * `FIG_v2_11_dns_grpair.json`
 
-## S4 - D scripts
+## D - D scripts
 
-Code that produced every file above. The solver is the CPU-authoritative SciPy solve_bvp chain; run_campaigns.py generates group S2, run_D1_lowk_extension.py the low-k extension and the locus figures, ultimate_dense_cpu_validation_publication_CORRECTED.py group S1, dns_physical_validation_suite.py group S3, and run_dns_D3_D4_D5.py the DNS matrix (dry run by default, --go to integrate) with analyze_dns_D345.py turning its checkpoint into the measured table, the deviation analysis and the multi-wavenumber figure. run_dns_D2_grpair.py runs the four-case Grashof-pair matrix and analyze_dns_D2_grpair.py reduces it to the measured Grashof ratios. verify_manuscript_numbers.py re-derives every number quoted in the manuscript, and check_build.py plus check_cover_letter.py gate the two compiled documents.
+Code that produced every file above. The solver is the CPU-authoritative SciPy solve_bvp chain; run_campaigns.py generates group B, run_D1_lowk_extension.py the low-k extension and the locus figures, ultimate_dense_cpu_validation_publication_CORRECTED.py group A, dns_physical_validation_suite.py group C, and run_dns_D3_D4_D5.py the DNS matrix (dry run by default, --go to integrate) with analyze_dns_D345.py turning its checkpoint into the measured table, the deviation analysis and the multi-wavenumber figure. run_dns_D2_grpair.py runs the four-case Grashof-pair matrix and analyze_dns_D2_grpair.py reduces it to the measured Grashof ratios. verify_manuscript_numbers.py re-derives every number quoted in the manuscript, and check_build.py plus check_cover_letter.py gate the two compiled documents.
 
 * `validate_thermal_pumping_PC_GPU_FINAL_V4_FIXED.py`
 * `dns_physical_validation_suite.py`

@@ -79,9 +79,11 @@ def longest_runs(mw, other_shingles, k=4):
 
 def main():
     main_tex = os.path.join(ROOT, "main_v2.tex")
+    supp_tex = os.path.join(ROOT, "supplementary_text.tex")
     companions = sorted(
         p for p in glob.glob(os.path.join(ROOT, "*.tex"))
-        if os.path.basename(p) not in ("main_v2.tex", "main.tex",
+        if os.path.basename(p) not in ("main_v2.tex", "supplementary_text.tex",
+                                       "main.tex",
                                        "table2_corrected.tex",
                                        "table_PiT_k10_vs_Pe.tex"))
     # companion papers of the series that exist only as PDFs. Study 1 is checked
@@ -107,12 +109,16 @@ def main():
         tt, aa = title_and_abstract(c)
         print("\n%s\n  title: %s\n  abstract: %s" % (os.path.basename(c), tt, aa))
 
-    mw = words(strip_latex(io.open(main_tex, encoding="utf-8", errors="replace")
-                           .read()))
-    ms = set(" ".join(s.split()) for s in sentences(strip_latex(
-        io.open(main_tex, encoding="utf-8", errors="replace").read())))
+    # The publication is the two-document set: the scan covers the manuscript
+    # and its supplementary document together, so a shared phrase cannot hide
+    # in the part that is not scanned.
+    corpus = (io.open(main_tex, encoding="utf-8", errors="replace").read() + "\n"
+              + io.open(supp_tex, encoding="utf-8", errors="replace").read())
+    mw = words(strip_latex(corpus))
+    ms = set(" ".join(s.split()) for s in sentences(strip_latex(corpus)))
     m_sh = set(tuple(mw[i:i + SHINGLE]) for i in range(len(mw) - SHINGLE))
-    print("\nmanuscript under submission: %d words, %d sentences, %d %d-word shingles"
+    print("\nmanuscript plus supplementary document: %d words, %d sentences, "
+          "%d %d-word shingles"
           % (len(mw), len(ms), len(m_sh), SHINGLE))
 
     worst = []
