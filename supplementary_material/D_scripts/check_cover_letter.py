@@ -32,6 +32,9 @@ NEEDLES = [
     "Taylor & Francis",
     "submitted to this journal on 1 November 2026",
     "shooting",
+    # the public author deposit and the preprint-policy question it raises
+    "symmetry_selected_thermal_pumping",
+    "preprint policy",
 ]
 log = io.open(WORK / "build_cover" / "cover_letter_NHTB_v2.log",
               encoding="utf-8", errors="replace").read()
