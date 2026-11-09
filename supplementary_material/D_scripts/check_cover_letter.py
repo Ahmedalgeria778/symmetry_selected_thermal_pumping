@@ -23,19 +23,20 @@ NEEDLES = [
     "Mixed-Convection Channel",
     # the three physical statements the letter commits to
     "reverses with the Reynolds number",
-    "proportional to",
+    "adds a quadrature coefficient",
     "fully nonlinear stationary DNS",
     # the campaign result, stated without the promotional frame
     "twelve non-degenerate cases",
     "exceeds the error bound",
     # the companion disclosure and the two-document split
     "submitted to this journal on 1 November 2026",
-    "no result, figure or derivation is shared",
+    "no result, figure or derivation of that study is reproduced",
     "separately numbered supplementary document",
     "S-numbering",
-    # the public author deposit and the preprint-policy question it raises
+    # the public author deposit, offered without asking the editor to rule on it
     "symmetry_selected_thermal_pumping",
-    "preprint policy",
+    "figure-generation scripts",
+    "available for the editor",
     # the routine declarations
     "not under consideration elsewhere",
     "no conflict of interest",

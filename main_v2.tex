@@ -60,27 +60,29 @@
 \maketitle
 
 \begin{abstract}
-Nonlinear redistribution of wall heat flux in a two-dimensional laminar
-mixed-convection channel with spatially periodic wall heating of unequal
-amplitude is governed by an exact symmetry selection rule, while its magnitude
-and its direction are set by the coupled thermal and hydrodynamic dynamics.
-Decomposing the first-order thermal response into symmetric and antisymmetric
-components, we prove that their mixed quadratic interaction is odd across the
-channel, so that the second-order mean wall-flux corrections are equal and
-opposite; symmetry-preserving self-interactions produce no directional
-redistribution at the same order. The parity law defines a thermal-pumping
-coefficient obeying an exact Green-function identity, from which follow its
-linearity in the Grashof number, its quadratic suppression at long wavelength,
-and the independence of its zero from the buoyancy amplitude. Phase-shifted
-forcing adds a second, independent quadrature coefficient that can reverse the
-pumping on its own. A fully nonlinear direct numerical simulation converges to
-within 1.52\% of the perturbative coefficient, returns the predicted reversal
-sign on both sides of the crossing at four wavenumbers, cancels the parity
-partner in the wall-flux difference to eleven digits relative to the flux
-itself, and tests the Grashof scaling at finite amplitude. In five of the
-twelve non-degenerate cases of the same thirteen-case campaign the deviation
-exceeds the bound specified before the campaign, by an amount independent of
-the forcing amplitude and growing with the wavenumber. Symmetry selects the structure of the nonlinear
+Nonlinear redistribution of the wall heat flux in a laminar mixed-convection
+channel with spatially periodic wall heating of unequal amplitude obeys an exact
+symmetry-selection rule. Decomposing the first-order thermal response into
+symmetric and antisymmetric components, we prove their mixed quadratic
+interaction is odd across the channel, so second-order mean wall-flux
+corrections are equal and opposite; symmetric self-interactions produce no
+directional redistribution at that order. The parity law defines a
+thermal-pumping coefficient obeying an exact Green-function identity, from which
+follow its linearity in the Grashof number, its quadratic suppression at long
+wavelength, and a zero independent of the buoyancy amplitude. At fixed P\'eclet
+number the Reynolds number controls the pumping direction: the reversal locus,
+mapped at seven wavenumbers, shifts from $\Rey=79.1$ at $k=0.4$ to $\Rey=8.5$ at
+$k=2.0$, and a term-wise decomposition shows a magnitude race between
+streamwise-advection and wall-normal terms, not a phase flip.
+Phase-shifted forcing adds an independent quadrature coefficient that can
+reverse the pumping alone; at equal amplitudes the response is
+exactly proportional to $\sin\phi$. A fully nonlinear direct numerical
+simulation, independent of the perturbative solver, matches that coefficient to
+$1.52\%$, returns the predicted reversal sign at four wavenumbers,
+shows parity cancellation at $2.7\times10^{-11}$ relative and Grashof scaling at
+finite amplitude. In five of twelve non-degenerate cases the deviation exceeds
+the bound specified before the campaign, independent of amplitude and growing
+with wavenumber. Symmetry selects the structure of the nonlinear
 redistribution; buoyancy-mediated dynamics select its amplitude, its sign, and
 the control parameter that governs it.
 \end{abstract}
@@ -1033,7 +1035,7 @@ The perturbative scalings come first, because within the model they are exact
 and they fix what the nonlinear runs have to reproduce. The reversal map follows,
 because it is the prediction the simulation is asked to bracket. The campaign
 that tests the whole chain at finite amplitude closes the section, including the
-two places where its deviation exceeds the bound specified before the campaign.
+five cases where its deviation exceeds the bound specified before the campaign.
 
 \subsection{Grashof-number scaling}
 
@@ -1517,7 +1519,7 @@ $\Rey_c$. The four DNS points are not themselves an independent determination of
 $\Rey_c$; they establish that the reduction by $\Grr$ removes the buoyancy amplitude
 from the nonlinear response, which is the statement Corollary~\ref{cor:Gr_independence}
 makes. The four runs
-cost $491$\,s in total, with residuals below $1.0\times10^{-8}$.
+took $491$\,s in total, with residuals below $1.0\times10^{-8}$.
 
 \begin{table}[htb]
   \centering
@@ -1584,7 +1586,8 @@ The perturbative campaign is complete and every claim in
 Sections~\ref{sec:phase}--\ref{sec:reversal} is backed by the second-order
 solver. The thirteen DNS runs designed to test the same claims nonlinearly were
 executed with the mesh, time step and integration length already validated in
-Table~\ref{tab:dns_validation_summary} ($N_x=64$, $N_y=49$,
+Table~\ref{tab:dns_validation_summary} and in
+Sec.~\ref{subsec:dns_sequences} of the supplementary material ($N_x=64$, $N_y=49$,
 $\Delta t=1.5\times10^{-3}$, $3\times10^{4}$ steps): $90$--$144$\,s per case,
 $24.8$\,min in total, with final residuals below $2.2\times10^{-8}$. Each entry
 of Table~\ref{tab:dns_predictions} is therefore a measured flux difference
@@ -1609,9 +1612,9 @@ $\PiT(k,\Rey)$, $\PiT^{\perp}(k,\Rey)$ from the same solver.
   $|\PiT^{\mathrm{DNS}}-\PiT^{\mathrm{pred}}|
   =|\Delta(q_+-q_-)|/(2|\widehat\varepsilon_a\widehat\varepsilon_s^{\,*}|)$.
   The conversion factor is $2|\widehat\varepsilon_a
-  \widehat\varepsilon_s^{\,*}|=3.0\times10^{-4}$ for the D3, D3b and D4 families,
+  \widehat\varepsilon_s^{\,*}|=3.0\times10^{-4}$ for the D3 and D4 families,
   $1.2\times10^{-3}$ for the ladder run D3L and $9.0\times10^{-4}$ for the D5
-  quadrature runs; the ladder flux gap of $3.25\times10^{-7}$ is therefore the
+  quadrature runs; the ladder deviation of $3.25\times10^{-7}$ is therefore the
   coefficient-space deviation $2.71\times10^{-4}$ quoted for it. The parity run
   has $\widehat\varepsilon_a=0$ and no coefficient-space statement is possible.
   The bound column is the deviation model
@@ -1664,17 +1667,18 @@ $\phi$.
   zero and a fixed absolute error maps onto a large relative one. At $\Rey=50$
   the measured coefficient is $+1.472\times10^{-3}$ against
   $+1.330\times10^{-3}$ predicted: the sign is unambiguous and the absolute
-  deviation, $1.42\times10^{-4}$, is half the pre-specified floor. The
+  deviation, $1.42\times10^{-4}$, is about half the pre-specified floor. The
   large relative error near the crossing is thus a crossing artefact.
 \item \emph{Error-model discriminator.} The ladder run D3L was designed to
-  separate the two readings of $\delta_\Pi$. Raising $\varepsilon_a$ fourfold, to $0.02$, moves the flux gap from the
-  $1.29\times10^{-7}$ measured at the reference amplitude on the other side of
-  the same crossing ($k=0.8$, $\Rey=20$) to $3.25\times10^{-7}$: a factor of
+  separate the two readings of $\delta_\Pi$. Raising $\varepsilon_a$ fourfold, to $0.02$, moves the deviation from the
+  $1.29\times10^{-7}$ measured at the reference amplitude at the same wavenumber
+  ($k=0.8$, $\Rey=20$) to $3.25\times10^{-7}$: a factor of
   $2.5$, not of $4$. The coefficient-space deviation is nevertheless left at
   $2.709\times10^{-4}$, one time the absolute floor, and the measured sign is
   positive where the prediction is negative. The deviation is
-  therefore \emph{not} absolute in $q_+-q_-$ and does not improve with the
-  forcing amplitude: the coefficient-space reading is the correct one, and a
+  therefore \emph{not} an absolute constant in $q_+-q_-$: it grows with the
+  forcing amplitude in flux space while remaining pinned at the coefficient-space
+  floor, so the coefficient-space reading is the correct one, and a
   single-amplitude DNS test of this family cannot resolve the reversal once
   $|\PiT|\lesssim\delta_\Pi$.
 \item \emph{Quadrature coefficient.} The equal-amplitude, phase-shifted runs

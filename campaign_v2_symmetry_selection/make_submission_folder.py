@@ -205,6 +205,13 @@ from this directory still needs the figure directories, which are not part of it
 they come from the working tree or from the public repository below, whose paths
 are the root-relative ones the compile lines above assume.
 
+Bootstrapping the pair from this folder needs the supplement first, because each
+document reads the auxiliary file of the other. In this directory the order is
+`supplementary_document.tex`, then `manuscript.tex`, then
+`supplementary_document.tex` again; starting from `manuscript.tex` with no
+supplement auxiliary present leaves every S-numbered reference printed as `??`
+until the supplement has been built once.
+
 The build gate reads both logs and both `.aux` files, checks the two sources as
 one corpus for dangling references and uncited floats, verifies that every
 graphics input exists with the exact case and that every `xr` target names a

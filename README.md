@@ -57,7 +57,7 @@ package, so the two files cannot silently disagree about a number.
 | `run_*.py`, `analyze_*.py`, `make_fig_*.py` | drivers, post-processing and figure generation |
 | `restructure_sections.py`, `reorg_*.py`, `move_*.py`, `add_end_matter.py` | the section recomposition itself: each moves whole LaTeX blocks by delimiter, never by line number, so a section cannot be split mid-paragraph |
 | `make_supplementary_material.py`, `make_submission_folder.py` | assemble the 64-file data package and the upload folder, with the README generated from the build logs; the folder rewrites only the two `xr` targets, to the names it ships |
-| `apply_review_round2.py`, `apply_review_round2_style.py` | the referee rounds: asserted replacements of whole sentences, matched exactly or whitespace-insensitively when a paragraph was reflowed, aborting on an ambiguous match |
+| `apply_review_round2.py`, `apply_review_round2_style.py`, `apply_review_round3.py` | the referee rounds: asserted replacements of whole sentences, matched exactly or whitespace-insensitively when a paragraph was reflowed, aborting on an ambiguous match; the third round also installs the abstract as a block, and reruns alone with `--abstract` |
 | `check_*.py`, `verify_manuscript_numbers.py` | the six quality gates described below |
 
 ## Reproducing
