@@ -9,6 +9,7 @@ are linked with the xr package. Fails on any defect.
     py -X utf8 campaign_v2_symmetry_selection/check_build.py
 """
 import io
+import os
 import re
 import sys
 from pathlib import Path
@@ -97,6 +98,48 @@ def hygiene(path, corpus_labels, corpus_src, own_src):
     return problems
 
 
+def _file_index():
+    """Every file under the working directory, keyed by its lower-cased
+    root-relative path. Windows resolves paths case-insensitively, so a
+    graphics input with the wrong case compiles here and breaks on Linux;
+    the exact-case names come from this walk."""
+    index = {}
+    for dirpath, dirnames, filenames in os.walk(WORK):
+        dirnames[:] = [d for d in dirnames
+                       if d not in (".git", "build_v2", "build_v3",
+                                    "build_cover", "__pycache__")]
+        for f in filenames:
+            rel = (Path(dirpath) / f).relative_to(WORK).as_posix()
+            index.setdefault(rel.lower(), rel)
+    return index
+
+
+def inputs(src, path, index):
+    """Every graphics and xr input named by a source must exist, with the
+    exact case, and an xr target must name the file it refers to."""
+    problems = []
+    for arg in re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]*)\}", src):
+        want = arg.replace("\\", "/").strip()
+        tried = [want] + [want + ext for ext in (".png", ".pdf", ".jpg")]
+        hit = next((t for t in tried if t.lower() in index), None)
+        if hit is None:
+            problems.append("%s graphics input not found: %s" % (path.name, want))
+        elif index[hit.lower()] != hit:
+            problems.append("%s graphics input case mismatch: %s (file is %s)"
+                            % (path.name, hit, index[hit.lower()]))
+    for base in re.findall(r"\\externaldocument\{([^}]*)\}", src):
+        target = base.replace("\\", "/").strip()
+        aux = WORK / (target + ".aux")
+        if not aux.exists():
+            problems.append("%s xr target has no auxiliary file: %s"
+                            % (path.name, target + ".aux"))
+        tex = WORK / (re.sub(r"^build_v2/", "", target) + ".tex")
+        if not tex.exists():
+            problems.append("%s xr target does not name an existing source: %s"
+                            % (path.name, tex.name))
+    return problems
+
+
 def report(name):
     log = read(BUILD / (name + ".log"))
     flat = log.replace("\n", " ")
@@ -153,9 +196,16 @@ def main():
         print("   never cited from the main manuscript: %s" % orphan)
 
     scoria = []
+    index = _file_index()
+    ngraphics = len(re.findall(r"\\includegraphics", corpus_src))
+    nxr = len(re.findall(r"\\externaldocument", corpus_src))
     for path in SOURCES:
         scoria += hygiene(path, corpus_labels, corpus_src, read(path))
+    for path in SOURCES[:2]:
+        scoria += inputs(read(path), path, index)
     print("source scoria     : %d" % len(scoria))
+    print("graphics inputs   : %d checked against the tree, %d xr targets"
+          % (ngraphics, nxr))
     for s in scoria[:10]:
         print("   ", s[:120])
 
@@ -171,8 +221,9 @@ def main():
         return 1
     print("\nPASS: both documents build clean, main %s pages (limit %d), "
           "supplementary %s pages, all required labels resolved, every "
-          "supplementary float cited from the main text, sources ascii-clean"
-          % (main_pages[0], MAIN_PAGE_LIMIT, counts[1][4][0]))
+          "supplementary float cited from the main text, all %d graphics inputs "
+          "and %d xr targets resolve with the exact case, sources ascii-clean"
+          % (main_pages[0], MAIN_PAGE_LIMIT, counts[1][4][0], ngraphics, nxr))
     return 0
 
 

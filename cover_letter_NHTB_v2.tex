@@ -4,14 +4,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{hyperref}
-\usepackage{enumitem}
 \newcommand{\Rey}{\mathit{Re}}
 \newcommand{\Pe}{\mathit{Pe}}
 \newcommand{\Grr}{\mathit{Gr}}
 \newcommand{\Prn}{\mathit{Pr}}
 \newcommand{\Nu}{\mathit{Nu}}
 \let\Pr\Prn
-\setlength{\parskip}{2pt}
+\setlength{\parskip}{4pt}
 \setlength{\parindent}{0pt}
 \linespread{0.98}
 \pagestyle{empty}
@@ -21,7 +20,7 @@
 \textbf{Ahmed Beniaiche}\\
 Laboratory of Fluid Mechanics, Ecole Militaire Polytechnique, Algiers, Algeria\\
 Email: beniaiche\_ahmed25@yahoo.fr\\[3pt]
-8 November 2026\\[5pt]
+9 November 2026\\[5pt]
 
 The Editor-in-Chief\\
 \emph{Numerical Heat Transfer, Part B: Fundamentals}\\
@@ -34,111 +33,39 @@ Periodically Heated Mixed-Convection Channel''}\\
 
 Dear Editor,
 
-We submit the enclosed manuscript for consideration in \emph{Numerical Heat Transfer,
-Part B: Fundamentals}. Its argument rests on three mutually independent pillars: an exact
-selection theorem, a nonlinear confirmation of that theorem by direct numerical
-simulation, and the deliberate falsification of its own pre-registered error model, reported
-as a result rather than smoothed over.
+We submit the enclosed manuscript for consideration in \emph{Numerical Heat Transfer, Part B:
+Fundamentals}. The paper shows that the sign of the second-order wall-flux redistribution in a
+streamwise-periodically heated mixed-convection channel is fixed by parity,
+$\Nu_{2,0}(+1)=-\Nu_{2,0}(-1)$ for every admissible $(\Rey,\Pr,\Grr,k)$, while its amplitude
+and its direction are set by the coupled dynamics: at fixed P\'eclet number the direction
+reverses with the Reynolds number. A Green identity reduces the rectified flux to one integral
+coefficient that scales linearly with $\Grr$, so the reversal point does not move with the
+buoyancy amplitude. Phase-shifted wall modulation gives the response two pumping coefficients
+of opposite sign whose sum is proportional to $\sin\phi$ at equal amplitudes. Every prediction
+is checked against fully nonlinear stationary DNS, performed independently of the
+boundary-value solvers that produced it. In five of the twelve non-degenerate cases of the
+campaign the deviation exceeds the error bound specified before the campaign, and the excess
+is reported and characterized.
 
 \medskip
-\textbf{Thesis.} The paper establishes an exact symmetry-selection theorem for nonlinear
-wall-flux redistribution in a periodically heated mixed-convection channel, and shows that
-the \emph{direction} of the pumping is set by the Reynolds number
-at fixed P\'eclet number. Separating the two is the physics: symmetry fixes the structure
-of the response, $\Nu_{2,0}(+1)=-\Nu_{2,0}(-1)$ exactly for every admissible
-$(\Rey,\Pr,\Grr,k)$ under the stated assumptions, while the coupled thermal--hydrodynamic
-dynamics fix its amplitude and sign. A second exact result follows: phase-shifted modulation
-gives the rectified response two pumping coefficients, in-phase and quadrature, of opposite
-sign and roughly twice the magnitude, so at equal amplitudes it is proportional to $\sin\phi$
-with no higher harmonic.
+The work continues a line of research on the same canonical configuration. Its companion, the
+exact integral framework for the \emph{symmetric} wall modulation, was submitted to this
+journal on 1 November 2026 and is under review here. That study drives the walls in phase,
+where the quantity that carries the present results vanishes identically, so no result, figure
+or derivation is shared between the two papers.
 
 \medskip
-\textbf{The headline number.} The rule was tested in its most destructive configuration,
-equal wall amplitudes in phase, where the theorem forces the pumping to vanish identically.
-Fully nonlinear DNS returns a wall-flux difference of $3.1\times10^{-18}$ against individual
-fluxes of $1.15\times10^{-7}$: a relative cancellation of $2.7\times10^{-11}$, eleven digits
-beyond the flux being cancelled.
+The submission consists of a main manuscript and a separately numbered supplementary document
+whose figures use S-numbering and are each cited from the main text. The sources, solvers,
+campaign scripts, raw tables and figure generators are deposited publicly at
+\url{https://github.com/Ahmedalgeria778/symmetry_selected_thermal_pumping}; please judge that
+deposit against the journal's preprint policy.
 
 \medskip
-\textbf{Nonlinear persistence of the $\Grr$-independence.} Corollary~1 states that the
-reversal point does not move with the buoyancy amplitude; verified perturbatively to
-$1.2\times10^{-10}$ in $\Rey_c$, it is now tested in the fully nonlinear regime by a
-four-run DNS Grashof pair. For runs differing in $\Grr$ by exactly a factor of four, the
-measured pumping fluxes ratio to $4.0003$ and $4.0015$, and the DNS--perturbative
-\emph{discrepancy} itself ratios to $3.996$ and $4.015$. Because the discrepancy scales with
-$\Grr$ like the pumping does, the second-order correction rescales the response without
-displacing its zero: the reduced coefficient $A=\Pi_T/\Grr$ at the two Grashof numbers falls
-on a single branch. The $0.1\%$ and $0.4\%$ residual departures from exact linearity are not
-read as a Richardson-number correction, which the two pairs order in reverse, and are reported
-as consistent with exact Grashof linearity at the tolerance the runs reach.
+The manuscript is original and is not under consideration elsewhere. I declare no conflict of
+interest, and the work received no external funding.
 
 \medskip
-\textbf{What the campaign falsified.} A pre-registered deviation model calibrated on an
-earlier sweep is exceeded by five of the twelve non-degenerate cases. The manuscript
-characterises the excess instead of widening the bound: it is independent of the forcing
-amplitude and grows with the wavenumber, which we report as an empirical observation rather
-than a scaling law. No mechanism is claimed, because the available checks do not separate
-truncation from resolution; a refined-streamwise-mesh replica of the worst case is named as the
-next test rather than as a conclusion.
-
-\medskip
-\textbf{Positioning, and a disclosure.} The manuscript continues a line of work on the same
-canonical configuration, and its companion study is the paper under review at this journal:
-the exact integral framework for the \emph{symmetric} wall modulation, submitted to this
-journal on 1 November 2026. The two papers share the geometry and the first-order amplitude
-machinery; they do not share the object of study. That study drives
-the walls in phase and quantifies the symmetric response; this paper drives them asymmetrically
-and proves that the second-order thermal response is then \emph{selected} by parity: the
-rectified wall-flux difference is exactly odd in the sign of the forcing, its amplitude is set
-by the coupled dynamics, and its direction by the Reynolds number at fixed P\'eclet number. The
-difference is one of physics, not of parameters, because the quantity that carries all of it
-vanishes identically in the symmetric case. The new content is the parity selection rule, the
-two-coefficient phase law with its $\sin\phi$ response at equal amplitudes, the reversal map
-$\Rey_c(k)$ at seven wavenumbers with DNS confirmation at four, and the parity cancellation
-carried to eleven digits. The companion work is described in the text rather than cited, since
-it carries no citable identifier, and its full text is available to you on request. The overlap
-with the study under review is measured: a word-level duplication scan of this manuscript
-together with its supplementary document returns three shared twelve-word shingles, all three
-inside the author-and-affiliation block, and no scientific sentence is carried over; the
-accounting is reported here rather than in the manuscript, where it would read as a
-defensive footnote.
-
-\medskip
-\textbf{Why this journal.} The contribution is methodological as much as physical, and no
-layer of the evidence validates itself. The parity identity and the Green identity verify
-the perturbative hierarchy --- adaptive collocation replicated by an independent fixed-mesh
-shooting solver, field agreement $9\times10^{-12}$ --- while the fully nonlinear stationary
-DNS, performed independently of those boundary-value solvers, tests the symmetry argument
-rather than the solver that produced it. Residuals are reported quantity by quantity, the
-error model is pre-registered before the campaign and then falsified by it, and candidate
-designs are rejected beforehand by a resolvability margin. That combination --- an exact
-identity, a two-strategy verification hierarchy and a documented failure of the author's own
-error estimate --- is fundamentals material for the readership of \emph{Numerical Heat
-Transfer Part B}.
-
-\medskip
-\textbf{One terminological caution.} ``Pumping'' here is not the travelling-wave propulsion of
-Hossain and Floryan, \emph{J.\ Fluid Mech.}\ \textbf{966}, A43 (2023): the observable is the
-difference of the two wall heat fluxes at strictly fixed bulk flow rate, a transverse
-redistribution with zero net transport.
-
-\medskip
-\textbf{What is not claimed, and reproducibility.} The results are two-dimensional, laminar
-and restricted to the domain where the second-order expansion is quantitatively controlled;
-no universality is claimed. The manuscript is original, is not under consideration elsewhere,
-and duplicates no text, figure or derivation from the companion study. I disclose that its
-source and PDF, with all solvers, campaign scripts, raw tables and figure generators, are
-publicly deposited at \mbox{\url{https://github.com/Ahmedalgeria778/symmetry_selected_thermal_pumping}};
-please judge that deposit against the journal's preprint policy. The submission is divided into
-a main manuscript and a separately numbered supplementary document: the theorems and every
-headline measurement stay in the main text, while the supplement, organised into six
-sections from the parameter maps and the DNS verification records to the seven
-derivations, the shooting check and the two mixed kernels, carries the supporting
-figures under S-numbering, each cited and discussed
-from the main text. The data arrive as
-a supplementary package of 64 files, inventoried with the SHA-256 digest of every entry, from which one
-consistency script regenerates every number quoted in the text.
-
 Thank you for considering the submission.
 
 \smallskip

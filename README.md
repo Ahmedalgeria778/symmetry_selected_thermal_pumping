@@ -20,7 +20,7 @@ pumping law, the exact pumping identities and their Reynolds-number dependence,
 the phase-shifted two-coefficient law, numerical methods and verification,
 results with the independent nonlinear DNS validation, physical interpretation
 and discussion, conclusions -- and keeps the parity theorem, the two-coefficient
-phase law, the reversal cartography and every headline measurement. The
+phase law, the reversal cartography and every key measurement. The
 supplement follows the order in which a reviewer checks such a claim:
 `S1` perturbative parameter maps and scaling checks, `S2` nonlinear DNS
 verification and convergence, `S3` phase decomposition and term-wise balance,
@@ -37,7 +37,7 @@ package, so the two files cannot silently disagree about a number.
 | `manuscript/main_v2.pdf` | the compiled main manuscript, build of this repository |
 | `manuscript/supplementary_text.pdf` | the compiled supplementary document |
 | `references.bib` | bibliography; the main manuscript carries the only reference list |
-| `cover_letter_NHTB_v2.tex` | cover letter addressed to the editor (2 pages) |
+| `cover_letter_NHTB_v2.tex` | cover letter addressed to the editor (1 page) |
 | `supplementary_material/` | the 64-file supplementary data package, groups A-D, with `MANIFEST.csv` (size, line count and SHA-256 of every entry) and its own `README.md` |
 | `campaign_v2_symmetry_selection/` | the campaigns: raw CSV/JSON results, fitted parameters, publication figures, drivers, analysis scripts and quality gates |
 | `dns_physical_validation_suite/` | the fully nonlinear DNS records: per-case measurements, the four convergence and scaling scans, the wall-flux parity test and the run report the consistency script re-derives |
@@ -56,7 +56,8 @@ package, so the two files cannot silently disagree about a number.
 | `ultimate_*` | dense finite-domain critical-Peclet survey (the data behind the endpoint classification) |
 | `run_*.py`, `analyze_*.py`, `make_fig_*.py` | drivers, post-processing and figure generation |
 | `restructure_sections.py`, `reorg_*.py`, `move_*.py`, `add_end_matter.py` | the section recomposition itself: each moves whole LaTeX blocks by delimiter, never by line number, so a section cannot be split mid-paragraph |
-| `make_supplementary_material.py`, `make_submission_folder.py` | assemble the 64-file data package and the upload folder, with the README generated from the build logs |
+| `make_supplementary_material.py`, `make_submission_folder.py` | assemble the 64-file data package and the upload folder, with the README generated from the build logs; the folder rewrites only the two `xr` targets, to the names it ships |
+| `apply_review_round2.py`, `apply_review_round2_style.py` | the referee rounds: asserted replacements of whole sentences, matched exactly or whitespace-insensitively when a paragraph was reflowed, aborting on an ambiguous match |
 | `check_*.py`, `verify_manuscript_numbers.py` | the six quality gates described below |
 
 ## Reproducing
@@ -108,7 +109,7 @@ from the data it quotes. Each resolves the repository root from its own location
 py -X utf8 campaign_v2_symmetry_selection/check_build.py                # build, labels, ASCII, prose hygiene
 py -X utf8 campaign_v2_symmetry_selection/verify_manuscript_numbers.py  # every quoted number re-derived
 py -X utf8 campaign_v2_symmetry_selection/check_notation.py             # notation and macro use
-py -X utf8 campaign_v2_symmetry_selection/check_duplicate_text.py       # 12-word shingle overlap with the companion sources
+py -X utf8 campaign_v2_symmetry_selection/check_duplicate_text.py       # duplication scan against the companion sources
 py -X utf8 campaign_v2_symmetry_selection/check_cover_letter.py         # cover-letter length and required statements
 py -X utf8 campaign_v2_symmetry_selection/check_end_matter.py           # abstract length, supplementary pointers, declarations
 ```
@@ -117,7 +118,9 @@ py -X utf8 campaign_v2_symmetry_selection/check_end_matter.py           # abstra
 as one corpus for dangling references and uncited floats, refuses any working
 filename in the prose, requires a keyword line, requires every figure and table to be
 cited in the text, requires each of the 21 supplementary floats to be cited from the
-main text, and enforces a 45-page ceiling on the main manuscript. It needs the build
+main text, checks each of the 24 graphics inputs against the file tree with its exact
+case and each `xr` target against the source and auxiliary file it names, and enforces
+a 45-page ceiling on the main manuscript. It needs the build
 above to exist; `verify_manuscript_numbers.py` and `check_notation.py` run on the
 data and the sources alone, the latter auditing both documents for the same notation
 conventions.
@@ -140,11 +143,12 @@ the vanishing of the mean second-order component in the symmetric limit is deriv
 this paper rather than quoted from unpublished work. The textual overlap is measured,
 not asserted: `check_duplicate_text.py` scans the manuscript together with its
 supplementary document against the companion sources and against the earlier drafts of
-this paper, reports the shared twelve-word shingles, and fails if the accounting quoted
-in the cover letter disagrees with the scan. The manuscript itself carries no such
-statement, and the gate requires it to stay silent.
+this paper, reports the shared twelve-word runs, and fails if prose is carried over
+from a companion or if the accounting reappears in the manuscript or in the cover
+letter: both documents state nothing about duplication, because the scan is a measure
+taken by the author, not a claim addressed to the editor.
 
-## Headline results
+## Main results
 
 - Exact parity theorem for the second-order mean thermal flux, verified in direct
   numerical simulation to a wall-flux difference of 3.1e-18 against individual fluxes
@@ -152,8 +156,8 @@ statement, and the gate requires it to stay silent.
 - Linearity of the pumping coefficient in the Grashof number, and Gr-independence of
   the reversal point, which survives nonlinearly: the simulated Grashof ratios are
   4.0003 and 4.0015 and the perturbative-discrepancy ratios are 3.996 and 4.015.
-- A pre-registered deviation model that the campaign falsified in 5 of 12 cases,
-  reported as a finding rather than hidden.
+- A deviation model specified before the campaign, exceeded in 5 of 12 cases,
+  reported and characterized.
 - Two independent solvers agreeing on the same boundary-value problem to 9e-12:
   adaptive collocation and a fixed-mesh shooting method.
 

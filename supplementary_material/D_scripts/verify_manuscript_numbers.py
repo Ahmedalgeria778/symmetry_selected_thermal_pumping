@@ -316,7 +316,7 @@ QUOTED_RATIO = {"D3_k0.8_Re20": 1.6, "D3_k1.0_Re15": 2.8,
 for cid, want in QUOTED_RATIO.items():
     check("delta_Pi multiple " + cid, m.loc[cid, "dev_over_model"], want, 0.06)
 bound = m[m.dev_over_model.notna()]
-check("cases within pre-registered bound",
+check("cases within pre-specified bound",
       int((bound.dev_over_model <= 1.0).sum()), 7, 0)
 check("cases exceeding bound", int((bound.dev_over_model > 1.0).sum()), 5, 0)
 

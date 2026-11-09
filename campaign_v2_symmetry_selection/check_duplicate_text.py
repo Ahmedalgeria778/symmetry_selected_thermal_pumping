@@ -164,41 +164,33 @@ def main():
     for name, ln, frag in sorted(worst, key=lambda r: -r[1])[:8]:
         print("  %-38s %3d words: %s" % (name, ln, frag[:150]))
 
-    # The review asked that the duplication accounting live in the cover
-    # letter, not in a manuscript footnote: the letter must quote what this
-    # scan measures, and the manuscript must quote nothing of the sort.
+    # The duplication accounting is quoted nowhere. The review asked for the
+    # shingle paragraph out of the cover letter and the earlier round had
+    # already asked for it out of the manuscript, so this scan only measures:
+    # it fails if that vocabulary reappears in either document, if a study-1
+    # version goes unscanned, or if a sentence is carried over from the
+    # companion that is not cited in the text.
     flat = re.sub(r"\s+", " ", io.open(main_tex, encoding="utf-8",
                                        errors="replace").read())
     letter = re.sub(r"\s+", " ", io.open(
         os.path.join(os.path.dirname(main_tex), "cover_letter_NHTB_v2.tex"),
         encoding="utf-8", errors="replace").read())
     fails = []
-    m = re.search(r"returns ([a-z0-9]+) shared twelve-word shingles", letter)
-    first = max([res[k] for k in study1 if k in res], default=None)
-    second = max([res[k] for k in study2 if k in res], default=None)
     if len([k for k in study1 if k in res]) < len(study1):
         fails.append("not every study-1 version was scanned: %s"
                      % [k for k in study1 if k not in res])
-    spelled = {"none": 0, "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4}
-    quoted_first = spelled.get(m.group(1).lower(), None) if m else None
-    if quoted_first is None and m is not None:
-        quoted_first = int(m.group(1))
-    if m is None:
-        fails.append("duplication sentence not found in the cover letter")
-    elif quoted_first != first or second != 0:
-        fails.append("cover letter quotes %s shingles, measured %s against study 1 "
-                     "and %s against the unmentioned second companion, which must "
-                     "stay at zero" % (m.group(1), first, second))
+    for label, doc in (("manuscript", flat), ("cover letter", letter)):
+        if re.search(r"twelve-word shingle|shingle|draft overlap|earlier "
+                     r"duplication", doc):
+            fails.append("the %s quotes duplication accounting, which is "
+                         "measure-only" % label)
+    carried = [k for k in study2 if k in res and res[k] > 0]
+    if carried:
+        fails.append("prose shared with the study-2 PDF: %s (%d shingles)"
+                     % (carried, [res[k] for k in carried][0]))
     else:
-        print("\ncover-letter companion-study shingles : %d  ok  "
-              "(study 1 scanned in %d version(s); the unsubmitted companion measures %d "
-              "and is not named in the text)"
-              % (first, len([k for k in study1 if k in res]), second))
-    for name, doc in (("manuscript", flat), ("cover letter", letter)):
-        if re.search(r"twelve-word shingle|draft overlap|earlier draft", doc):
-            if name == "manuscript":
-                fails.append("the manuscript still carries duplication-accounting "
-                             "prose, which the review asked to delete")
+        print("\nstudy-2 companion: 0 shared shingles, and the scan is quoted "
+              "in neither document")
     drafts = sorted((v, k) for k, v in res.items()
                     if k.endswith(".tex") and k != "cover_letter_NHTB_v2.tex")
     if len(drafts) >= 2:

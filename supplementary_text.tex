@@ -52,7 +52,7 @@
 \begin{document}
 
 \title{\textbf{Supplementary Material for ``Symmetry-Selected Nonlinear Thermal
-       Pumping in Periodically Heated Mixed-Convection Channels''}}
+       Pumping in a Periodically Heated Mixed-Convection Channel''}}
 \author{BENIAICHE Ahmed \\
 \textit{Laboratory of Fluid Mechanics, Ecole Militaire Polytechnique,} \\
 \textit{Algiers, Algeria} \\
@@ -114,7 +114,7 @@ figures, and the corresponding reduced data are archived with it.
   \centering
   \includegraphics[width=0.55\textwidth]{fig05_Gr_sweep.png}
   \caption{Thermal pumping coefficient versus Grashof number at fixed $(k,\Rey,\Pr)=(0.8,10,0.7)$.
-  The free-intercept fit is effectively exact and the response vanishes in the forced-convection limit
+  The free-intercept fit leaves an intercept of $-5.51\times10^{-16}$ and the response vanishes in the forced-convection limit
   $\Grr=0$.}
   \label{fig:Gr_sweep}
 \end{figure}
@@ -122,8 +122,8 @@ figures, and the corresponding reduced data are archived with it.
   \centering
   \includegraphics[width=0.72\textwidth]{campaign_v2_symmetry_selection/FIG_v2_01_piT_vs_Re_kartsch.png}
   \caption{Normalized pumping response $A=\PiT/\Grr$ versus Reynolds number at fixed
-  $\Pe=7$ and $\Grr=100$ for seven wavenumbers, computed with the authoritative
-  perturbative solver. Each curve crosses zero exactly once. The $k=0.4$ and
+  $\Pe=7$ and $\Grr=100$ for seven wavenumbers, computed with the perturbative
+  solver. Each curve crosses zero once. The $k=0.4$ and
   $k=0.6$ curves are drawn over the extended interval $\Rey\le120$ that their
   crossings require; the remaining five use the primary $\Rey\le40$ window,
   inside which each of them already crosses. The crossing moves to lower
@@ -163,10 +163,9 @@ figures, and the corresponding reduced data are archived with it.
 The nonlinear evidence quoted in the manuscript is recorded here in full. Four
 figures tighten one numerical control at a time around the reference case---the
 wall amplitude, the streamwise and transverse resolution, the time step and the
-Grashof pair---and the fifth, with the table that closes the section, sweeps the
+Grashof pair, and the fifth, with the table that closes the section, sweeps the
 Reynolds number across the reversal. They fix the error levels a reader needs in
-order to judge the DNS, and they are the detail from which the manuscript keeps
-only the headline numbers.
+order to judge the DNS; the manuscript quotes only the summary values.
 
 \begin{figure}[htb]
 \centering
@@ -579,9 +578,8 @@ Figure~\ref{fig:physical_temperature} shows the first-order temperature
 response for the reference configuration together with its transverse
 gradient. The temperature field exhibits the imposed streamwise periodicity,
 while the transverse gradient is strongly structured across the channel.
-This distinction is important because the buoyancy term in the linearized
-momentum equation is proportional to $\Theta'(Y)$, rather than to the
-temperature amplitude itself. The resolved temperature field therefore
+The buoyancy term in the linearized momentum equation is proportional to
+$\Theta'(Y)$ and not to the temperature amplitude itself. The resolved temperature field therefore
 provides the spatial structure of the thermal forcing that is subsequently
 converted into a hydrodynamic response.
 
@@ -704,7 +702,7 @@ For $\Rey=10$, the negative value of $\PiT$ indicates that the upper-wall
 correction is directed opposite to the convention adopted for positive
 pumping, while the lower wall receives the compensating correction. The
 important point is that the total mean wall contribution remains balanced:
-the nonlinear mechanism redistributes the flux rather than creating an
+the nonlinear mechanism redistributes the flux; it creates no
 additional net heat input at second order.
 
 The contrast between $\Rey=10$ and $\Rey=35$ is particularly informative.

@@ -5,7 +5,7 @@ four claims the campaign was designed to test:
 
   1. sign of the wall-flux difference flips across Re_c at every k sampled;
   2. the measured deviation from the two-coefficient prediction is bounded by the
-     pre-registered model delta_Pi = max(2.71e-4, 1.52% |Pi_T|);
+     pre-specified model delta_Pi = max(2.71e-4, 1.52% |Pi_T|);
   3. the parity cancellation at phi = 0 and the antisymmetry in phi;
   4. which of the two readings of the error model (H1 fixed in coefficient space,
      H2 absolute in q_+-q_-) the amplitude ladder supports.
@@ -58,7 +58,7 @@ reversal = dict(n_bracket_cases=int(len(br)),
                            margin_H1=float(r.margin_H1))
                       for r in br.itertuples()])
 
-# --- 2. pre-registered deviation model ---------------------------------------
+# --- 2. pre-specified deviation model ---------------------------------------
 finite = df[df.dev_over_model.notna()]
 model = dict(form="delta_Pi = max(2.71e-4, 1.52% |Pi_T|)",
              n_cases=int(len(finite)),

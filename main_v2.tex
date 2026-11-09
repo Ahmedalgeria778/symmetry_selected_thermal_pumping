@@ -51,8 +51,7 @@
 
 \begin{document}
 
-\title{\textbf{Symmetry-Selected Nonlinear Thermal Pumping in
-       Periodically Heated Mixed-Convection Channels}}
+\title{\textbf{Symmetry-Selected Nonlinear Thermal Pumping in a Periodically Heated Mixed-Convection Channel}}
 \author{BENIAICHE Ahmed \\
 \textit{Laboratory of Fluid Mechanics, Ecole Militaire Polytechnique,} \\
 \textit{Algiers, Algeria} \\
@@ -77,11 +76,11 @@ forcing adds a second, independent quadrature coefficient that can reverse the
 pumping on its own. A fully nonlinear direct numerical simulation converges to
 within 1.52\% of the perturbative coefficient, returns the predicted reversal
 sign on both sides of the crossing at four wavenumbers, cancels the parity
-partner to nineteen decimals in the wall-flux difference, and tests the
-Grashof scaling at finite amplitude. The same thirteen-case campaign falsifies
-part of its own pre-registered error model: five of the twelve non-degenerate
-cases exceed the bound, by a deviation independent of the forcing amplitude and
-growing with the wavenumber. Symmetry selects the structure of the nonlinear
+partner in the wall-flux difference to eleven digits relative to the flux
+itself, and tests the Grashof scaling at finite amplitude. In five of the
+twelve non-degenerate cases of the same thirteen-case campaign the deviation
+exceeds the bound specified before the campaign, by an amount independent of
+the forcing amplitude and growing with the wavenumber. Symmetry selects the structure of the nonlinear
 redistribution; buoyancy-mediated dynamics select its amplitude, its sign, and
 the control parameter that governs it.
 \end{abstract}
@@ -139,7 +138,7 @@ in magnitude and opposite in sign. The thermal--hydrodynamic \emph{dynamics} sel
 the \emph{amplitude and the sign} of that redistribution, and at fixed P\'eclet
 number the Reynolds number controls the direction of the pumping. Every result below
 is assigned to one of these two categories, and the central claim of the paper is
-that the division is exact rather than rhetorical: the first statement holds as a
+that the division is a difference in kind: the first statement holds as a
 theorem under stated assumptions, whereas the second requires quantitative
 calculation and can even reverse.
 
@@ -175,7 +174,8 @@ broader theory of pattern-forming systems \cite{CrossHohenberg1993}. Here, howev
 is not studied as an instability threshold. The weakly nonlinear expansion is used to expose an exact
 symmetry selection rule embedded in the steady forced transport problem.
 
-For identical upper and lower wall modulations, $\varepsilon_1=\varepsilon_2$, the leading second-order
+For identical in-phase upper and lower wall modulations,
+$\varepsilon_1=\varepsilon_2$ with $\phi=0$, the leading second-order
 wall-flux redistribution is symmetry-forbidden. The corresponding nonlinear forcing is even in the
 transverse coordinate and cannot generate a persistent difference between the two inward wall heat
 fluxes. The symmetric configuration therefore supplies a precise baseline against which the effect of
@@ -203,7 +203,7 @@ The contributions of the paper are therefore threefold.
   multiplying an independent pumping coefficient. For equal wall amplitudes the
   dependence on the phase is exactly $\sin\phi$, with no higher harmonic, and the
   quadrature coefficient $\PiT^{\perp}$ has the \emph{opposite sign} to the
-  published in-phase coefficient $\PiT$.
+  in-phase coefficient $\PiT$ determined here.
   \item A \textbf{dynamical mapping of the reversal}, validated by fully nonlinear
   DNS: the parity cancellation itself is reproduced in DNS to
   $3.1\times10^{-18}$ in the wall-flux difference, which is
@@ -223,13 +223,13 @@ This paper continues a line of work on the same canonical configuration. The com
 treats the \emph{symmetric} wall modulation: it develops the exact integral framework for the
 first-order complex thermal amplitude, including the non-monotonic
 $k$-dependence of the mode-coupling coefficient. The present study changes the object of
-interest: it is the asymmetric configuration, the exact parity selection rule that follows from
-it, and the dynamical consequences of that rule. The contrast is not one of parameters but of
-which quantity is observable at all. Section~\ref{sec:symmetry_law} argues that the symmetric and
+interest: it is the asymmetric configuration, the parity selection rule that follows from
+it, and the dynamical consequences of that rule. The contrast lies in which quantity is
+observable at all, not in the parameter values. Section~\ref{sec:symmetry_law} argues that the symmetric and
 antisymmetric cases pin the two rectified flux corrections to equality, and then, through the
-periodic energy balance, to zero --- the endpoint representation of Supplementary
+periodic energy balance, to zero; the endpoint representation of Supplementary
 Sec.~\ref{app:mean_solution} is what turns that balance into a statement about the two wall
-fluxes --- so that in the symmetric limit the response measured here
+fluxes, so that in the symmetric limit the response measured here
 vanishes by construction and neither a reversal of its direction nor a phase law for it can be
 defined. Only the shared canonical geometry and the standard nondimensional
 Navier--Stokes--Boussinesq statement appear again; no derivation, table or figure of the
@@ -325,7 +325,7 @@ introduced according to
 \end{equation}
 so incompressibility is identically satisfied. With the $e^{-ikX}$ convention, continuity gives
 \begin{equation}
-  \boxed{\widehat U^{(j)}=-\frac{i}{k}(\widehat V^{(j)})'.}
+  \widehat U^{(j)}=-\frac{i}{k}(\widehat V^{(j)})'.
   \label{eq:U_from_V}
 \end{equation}
 
@@ -422,7 +422,7 @@ Uniqueness therefore gives
 \end{equation}
 Hence $\Theta^{(s)}$ is even and $(\Theta^{(s)})'$ odd, while $\Theta^{(a)}$ is odd and
 $(\Theta^{(a)})'$ even. The commutation of $\mathcal R$ with both first-order operators,
-which is what makes the parity assignment unique rather than accidental, is spelled out
+which is what fixes the parity assignment, is spelled out
 in Sec.~\ref{app:reflection} of the supplementary material.
 
 \subsection{Reflection parity of the first-order hydrodynamic modes}
@@ -513,7 +513,7 @@ $\widehat U$ & even & odd
 \end{center}
 Every term in Eq.~\eqref{eq:E_cross_complex} is therefore odd, so
 \begin{equation}
-  \boxed{\mathcal E_{as}(-Y)=-\mathcal E_{as}(Y)}.
+  \mathcal E_{as}(-Y)=-\mathcal E_{as}(Y).
   \label{eq:Eas_odd}
 \end{equation}
 Also,
@@ -615,7 +615,7 @@ quadrature form quoted above.
 \label{prop:grlinearity}
 At fixed $(k,\Rey,\Pr)$,
 \begin{equation}
-  \boxed{\PiT(k,\Pe,\Grr;\Rey,\Pr)=\Grr A(k,\Rey,\Pr).}
+  \PiT(k,\Pe,\Grr;\Rey,\Pr)=\Grr A(k,\Rey,\Pr).
   \label{eq:PiT_Gr}
 \end{equation}
 \end{proposition}
@@ -644,9 +644,8 @@ for every $\Grr$. The quadrature coefficient obeys the identical scaling because
 hydrodynamic modes that enter its kernel are the same $\Grr$-linear solutions.
 \end{proof}
 
-This corollary is a structural prediction rather than an asymptotic one, and it is
-directly testable. At $k=0.8$ and $\Pe=7$ the reversal Reynolds number was located by
-Brent iteration on the authoritative perturbative solver for four Grashof numbers:
+This corollary is a structural prediction, and it is directly testable. At $k=0.8$ and $\Pe=7$ the reversal Reynolds number was located by
+Brent iteration on the perturbative solver for four Grashof numbers:
 \begin{equation}
 \begin{array}{c|rrrr}
 \Grr & 25 & 50 & 100 & 200\\ \hline
@@ -694,7 +693,7 @@ Thus $(\Theta^{(s)})'=O(k)$ whereas $(\Theta^{(a)})'=1+O(k)$. Equation~\eqref{eq
 \end{equation}
 so every cross-forcing contribution is $O(k^2)$ and
 \begin{equation}
-  \boxed{A(k,\Rey,\Pr)=A_2(\Rey,\Pr)k^2+o(k^2),\qquad k\to0.}
+  A(k,\Rey,\Pr)=A_2(\Rey,\Pr)k^2+o(k^2),\qquad k\to0.
   \label{eq:small_k}
 \end{equation}
 
@@ -825,10 +824,10 @@ coefficients are
 \end{equation}
 so the quadrature channel not only differs from the in-phase one, it drives the
 redistribution in the \emph{opposite} direction and with 1.87 times the magnitude at
-matched bilinear amplitude. The in-phase value reproduces the authoritative
-single-case calculation of Section~\ref{sec:phase} to a relative discrepancy of
-$4.3\times10^{-13}$, which validates the kernel decomposition
-\eqref{eq:mixed_forcing_two} against the published solver.
+matched bilinear amplitude. The in-phase value agrees with the direct single-case solve of the
+reference state to a relative discrepancy of $4.3\times10^{-13}$, which
+validates the kernel decomposition \eqref{eq:mixed_forcing_two} against the
+reference solver.
 
 The law \eqref{eq:two_coeff_law} was checked by reconstructing the mixed forcing
 profile $c\mathcal K_c+d\mathcal K_q$ and solving the mean thermal problem for twelve
@@ -846,7 +845,7 @@ over $\Grr=25$--$400$ the normalized responses $\PiT/\Grr$ and $\PiT^{\perp}/\Gr
 by $1.0\times10^{-13}$ and $3.7\times10^{-13}$ relative respectively, confirming that
 Corollary~\ref{cor:Gr_independence} covers the new coefficient as well;
 Sec.~\ref{subsec:Gr_test} repeats the scaling in DNS, where the measured Grashof
-ratio of $q_+-q_-$ stays within $3.7\times10^{-4}$ of the exact value.
+ratio of $q_+-q_-$ stays within $3.7\times10^{-4}$ of the predicted value.
 
 Two structural differences between the channels are worth recording. First,
 $\PiT^{\perp}>0$ for every $\Rey\in[5,50]$ examined at $k=0.8$ and $\Pe=7$, decreasing
@@ -858,7 +857,7 @@ $(k,\Rey)=(0.4,5)$ to $-36.3$ at $(1.6,10)$, attains $+11.0$ at $(0.8,40)$ and c
 sign across the parameter
 domain, so $\PiT^{\perp}$ cannot be reduced to $\PiT$ by any rescaling.
 
-Figure~\ref{fig:sin_phi} shows the exact phase selection and
+Figure~\ref{fig:sin_phi} shows the phase selection predicted by \eqref{eq:sin_phi} and
 Figure~\ref{fig:two_branches} the two reversal branches. The prediction
 \eqref{eq:sin_phi} is a second-order statement and is therefore directly testable in
 fully nonlinear DNS. With $\varepsilon=0.03$ and $\phi=\pi/2$ the theorem gives
@@ -937,7 +936,7 @@ correction satisfies its integral constraint to $1.1\times10^{-16}$.
 
 The reference result is also insensitive to the initial collocation mesh. Calculations with $N_0=101,201,401,801$
 and a finer reference initialization differ from the reported value only in the last displayed digits.
-These tests support the use of the adaptive collocation result as the authoritative CPU reference while the
+These tests support the use of the adaptive collocation result as the reference CPU solution while the
 shooting calculation supplies an independent field reconstruction.
 Table~\ref{tab:validation_summary} collects the diagnostics of that audit.
 
@@ -957,7 +956,7 @@ Table~\ref{tab:validation_summary} collects the diagnostics of that audit.
   Wall-vs-integral $\PiT$ discrepancy & $3.2\times10^{-13}$ \\
   Quadrature cross-check & $1.8\times10^{-11}$ \\
   Collocation--shooting difference & $8.6\times10^{-12}$ \\
-  Zero-bulk-flux residual & $1.1\times10^{-16}$ \\
+  Zero-bulk-flow residual & $1.1\times10^{-16}$ \\
   \end{tabular}
   \end{ruledtabular}
 \end{table}
@@ -979,12 +978,10 @@ The DNS does not use the first-order thermal or hydrodynamic modal solutions
 as input. Instead, the fully nonlinear temperature and momentum equations are
 integrated directly to a stationary state under the same periodic wall
 forcing, with the wall heat-flux difference evaluated from the converged
-temperature field. The DNS is consequently an independent test of the
-perturbative mechanism rather than a second implementation of the same
-boundary-value calculation. Four numbers from that campaign carry the argument
+temperature field. The DNS is therefore an independent test of the perturbative mechanism: it reuses none of the boundary-value calculation. Four numbers from that campaign carry the argument
 of Section~\ref{sec:results}: the parity cancellation measured at
 $3.1\times10^{-18}$ in the wall-flux difference, the eight bracketed runs that
-all return the predicted reversal sign, the Grashof ratio exact to
+all return the predicted reversal sign, the Grashof ratio agreeing to
 $3.7\times10^{-4}$, and the quadrature coefficient recovered to $1.38\%$.
 
 Unless otherwise stated, the reference DNS configuration is
@@ -1032,12 +1029,11 @@ solver.
 \label{sec:results}
 %-----------------------------------------------------------------
 
-The evidence is ordered as the claims are. The perturbative scalings come first,
-because within the model they are exact and they fix what the nonlinear runs are
-supposed to reproduce. The reversal map follows, because it is the prediction the
-simulation is asked to bracket. The campaign that tests the whole chain at finite
-amplitude closes the section, together with the two places where it falsifies its
-own pre-registered error model.
+The perturbative scalings come first, because within the model they are exact
+and they fix what the nonlinear runs have to reproduce. The reversal map follows,
+because it is the prediction the simulation is asked to bracket. The campaign
+that tests the whole chain at finite amplitude closes the section, including the
+two places where its deviation exceeds the bound specified before the campaign.
 
 \subsection{Grashof-number scaling}
 
@@ -1072,9 +1068,7 @@ interior: at $\Pe=10.85$ the response changes sign once, at
 \end{equation}
 At the endpoint itself the zero has reached the upper boundary,
 \begin{equation}
-  \boxed{
   \Pe_c=10.871940554611,\qquad k_c=10,
-  }
   \label{eq:finite_domain_endpoint}
 \end{equation}
 where the boundary value $\PiT(10,\Pe_c)=-8.40\times10^{-15}$ is zero to the
@@ -1102,8 +1096,7 @@ Figure~\ref{fig:endpoint} shows the three regimes in one view: interior zero,
 boundary contact, and complete loss of positive response inside the window. The
 endpoint is reached geometrically, when the zero set of $\PiT(k,\Pe)$ first touches
 $k=k_{\max}=10$; it is not prescribed as an independent critical parameter. A dense local
-check at that boundary confirms that the transition is transversal rather than a sampling
-artefact: with $\delta=\Pe-\Pe_c$, the boundary value is
+check at that boundary confirms that the transition is transversal: with $\delta=\Pe-\Pe_c$, the boundary value is
 $\PiT(10,\Pe_c-\delta)=+5.00619\times10^{-8}$ and $+5.00641\times10^{-9}$ for
 $\delta=10^{-3}$ and $10^{-4}$, and $\PiT(10,\Pe_c+\delta)=-5.00648\times10^{-9}$ and
 $-5.00671\times10^{-8}$ for the same two offsets. The magnitudes are nearly antisymmetric
@@ -1112,8 +1105,8 @@ $\partial\PiT/\partial\Pe\approx-5.01\times10^{-5}$ at $(k,\Pe)=(10,\Pe_c)$; the
 five-row ladder is in group A of the supplementary data package.
 
 The endpoint must therefore be read strictly as a \emph{finite-domain dynamical endpoint}
-of the observed zero-crossing branch for $(\Rey,\Grr)=(10,100)$ on $0.02\le k\le10$ --- not
-a universal critical P\'eclet number, not an instability threshold. The survey supporting
+of the observed zero-crossing branch for $(\Rey,\Grr)=(10,100)$ on $0.02\le k\le10$, that is
+neither a universal critical P\'eclet number nor an instability threshold. The survey supporting
 this classification (173 wavenumbers per $\Pe$ for five $\Pe$ values, 865 first-order BVP
 evaluations, plus the local $\Delta\Pe$ ladder quoted above) is archived as group
 A of the supplementary data package, which records the raw grid, the refined roots, the
@@ -1138,9 +1131,7 @@ themselves are recorded in Sec.~\ref{subsec:dns_sequences} of the supplementary 
 asymmetry amplitude decreases at fixed $\varepsilon_s=0.03$,
 $\PiT^{\mathrm{DNS}}$ converges to $-4.6763\times10^{-2}$, which recovers the
 second-order perturbative value $-4.7485\times10^{-2}$ to $1.52\%$
-(Fig.~\ref{fig:dns_amplitude}). The approach to a finite limit is the nonlinear
-evidence that $\PiT$ is the leading transport coefficient of the
-symmetric--antisymmetric interaction rather than an amplitude artefact. Refining
+(Fig.~\ref{fig:dns_amplitude}). The approach to a finite limit is the nonlinear evidence that $\PiT$ is the leading transport coefficient of the symmetric--antisymmetric interaction. Refining
 the mesh from $48\times37$ to $96\times73$ moves the coefficient monotonically by
 at most $1.10\%$, and refining the time step from $3.0\times10^{-3}$ to
 $1.0\times10^{-3}$ by at most $1.75\times10^{-6}$
@@ -1407,7 +1398,7 @@ thermal--hydrodynamic pathways.
 
 The DNS results strengthen the physical interpretation of the pumping mechanism
 by demonstrating that the symmetry-selected wall-flux redistribution is not an
-artifact of the perturbative truncation. The exact reflection properties survive
+artifact of the perturbative truncation. The reflection properties forced by symmetry survive
 in the fully nonlinear equations, while the magnitude and direction of the
 response remain dynamically selectable. In particular, the fixed-$\Pe$
 Reynolds sweep shows that the thermal field and hydrodynamic mediator should
@@ -1425,7 +1416,7 @@ thermal redistribution.
 
 The reversal reported above is obtained from fully nonlinear DNS at a single
 wavenumber, and a single point cannot distinguish a law from an accident. We therefore
-map the reversal locus $\Rey_c(k)$ with the authoritative perturbative solver over
+map the reversal locus $\Rey_c(k)$ with the perturbative solver over
 seven wavenumbers at fixed $\Pe=7$ and $\Grr=100$, with $\Pr=\Pe/\Rey$, scanning
 $\Rey\in\{5,10,15,20,25,30,35,40\}$ and refining each sign change by Brent
 iteration. Because the two longest-wavelength crossings fall outside that
@@ -1442,8 +1433,11 @@ group B of the supplementary data package.
   entries with $\Rey_c\le40$ are bracketed inside the primary scan; the two
   longest-wavelength crossings lie beyond $\Rey=40$ and were bracketed on the
   extended interval. The reversal is therefore resolved at every wavenumber
-  sampled. The $k=0.8$ value reproduces the independent determination from the
-  DNS-based sweep, $\Rey_c=30.838496518$, to nine significant digits.}
+  sampled. The $k=0.8$ entry is the value used to place the DNS cases around
+  their own crossing (Sec.~\ref{sec:outlook}); it agrees with the four
+  Grashof-number determinations at that wavenumber, $\Rey_c=30.838496520$, to
+  the displayed digits, and the crossing location itself remains a perturbative
+  quantity.}
   \label{tab:Rec_k}
   \begin{ruledtabular}
   \footnotesize
@@ -1455,7 +1449,7 @@ group B of the supplementary data package.
   \end{ruledtabular}
 \end{table}
 
-Two facts follow. First, the reversal is systematic rather than isolated: it
+Two facts follow. First, the reversal is systematic: it
 occurs at every one of the seven wavenumbers sampled and its location moves
 monotonically to lower $\Rey$ as $k$ increases, from $\Rey_c=79.08$ at $k=0.4$
 to $\Rey_c=8.54$ at $k=2.0$. Over the seven resolved crossings the empirical
@@ -1565,7 +1559,7 @@ cost $491$\,s in total, with residuals below $1.0\times10^{-8}$.
   \label{fig:dns_grpair}
 \end{figure}
 
-The design is not accidental: candidate Reynolds numbers closer to the crossing
+Candidate Reynolds numbers closer to the crossing
 were rejected before integration by the resolvability gate of
 Sec.~\ref{subsec:error_model}, which requires the predicted signal to exceed
 the deviation floor by more than a
@@ -1574,12 +1568,12 @@ $\Rey=40$ has $1.99$ and $7.98$, so in both cases at least one member cannot
 test a sign; the accepted pair keeps margins between $2.5$ and $47.4$ on both
 sides of $\Rey_c$.
 
-The residual departures of the two measured ratios from exactly four---$0.1\%$
-and $0.4\%$---are not interpreted. A Richardson-type correction
+The residual departures of the two measured ratios from four, $0.1\%$ and $0.4\%$, are not
+interpreted. A Richardson-type correction
 $\Grr/\Rey^{2}$ would predict the larger departure at the smaller Reynolds
 number, since $\Grr/\Rey^{2}=0.50$ for $(\Grr,\Rey)=(200,20)$ against $0.08$ for $(200,50)$,
 whereas the observed ordering is the reverse. The ratios are therefore reported
-as consistent with exact Grashof linearity at the tolerance the runs reach, and
+as consistent with Grashof linearity at the tolerance the runs reach, and
 the structural claim rests on the proportionality of the \emph{discrepancy}
 together with the unchanged sign, not on the fourth decimal of the ratio.
 
@@ -1604,7 +1598,7 @@ amplitudes,
 \end{equation}
 with $\widehat\varepsilon_s=\tfrac12(\varepsilon_1+\varepsilon_2e^{-i\phi})$ and
 $\widehat\varepsilon_a=\tfrac12(\varepsilon_1-\varepsilon_2e^{-i\phi})$, and with
-$\PiT(k,\Rey)$, $\PiT^{\perp}(k,\Rey)$ from the same authoritative solver.
+$\PiT(k,\Rey)$, $\PiT^{\perp}(k,\Rey)$ from the same solver.
 
 \begin{table}[htb]
   \centering
@@ -1621,7 +1615,7 @@ $\PiT(k,\Rey)$, $\PiT^{\perp}(k,\Rey)$ from the same authoritative solver.
   coefficient-space deviation $2.71\times10^{-4}$ quoted for it. The parity run
   has $\widehat\varepsilon_a=0$ and no coefficient-space statement is possible.
   The bound column is the deviation model
-  $\delta_\Pi=\max(2.71\times10^{-4},1.52\%\,|\PiT|)$ pre-registered from the
+  $\delta_\Pi=\max(2.71\times10^{-4},1.52\%\,|\PiT|)$ pre-specified from the
   completed fixed-$\Pe$ sweep, and $\le$ marks where it holds. The single
   measured sign that differs from the prediction, marked $^{a}$, is the ladder
   run discussed in item~3 of Section~\ref{sec:outlook}.}
@@ -1658,8 +1652,7 @@ $\phi$.
 
 \begin{enumerate}
 \item \emph{Reversal confirmed at four wavenumbers.} The locus $\Rey_c(k)$ of
-  Table~\ref{tab:Rec_k} is perturbative, so each wavenumber is tested on both
-  sides of its own crossing rather than on a common Reynolds interval: at
+  Table~\ref{tab:Rec_k} is perturbative, so each wavenumber is tested on both sides of its own crossing: at
   $k=0.6$ the reversal sits at $\Rey=51.25$, and a grid confined to $\Rey\le40$
   would sample a single sign at that wavenumber and measure nothing about a
   reversal. All eight bracket runs return the predicted sign, and the two
@@ -1671,16 +1664,15 @@ $\phi$.
   zero and a fixed absolute error maps onto a large relative one. At $\Rey=50$
   the measured coefficient is $+1.472\times10^{-3}$ against
   $+1.330\times10^{-3}$ predicted: the sign is unambiguous and the absolute
-  deviation, $1.42\times10^{-4}$, is half the pre-registered floor. The
+  deviation, $1.42\times10^{-4}$, is half the pre-specified floor. The
   large relative error near the crossing is thus a crossing artefact.
 \item \emph{Error-model discriminator.} The ladder run D3L was designed to
-  separate the two readings of $\delta_\Pi$. Raising $\varepsilon_a$ fourfold
-  multiplies the flux gap, $3.25\times10^{-7}$ against the
-  $1.29\times10^{-7}$ measured at the reference amplitude and the nearest
-  bracket point of the same wavenumber ($k=0.8$, $\Rey=20$), but leaves the
-  coefficient-space deviation at
-  $2.709\times10^{-4}$---that is $1.00$ times the absolute floor---and the
-  measured sign is positive where the prediction is negative. The deviation is
+  separate the two readings of $\delta_\Pi$. Raising $\varepsilon_a$ fourfold, to $0.02$, moves the flux gap from the
+  $1.29\times10^{-7}$ measured at the reference amplitude on the other side of
+  the same crossing ($k=0.8$, $\Rey=20$) to $3.25\times10^{-7}$: a factor of
+  $2.5$, not of $4$. The coefficient-space deviation is nevertheless left at
+  $2.709\times10^{-4}$, one time the absolute floor, and the measured sign is
+  positive where the prediction is negative. The deviation is
   therefore \emph{not} absolute in $q_+-q_-$ and does not improve with the
   forcing amplitude: the coefficient-space reading is the correct one, and a
   single-amplitude DNS test of this family cannot resolve the reversal once
@@ -1695,14 +1687,13 @@ $\phi$.
   $\phi=0$ member of the same family is the exact cancellation limit: the two
   wall fluxes are measured equal to $3.1\times10^{-18}$, against individual
   values of $-1.145796985\times10^{-7}$, so the parity theorem is reproduced in
-  DNS at a relative precision of $2.7\times10^{-11}$---eleven digits beyond the
-  flux itself. This is the sharpest single confirmation in the campaign, and it
-  is independent of the symmetric-forcing case of
-  Table~\ref{tab:dns_validation_summary} at $8\times10^{-18}$.
+  DNS at a relative precision of $2.7\times10^{-11}$, eleven digits relative to
+  the flux itself. This test is independent of the symmetric-forcing case of
+  Table~\ref{tab:dns_validation_summary}, which gives $8\times10^{-18}$.
 \end{enumerate}
 
 Fig.~\ref{fig:dns_multik} collects the two readings of the same campaign: the reversal
-direction, panel (a), and the magnitude against the pre-registered deviation model,
+direction, panel (a), and the magnitude against the pre-specified deviation model,
 panel (b), which is the quantity the analysis of Sec.~\ref{subsec:error_model} judges.
 
 \begin{figure}[htb]
@@ -1721,13 +1712,13 @@ panel (b), which is the quantity the analysis of Sec.~\ref{subsec:error_model} j
   \label{fig:dns_multik}
 \end{figure}
 
-\subsection{What the campaign changes about the error model}
+\subsection{Deviation from the pre-specified bound}
 \label{subsec:error_model}
 
-The campaign falsifies part of its own pre-registered error model. Of the twelve
-non-degenerate cases, seven satisfy
+The bound was exceeded in five of the twelve non-degenerate cases; we report and
+characterize the excess. Seven cases satisfy
 $\delta_\Pi=\max(2.71\times10^{-4},1.52\%\,|\PiT|)$ and five exceed it, by up to
-$4.6$ times. The pattern is systematic rather than random: the coefficient-space
+$4.6$ times. The pattern is systematic: the coefficient-space
 deviation is independent of the forcing amplitude (item~3 above) and grows
 monotonically with the wavenumber, its maximum over the bracket pairs rising
 from $1.15\times10^{-4}$ at $k=0.6$ through $4.30\times10^{-4}$ at $k=0.8$ and
@@ -1820,9 +1811,9 @@ velocity modes that convert the thermal pair into a momentum flux
 quadratic forcing, which shows that every term of $\mathcal E_{as}$ is odd while each of
 the two wall contributions is separately non-zero
 (Supplementary Figs.~\ref{fig:symmetry_forcing} and \ref{fig:wall_flux_physical}). The
-reading is therefore not that the two walls stop exchanging heat, but that the nonlinear
-interaction is symmetry-forbidden from rectifying into a net transport: the pumping is
-selected, not suppressed. Buoyancy then enters only as the amplitude mediator, which is
+reading is that the two walls keep exchanging heat while the nonlinear interaction is
+symmetry-forbidden from rectifying into a net transport. Buoyancy enters only as the
+amplitude mediator, which is
 why the direction of the response is set by $\Rey$ rather than by $\Grr$.
 
 \subsection{Mechanism: buoyancy-mediated spatial rectification}
@@ -1856,7 +1847,7 @@ field maps, the secondary circulation and the detailed spatial analysis of both
 limits are developed in
 Sec.~\ref{subsec:rectification} of the supplementary material.
 
-\subsection{What is exact and what is dynamical?}
+\subsection{Exact and dynamical statements}
 
 Three different statements must be distinguished. First, the relation
 $\Nu_{2,0}(+1)=-\Nu_{2,0}(-1)$ is an exact consequence of reflection symmetry,
@@ -1871,8 +1862,7 @@ $k=10$ for the particular fixed-Reynolds-number problem considered here.
 The dense CPU calculation strengthens this distinction. Below the endpoint,
 an interior zero exists; at the endpoint, the zero is located at the boundary;
 above the endpoint, no positive response remains in the investigated
-wavenumber interval. Thus, the transition concerns the geometry of the
-zero set in a finite parameter domain rather than the onset of a new
+wavenumber interval. Thus, the transition concerns the geometry of the zero set in a finite parameter domain, and not the onset of a new
 symmetry class or a hydrodynamic instability.
 
 \subsection{Limitations}
@@ -1893,7 +1883,7 @@ The phase-shifted forcing family is treated in full in Section~\ref{sec:phase}, 
 shown to introduce a second, independent pumping coefficient $\PiT^{\perp}$ and to reproduce a
 pure $\sin\phi$ dependence for equal wall amplitudes (Corollary~\ref{cor:sinphi}).
 
-\subsection{What drives the growth of the remainder with $k$}
+\subsection{Growth of the remainder with wavenumber}
 \label{subsec:remainder}
 
 The monotone growth is the interesting part of the table, and it has two
@@ -1911,7 +1901,7 @@ mesh-resolution floor is identified as future work below.
 The second candidate is numerical, and it cannot be dismissed by the residuals
 alone. The time-stepping and solver errors are genuinely negligible---the final
 residuals are below $2.2\times10^{-8}$, four orders under the deviations they
-accompany---but the spatial discretisation is not: on the published convergence
+accompany, but the spatial discretisation is not: on the convergence
 ladder at $k=0.8$, $\PiT$ moves by $3.1\times10^{-4}$ between the production
 mesh of $3136$ degrees of freedom and the finest tested, $7008$, which is the
 same order as the deviations measured here at $k=0.8$ and $k=1.0$. Because the
@@ -1928,8 +1918,7 @@ comparison with the perturbative coefficient: the \emph{sign} structure, which
 is what the paper claims, is recovered in all eight bracket pairs. A decisive
 separation requires one replica of the $k=1.2$ pair at refined $N_x$: if the
 deviation collapses toward the floor, the growth is discretisation; if it
-persists, it is the remainder of the truncation. That test is identified as
-future work rather than asserted here.
+persists, it is the remainder of the truncation. That test is left for future work.
 
 Grashof-independence of the reversal point (Corollary~\ref{cor:Gr_independence})
 is exact within the perturbative model, to better than $10^{-9}$ in $\Rey_c$, and the
@@ -1950,15 +1939,13 @@ symmetry, whereas its \emph{amplitude and sign} are dynamical, and that the
 Reynolds number---even at fixed P\'eclet number---controls the direction of the
 resulting thermal pumping.
 
-\emph{What symmetry selects.} The first-order thermal fields decompose uniquely
+\emph{Symmetry-selected structure.} The first-order thermal fields decompose uniquely
 into symmetric and antisymmetric parts; their hydrodynamic responses inherit
 opposite reflection parities, so the mixed quadratic forcing is necessarily odd
 across the channel. The second-order mean temperature correction is therefore
 odd, which imposes
 \begin{equation}
-\boxed{
 \Nu_{2,0}(+1) = -\Nu_{2,0}(-1)
-}
 \end{equation}
 This is a structural consequence of the governing equations \emph{within the
 second-order expansion}: it concerns the mixed quadratic contribution to the mean
@@ -1968,7 +1955,7 @@ identity has been established at arbitrary wall amplitude by the perturbative
 theory. The finite-amplitude DNS value quoted above is a separate numerical
 verification of the same cancellation, and it is presented as such.
 
-\emph{What the dynamics select.} The redistribution is measured by the
+\emph{Dynamically selected amplitude and sign.} The redistribution is measured by the
 thermal-pumping coefficient, for which the Green identity
 $\PiT=-(\Pe/2)\int_{-1}^{1}Y\,\mathcal{E}_{as}\,dY$ yields
 \begin{equation}
@@ -1982,15 +1969,15 @@ effect. Under the hypotheses of the model, $\PiT$ is proportional to $\Grr$, so 
 zero is exactly independent of
 $\Grr$ (Corollary~\ref{cor:Gr_independence}): the reversal point is
 $\Rey_c=30.8384965$ for $\Grr=25,50,100$ and $200$, with an absolute spread of
-$1.2\times10^{-10}$ and $A$ invariant to better than $10^{-10}$ relative --- a
-solver tolerance, not an independent nonlinear measurement of $\Rey_c$. DNS
+$1.2\times10^{-10}$ and $A$ invariant to better than $10^{-10}$ relative, which is a
+solver tolerance and not an independent nonlinear measurement of $\Rey_c$. DNS
 tests the two statements that remain at finite amplitude: at $\Rey=20$ and $\Rey=50$ the measured
 Grashof ratio of $q_+-q_-$ is $4.0003$ and $4.0015$, and the sign predicted on
 either side of the crossing survives.
 
 \emph{Phase selects a second, independent coefficient.} Allowing a phase lag
 $\phi$ between the two walls makes the mixed product complex, and streamwise
-averaging leaves two independent invariants rather than one. The wall flux
+averaging leaves two independent invariants. The wall flux
 becomes
 \begin{equation}
 \Nu_{2,0}(+1)=\Re(\varepsilon_a\varepsilon_s^{*})\,\PiT
@@ -2001,8 +1988,8 @@ $\PiT^{\perp}=+8.89496095\times10^{-2}$ at the reference state: the quadrature
 coefficient is of opposite sign and nearly twice as large. For equal wall
 amplitudes the in-phase invariant vanishes identically and the response obeys
 $\Nu_{2,0}(+1)\propto\sin\phi$ exactly (Corollary~\ref{cor:sinphi}), verified phase
-by phase to $2.4\times10^{-13}$. This is a selection rule, not a suggestion: it fixes which
-combinations of wall forcing can pump and in which quadrature.
+by phase to $2.4\times10^{-13}$. The rule fixes which combinations of wall forcing can pump, and in which
+quadrature.
 
 \emph{Reversal is systematic, and it is a magnitude race, not a phase flip.}
 The reversal point has been mapped over seven wavenumbers, giving
@@ -2037,10 +2024,9 @@ the zero remains a statement of the perturbative model
 (Corollary~\ref{cor:Gr_independence}); the DNS campaign verifies its two observable
 consequences, not the location itself.
 Spatial and temporal refinement demonstrate convergence of the nonlinear
-observable. The campaign also falsifies part of its own pre-registered error
-model: five of the twelve non-degenerate cases exceed $\delta_\Pi$, with an
-excess that is independent of the forcing amplitude and grows with the
-wavenumber (Sec.~\ref{subsec:remainder}); separating the truncation remainder
+observable. The bound specified before the campaign is exceeded
+by five of the twelve non-degenerate cases, with an excess that is independent
+of the forcing amplitude and grows with the wavenumber (Sec.~\ref{subsec:remainder}); separating the truncation remainder
 from the residual spatial discretisation requires a refined-$N_x$ replica of
 the $k=1.2$ bracket pair, which is the immediate next test. The remaining
 finite-domain statement
